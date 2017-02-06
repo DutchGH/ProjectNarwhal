@@ -2,7 +2,6 @@ Things to do:
   -Make technology choices.
   -Pick a Scrum master.
   -Ensure everyone can access project on Gitlab.
-  -Assign permissions on Gitlab.
   -Agree on issue tracker labels, assign milestones.
   -Consider team member skills and possible roles:
     -potential roles:
