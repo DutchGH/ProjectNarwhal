@@ -26,6 +26,7 @@ Lesson DB:
 
 // Queries //
 General:
+  -Compare username and password (log in)
   -Check if an account is a user or an admin
 
 User:
