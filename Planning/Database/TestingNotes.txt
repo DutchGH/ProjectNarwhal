@@ -8,6 +8,12 @@ User account DB:
   -Change a user account to an admin account
   -Edit the details of a user account
 
+Trainer account DB:
+  -Add a new trainer account
+  -Remove a trainer account
+  -Change a trainer account to an admin account
+  -Edit the details of a trainer account
+
 Admin account DB:
   -Add an admin account
   -Remove an admin account
@@ -33,9 +39,13 @@ User:
   -Return the user based on the PK
   -Return a list of a user's lessons
 
+Trainer:
+  -Return the trainer based on the PK
+  -Return a list of a trainer's lessons
+
+
 Admin:
   -Return the admin based on the PK
-  -Return a list of the admin's lessons
 
 Room:
   -Return the room based on the PK
