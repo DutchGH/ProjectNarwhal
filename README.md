@@ -8,6 +8,6 @@
 * Jake Horsfield (@sc5jh)
 
 ## Wiki Contents
-1. [Meetings](group-meetings)
-2. [To Do List](todo-list)
+1. [Meetings](https://gitlab.com/comp2931/narwhal/wikis/group-meetings)
+2. [To Do List](https://gitlab.com/comp2931/narwhal/wikis/todo-list)
 
