@@ -5,7 +5,7 @@
 * Luke Roberts (@sc15lar)
 * Ben Reed (@benreed24)
 * Suhaib Saeed (@ee14s3s)
-* Jake Horsfield (@sc5jh)
+* Jake Horsfield (@sc15jh)
 
 ## Wiki Contents
 1. [Meetings](https://gitlab.com/comp2931/narwhal/wikis/group-meetings)
