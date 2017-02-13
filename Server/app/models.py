@@ -1,11 +1,11 @@
 from app import db
-import datetime
+from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime
 
 ##Trainer
 class Trainer(db.Model):
 	__tablename__ = 'Trainer'
-	trainerID = db.Column(db.Integer,primary_key=True)
+	trainerID = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(100))
 	address = db.Column(db.String(100))
 	phone = db.Column(db.Integer)
@@ -16,7 +16,7 @@ class Trainer(db.Model):
 ##Admin
 class Admin(db.Model):
 	__tablename__ = 'Admin'
-	adminID = db.Column(db.Integer,primary_key=True)
+	adminID = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(100))
 	username = db.Column(db.String(100))
 	password = db.Column(db.String(100))
@@ -24,7 +24,7 @@ class Admin(db.Model):
 ##Room
 class Room(db.Model):
 	__tablename__ = 'Room'
-	roomID = db.Column(db.Integer,primary_key=True)
+	roomID = db.Column(db.Integer, primary_key=True)
 	capacity = db.Column(db.Integer)
 	roomType = db.Column(db.String(100))
 	picURL = db.Column(db.String(100))
@@ -34,21 +34,22 @@ class Room(db.Model):
 ##Course
 class Class(db.Model):
 	__tablename__ = 'Class'
-	classID = db.Column(db.Integer,primary_key=True)
+	classID = db.Column(db.Integer, primary_key=True)
 	courseID = db.Column(db.Integer)
 	title = db.Column(db.String(100))
 	description = db.Column(db.String(100))
 	capacity = db.Column(db.Integer)
-	startTime = db.Column(db.DateTime)
-	duration = db.Column(db.Integer)
-	requiredFacilities = db.Column(db.String(100))
-	prerequsitTraining = db.Column(db.String(100))
+	startTime = db.Column(db.DateTime, default=datetime.utcnow )
+	duration = db.Column(db.Integer, default=60)
+	requiredFacilities = db.Column(db.String(100), default='None')
+	prerequsitTraining = db.Column(db.String(100), default='None')
 	locationPoint = db.Column(db.Integer, db.ForeignKey('Room.roomID'))
-	location = db.relationship("Room",foreign_keys=[locationPoint])
+	location = db.relationship("Room", foreign_keys=[locationPoint])
 	trainerPoint = db.Column(db.Integer, db.ForeignKey('Trainer.trainerID'))
-	waitListPoint = db.Column(db.Integer, db.ForeignKey('Delegate.delID'))
-	trainer = db.relationship("Trainer",foreign_keys=[trainerPoint])
-	waitList = db.relationship("Delegate",foreign_keys=[waitListPoint])
+	trainer = db.relationship("Trainer", foreign_keys=[trainerPoint])
+	#Commented out as not 100% on how to implement this just yet.
+	#waitListPoint = db.Column(db.Integer, db.ForeignKey('Delegate.delID'))
+	#waitList = db.relationship("Delegate", foreign_keys=[waitListPoint])
 
 ##Delegates
 class Delegate(db.Model):
@@ -58,4 +59,4 @@ class Delegate(db.Model):
 	username = db.Column(db.String(100))
 	password = db.Column(db.String(100))
 	classListPoint = db.Column(db.Integer, db.ForeignKey('Class.classID'))
-	classList= db.relationship("Class",foreign_keys=[classListPoint])
+	classList= db.relationship("Class", foreign_keys=[classListPoint])
