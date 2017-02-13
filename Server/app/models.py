@@ -39,8 +39,11 @@ class Class(db.Model):
 	title = db.Column(db.String(100))
 	description = db.Column(db.String(100))
 	capacity = db.Column(db.Integer)
+	#Temporarily set the default to the time now for ease of testing.
 	startTime = db.Column(db.DateTime, default=datetime.utcnow )
+	#Set the default 60 need to discuss the unit of time.
 	duration = db.Column(db.Integer, default=60)
+	#Both the follow fields default to None unless specified.
 	requiredFacilities = db.Column(db.String(100), default='None')
 	prerequsitTraining = db.Column(db.String(100), default='None')
 	locationPoint = db.Column(db.Integer, db.ForeignKey('Room.roomID'))
