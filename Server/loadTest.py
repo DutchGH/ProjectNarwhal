@@ -1,7 +1,6 @@
 from app import db, models
 import datetime
-##Create some random db items
-#room1 = models.Room(roomID=1,capacity=100,roomType"lecTheater",accessRating="W",location="N.1.3")
+
 
 def addNewAdmin( ID, Name, Username, Password ):
     x = models.Admin(adminID=ID,name=Name,username=Username,password=Password)
@@ -18,13 +17,13 @@ def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
     db.session.add(x)
     db.session.commit()
 
-def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ):
-    x = models.Class(classID=ID,courseID=CourseID,title=Title,description=Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer)
+def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,waitList):
+    x = models.Class(classID=ID,courseID=CourseID,title=Title,description=Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,waitList=waitList)
     db.session.add(x)
     db.session.commit()
 
 def addNewDel( ID, Name, Username, Password, Class ):
-    x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,classListPoint=Class)
+    x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,classList=Class)
     db.session.add(x)
     db.session.commit()
 
@@ -46,13 +45,14 @@ addNewRoom(3,5,"Conference suite","W","mt.1.7")
 print("Creating classes.")
 rooms = models.Room.query.all()
 trainers = models.Trainer.query.all()
-addNewClass(1,2011,"Web App","Learn to use flask for creating a web server.",90,rooms[0].roomID,trainers[0].trainerID)
-addNewClass(2,2121,"Data Mining","Mining through bare data and that.",90,rooms[1].roomID,trainers[1].trainerID)
-addNewClass(3,2931,"Software Engineering","The art of developing software.",90,rooms[2].roomID,trainers[2].trainerID)
+delegates = models.Delegate.query.all()
+addNewClass(1,2011,"Web App","Learn to use flask for creating a web server.",90,rooms[0].roomID,trainers[0].trainerID,delegates)
+addNewClass(2,2121,"Data Mining","Mining through bare data and that.",90,rooms[1].roomID,trainers[1].trainerID,delegates)
+addNewClass(3,2931,"Software Engineering","The art of developing software.",90,rooms[2].roomID,trainers[2].trainerID,delegates)
 
 print("Creating Delegates.")
 classes = models.Class.query.all()
-addNewDel(1,"Ben Reed","Ben","pass",classes[0].classID)
-addNewDel(2,"Suhaib Saeed","Si","pass",classes[1].classID)
-addNewDel(3,"Jon-Fredick Henning","Jon","pass",classes[2].classID)
+addNewDel(1,"Ben Reed","Ben","pass",classes)
+addNewDel(2,"Suhaib Saeed","Si","pass",classes)
+addNewDel(3,"Jon-Fredick Henning","Jon","pass",classes)
 print("DONE")

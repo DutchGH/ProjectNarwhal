@@ -5,9 +5,9 @@ from migrate import *
 from migrate.changeset import schema
 pre_meta = MetaData()
 post_meta = MetaData()
-task = Table('task', post_meta,
-    Column('desc', String(length=100), primary_key=True, nullable=False),
-    Column('done', Boolean),
+waiting_table = Table('waiting_table', post_meta,
+    Column('classID', Integer),
+    Column('delID', Integer),
 )
 
 
@@ -16,11 +16,11 @@ def upgrade(migrate_engine):
     # migrate_engine to your metadata
     pre_meta.bind = migrate_engine
     post_meta.bind = migrate_engine
-    post_meta.tables['task'].create()
+    post_meta.tables['waiting_table'].create()
 
 
 def downgrade(migrate_engine):
     # Operations to reverse the above upgrade go here.
     pre_meta.bind = migrate_engine
     post_meta.bind = migrate_engine
-    post_meta.tables['task'].drop()
+    post_meta.tables['waiting_table'].drop()

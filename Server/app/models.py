@@ -2,6 +2,16 @@ from app import db
 from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime
 
+association_table = db.Table('association_table', db.Model.metadata,
+	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
+	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
+)
+
+waiting_table = db.Table('waiting_table', db.Model.metadata,
+	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
+	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
+)
+
 ##Trainer
 class Trainer(db.Model):
 	__tablename__ = 'Trainer'
@@ -50,9 +60,8 @@ class Class(db.Model):
 	location = db.relationship("Room", foreign_keys=[locationPoint])
 	trainerPoint = db.Column(db.Integer, db.ForeignKey('Trainer.trainerID'))
 	trainer = db.relationship("Trainer", foreign_keys=[trainerPoint])
-	#Commented out as not 100% on how to implement this just yet.
-	#waitListPoint = db.Column(db.Integer, db.ForeignKey('Delegate.delID'))
-	#waitList = db.relationship("Delegate", foreign_keys=[waitListPoint])
+	attendanceList = db.relationship('Delegate',secondary=association_table)
+	waitList = db.relationship('Delegate',secondary=waiting_table)
 
 ##Delegates
 class Delegate(db.Model):
@@ -61,5 +70,4 @@ class Delegate(db.Model):
 	name = db.Column(db.String(100))
 	username = db.Column(db.String(100))
 	password = db.Column(db.String(100))
-	classListPoint = db.Column(db.Integer, db.ForeignKey('Class.classID'))
-	classList= db.relationship("Class", foreign_keys=[classListPoint])
+	classList= db.relationship("Class", secondary=association_table)
