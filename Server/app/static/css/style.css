@@ -1,3 +1,8 @@
+html
+{
+  font-family: 'Raleway', sans-serif;
+}
+
 
 .Site {
     display: flex;
@@ -11,6 +16,6 @@
 
   .brand-logo
   {
-  	font-weight: 200 ;
+  	font-weight: 200 !important;
   }
 

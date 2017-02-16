@@ -6,3 +6,8 @@ from app import app
 @app.route('/')
 def home():
     return render_template ('index.html', title="FDM TEST")
+
+
+@app.route('/timetable')
+def timetable():
+    return render_template ('timetable.html', title="FDM TEST")
