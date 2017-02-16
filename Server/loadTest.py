@@ -1,31 +1,6 @@
 from app import db, models
-import datetime
+from queries import *
 
-
-def addNewAdmin( ID, Name, Username, Password ):
-    x = models.Admin(adminID=ID,name=Name,username=Username,password=Password)
-    db.session.add(x)
-    db.session.commit()
-
-def addNewTrainer( ID, Name, Address, Phone, Email, Username, Password ):
-    x = models.Trainer(trainerID=ID,name=Name,address=Address,phone=Phone,email=Email,username=Username,password=Password)
-    db.session.add(x)
-    db.session.commit()
-
-def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
-    x = models.Room(roomID=ID,capacity=Capacity,roomType=RoomType,accessRating=AccessRating,location=Location)
-    db.session.add(x)
-    db.session.commit()
-
-def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,waitList):
-    x = models.Class(classID=ID,courseID=CourseID,title=Title,description=Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,waitList=waitList)
-    db.session.add(x)
-    db.session.commit()
-
-def addNewDel( ID, Name, Username, Password, Class ):
-    x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,classList=Class)
-    db.session.add(x)
-    db.session.commit()
 
 print("Creating admins.")
 addNewAdmin(1,"Luke Roberts","Luke","pass");

@@ -56,8 +56,8 @@ class Class(db.Model):
 	#Set the default 60 need to discuss the unit of time.
 	duration = db.Column(db.Integer, default=60)
 	#Both the follow fields default to None unless specified.
-	requiredFacilities = db.Column(db.String(100), default='None')
-	prerequsitTraining = db.Column(db.String(100), default='None')
+	reqFac = db.Column(db.String(100), default='None')
+	preTrain = db.Column(db.String(100), default='None')
 	locationPoint = db.Column(db.Integer, db.ForeignKey('Room.roomID'))
 	location = db.relationship("Room", foreign_keys=[locationPoint])
 	trainerPoint = db.Column(db.Integer, db.ForeignKey('Trainer.trainerID'))
