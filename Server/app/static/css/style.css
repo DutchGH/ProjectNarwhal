@@ -1,3 +1,4 @@
+
 .Site {
     display: flex;
     min-height: 100vh;
@@ -10,5 +11,6 @@
 
   .brand-logo
   {
-  	font-weight: 300;
-        }
+  	font-weight: 200 ;
+  }
+
