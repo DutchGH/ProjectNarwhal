@@ -2,11 +2,13 @@ from app import db
 from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime
 
+#Association table for the delegate's class lists.
 association_table = db.Table('association_table', db.Model.metadata,
 	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
 	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
 )
 
+#Association table for the classes' waiting lists.
 waiting_table = db.Table('waiting_table', db.Model.metadata,
 	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
 	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
