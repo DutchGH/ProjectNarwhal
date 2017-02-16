@@ -47,18 +47,18 @@ def trainers():
     return models.Trainer.query.all()
 
 #Return a list of delegates based on a query.
-def delegates( name ):
+def delegates( name = "None" ):
     if type(name) == int:
         #This will return a single user based on ID.
         q = models.Delegate.query.filter_by( delID = name )
     elif type(name) == str:
         #This will return a single user based on username.
         q = models.Delegate.query.filter_by( username = name )
-    else:
+    elif name == "None":
         q = models.Delegate.query.all()
 
     #This will ensure the function returns the item instead of a list of one.
-    if(len(q) == 1):
+    if(q.count() == 1):
         q = q[0]
     return q
 
