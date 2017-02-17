@@ -1,74 +1,46 @@
 from app import models,db
 import datetime
 
+#Converts a query object into lists or a single item if only one is returned.
+def listConvert(x):
+    if( x.count() == 1 ):
+         x = x[0]
+         return x
+    else:
+        y = []
+    for i in x:
+        y.append(i)
+    return y
+
 #Return the list of classes
-def classes( ID = "", CourseID = "", StartTime = "", ReqFac = "", PreTrain = "", Location = "", Trainer = "" ):
-    test =""
-    if ID != "":
-        #This will return a single class based on ID.
-        #q = models.Class.query.filter_by( classID = ID )
-        test = test+"classID = "+str(ID)+","
-    if CourseID != "":
-        #This will return a list of classes under the same course.
-        #q = models.Class.query.filter_by( courseID = CourseID )
-        test = test+"courseID = "+str(CourseID)+","
-    if StartTime != "":
-        #This will return a list of classes starting a the same time.
-        #q = models.Class.query.filter_by( startTime = StartTime )
-        test = test+"startTime = "+str(StartTime)+","
-    if ReqFac != "":
-        #This will return a list of classes requiring certain facilities.
-        #q = models.Class.query.filter_by( reqFac = ReqFac )
-        test = test+"reqFac = "+str(ReqFac)+","
-    if PreTrain != "":
-        #This will return a list of classes requiring other courses.
-        #q = models.Class.query.filter_by( preTrain = PreTrain )
-        test = test+"preTrain = "+str(PreTrain)+","
-    if Location != "":
-        #This will return a list of classes at a certain location.
-        #q = models.Class.query.filter_by( location = Location )
-        test = test+"location = "+str(Location)+","
-    if Trainer != "":
-        #This will return a list of classes taught by a certain trainer.
-        #q = models.Class.query.filter_by( trainer = Trainer )
-        test = test+"trainer = "+str(Trainer)
-
-    print( test )
-
-    #q = models.Class.query.filter_by( eval( test ))
-    q = []
-    #This will ensure the function returns the item instead of a list of one.
-    if(len(q) == 1):
-         q = q[0]
+def classes( **kwargs ):
+    q = models.Class.query.filter_by(**kwargs)
+    q = listConvert(q)
     return q
 
 #Return a list of all trainers
-def trainers():
-    return models.Trainer.query.all()
+def trainers( **kwargs ):
+    q = models.Trainer.query.filter_by(**kwargs)
+    q = listConvert(q)
+    return q
 
 #Return a list of delegates based on a query.
-def delegates( name = "None" ):
-    if type(name) == int:
-        #This will return a single user based on ID.
-        q = models.Delegate.query.filter_by( delID = name )
-    elif type(name) == str:
-        #This will return a single user based on username.
-        q = models.Delegate.query.filter_by( username = name )
-    elif name == "None":
-        q = models.Delegate.query.all()
-
-    #This will ensure the function returns the item instead of a list of one.
-    if(q.count() == 1):
-        q = q[0]
+def delegates( **kwargs ):
+    q = models.Delegate.query.filter_by(**kwargs)
+    q = listConvert(q)
     return q
 
 #Return a list of all admins
-def admins():
-    return models.Admin.query.all()
+def admins( **kwargs ):
+    q = models.Admin.query.filter_by(**kwargs)
+    q = listConvert(q)
+    return q
 
 #Returns a list of all rooms
-def rooms():
-    return models.Rooms.query.all()
+def rooms( **kwargs ):
+    q = models.Room.query.filter_by(**kwargs)
+    q = listConvert(q)
+    return q
 
 #Adds an item to a list, works to add either classes to a delegates classList or
 #to add delegates to a classes waiting list.
@@ -119,27 +91,32 @@ def addNewAdmin( ID, Name, Username, Password ):
     x = models.Admin(adminID=ID,name=Name,username=Username,password=Password)
     db.session.add(x)
     db.session.commit()
+    return x
 
 #This will add a new Trainer to the trainer database.
 def addNewTrainer( ID, Name, Address, Phone, Email, Username, Password ):
     x = models.Trainer(trainerID=ID,name=Name,address=Address,phone=Phone,email=Email,username=Username,password=Password)
     db.session.add(x)
     db.session.commit()
+    return x
 
 #This will add a new room to the room database.
 def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
     x = models.Room(roomID=ID,capacity=Capacity,roomType=RoomType,accessRating=AccessRating,location=Location)
     db.session.add(x)
     db.session.commit()
+    return x
 
 #This will add a new class to the class database.
 def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,waitList):
     x = models.Class(classID=ID,courseID=CourseID,title=Title,description=Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,waitList=waitList)
     db.session.add(x)
     db.session.commit()
+    return x
 
 #This will add a new delegate to the delegate database.
 def addNewDel( ID, Name, Username, Password, Class ):
     x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,classList=Class)
     db.session.add(x)
     db.session.commit()
+    return x
