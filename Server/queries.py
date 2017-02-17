@@ -2,7 +2,7 @@ from app import models,db
 import datetime
 
 #Converts a query object into lists or a single item if only one is returned.
-def listConvert(x):
+def listConvert( x ):
     if( x.count() == 1 ):
          x = x[0]
          return x
@@ -95,28 +95,34 @@ def addNewAdmin( ID, Name, Username, Password ):
 
 #This will add a new Trainer to the trainer database.
 def addNewTrainer( ID, Name, Address, Phone, Email, Username, Password ):
-    x = models.Trainer(trainerID=ID,name=Name,address=Address,phone=Phone,email=Email,username=Username,password=Password)
+    x = models.Trainer(trainerID=ID,name=Name,address=Address,phone=Phone,
+    email=Email,username=Username,password=Password)
     db.session.add(x)
     db.session.commit()
     return x
 
 #This will add a new room to the room database.
 def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
-    x = models.Room(roomID=ID,capacity=Capacity,roomType=RoomType,accessRating=AccessRating,location=Location)
+    x = models.Room(roomID=ID,capacity=Capacity,roomType=RoomType,
+    accessRating=AccessRating,location=Location)
     db.session.add(x)
     db.session.commit()
     return x
 
 #This will add a new class to the class database.
-def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,waitList):
-    x = models.Class(classID=ID,courseID=CourseID,title=Title,description=Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,waitList=waitList)
+def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,
+waitList):
+    x = models.Class(classID=ID,courseID=CourseID,title=Title,description=
+    Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,
+    waitList=waitList)
     db.session.add(x)
     db.session.commit()
     return x
 
 #This will add a new delegate to the delegate database.
 def addNewDel( ID, Name, Username, Password, Class ):
-    x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,classList=Class)
+    x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,
+    classList=Class)
     db.session.add(x)
     db.session.commit()
     return x
