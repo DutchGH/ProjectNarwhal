@@ -70,3 +70,313 @@ INFO:root:Application launched on 02/17/2017
 INFO:root:Application launched on 02/17/2017
 INFO:root:Application launched on 02/17/2017
 INFO:root:Application launched on 02/17/2017
+INFO:root:Application launched on 02/17/2017
+INFO:root:Application launched on 02/17/2017
+INFO:root:Application launched on 02/17/2017
+INFO:root:Application launched on 02/17/2017
+INFO:root:Application launched on 02/18/2017
+DEBUG:migrate.versioning.repository:Loading repository C:\Users\Ben\Desktop\Project\narwhal\Server\db_repository...
+DEBUG:migrate.versioning.repository:Repository C:\Users\Ben\Desktop\Project\narwhal\Server\db_repository loaded successfully
+DEBUG:migrate.versioning.repository:Config: OrderedDict([('db_settings', OrderedDict([('repository_id', 'database repository'), ('version_table', 'migrate_version'), ('required_dbs', '[]'), ('use_timestamp_numbering', 'False')]))])
+DEBUG:migrate.versioning.util:Constructing engine
+DEBUG:migrate.versioning.repository:Loading repository C:\Users\Ben\Desktop\Project\narwhal\Server\db_repository...
+DEBUG:migrate.versioning.repository:Repository C:\Users\Ben\Desktop\Project\narwhal\Server\db_repository loaded successfully
+DEBUG:migrate.versioning.repository:Config: OrderedDict([('db_settings', OrderedDict([('repository_id', 'database repository'), ('version_table', 'migrate_version'), ('required_dbs', '[]'), ('use_timestamp_numbering', 'False')]))])
+DEBUG:migrate.versioning.util:Disposing SQLAlchemy engine Engine(sqlite:///C:\Users\Ben\Desktop\Project\narwhal\Server\app.db)
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:05:58] "GET / HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:05:58] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:07:25] "GET / HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:11] "GET /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:11] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:11] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:12] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:12] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:12] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:08:12] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:21] "GET /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:21] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:21] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:21] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:21] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:21] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:14:22] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:28] "GET /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:28] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:28] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:28] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:29] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:29] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:16:29] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:34] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:34] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:47] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:47] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:47] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:47] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:47] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:47] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:17:48] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:40] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:45] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:45] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:45] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:46] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:46] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:46] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:48] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:52] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:52] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:52] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:52] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:53] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:18:53] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:02] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:04] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:05] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:05] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:05] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:05] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:05] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:05] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:41] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:41] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:41] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:41] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:41] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:28:41] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:30:39] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:30:39] "GET /%3Cbuilt-in%20function%20next%3E HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:42] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:42] "GET /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:42] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:42] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:42] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:43] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:31:43] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:05] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:05] "GET /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:05] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:05] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:05] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:05] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:32:06] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:33:13] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:33:14] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:35:50] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:35:50] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:36:13] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:12] "GET /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:14] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:14] "GET /loggedIn HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:14] "GET /loggedIn?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:15] "GET /loggedIn?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:15] "GET /loggedIn?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:15] "GET /loggedIn?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:15] "GET /loggedIn?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:15] "GET /loggedIn?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:25] "GET /loggedIn HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:25] "GET /loggedIn?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:25] "GET /loggedIn?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:25] "GET /loggedIn?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:25] "GET /loggedIn?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:26] "GET /loggedIn?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:26] "GET /loggedIn?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:40:46] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:41:04] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:41:04] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:21] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:22] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:22] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:25] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:25] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:26] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:26] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:30] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:39] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:39] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:40] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:43] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:43] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:45] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:52] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:57] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:42:57] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:43:12] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:43:12] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:01] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:04] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:04] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:06] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:06] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:08] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:10] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:10] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:47:13] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:48:56] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:48:58] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:48:58] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:49:01] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:49:01] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:49:03] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:49:07] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:49:10] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:07] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:08] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:08] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:08] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:08] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:08] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:50:08] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:00] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:09] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:15] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:16] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:19] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:24] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 18:55:24] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/18/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
