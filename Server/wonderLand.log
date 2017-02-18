@@ -380,3 +380,9 @@ INFO:werkzeug: * Restarting with stat
 INFO:root:Application launched on 02/18/2017
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 19:00:17] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 19:00:17] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 19:00:18] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [18/Feb/2017 19:00:19] "GET /login HTTP/1.1" 200 -
+INFO:root:Application launched on 02/18/2017
+INFO:root:Application launched on 02/18/2017
