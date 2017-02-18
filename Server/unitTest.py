@@ -18,12 +18,16 @@ def addRoom():
     return len(newRoomList) - len(oldRoomList)
 
 def addRoomQuick():
-    oldRoomList = len(rooms())
+    oldRoomList = rooms()
+    if(type(oldRoomList) != list):
+        oldRoomList = ['a']
     newRoom = addNewRoom(999,999,"TestRoom","All","Nowhere")
-    newRoomList = len(rooms())
+    newRoomList = rooms()
+    if(type(newRoomList) != list):
+        newRoomList = ['a']
     db.session.delete(newRoom)
     db.session.commit()
-    return newRoomList - oldRoomList
+    return len(newRoomList) - len(oldRoomList)
 
 def addTrainer():
     oldTrainerList = models.Trainer.query.all()
@@ -36,13 +40,17 @@ def addTrainer():
     return len(newTrainerList) - len(oldTrainerList)
 
 def addTrainerQuick():
-    oldTrainerList = len(trainers())
+    oldTrainerList = trainers()
+    if(type(oldTrainerList) != list):
+        oldTrainerList = ['a']
     newTrainer = addNewTrainer(999,"Sam Wilson","Dec-10",0,"swilson@leeds.ac.uk",
     "sam1","pass")
-    newTrainerList = len(trainers())
+    newTrainerList = trainers()
+    if(type(newTrainerList) != list):
+        newTrainerList = ['a']
     db.session.delete(newTrainer)
     db.session.commit()
-    return newTrainerList - oldTrainerList
+    return len(newTrainerList) - len(oldTrainerList)
 
 def addAdmin():
     oldAdminList = models.Admin.query.all()
@@ -55,12 +63,16 @@ def addAdmin():
     return len(newAdminList) - len(oldAdminList)
 
 def addAdminQuick():
-    oldAdminList = len(admins())
+    oldAdminList = admins()
+    if(type(oldAdminList) != list):
+        oldAdminList = ['a']
     newAdmin = addNewAdmin(999,"Luke Roberts","Luke","pass");
-    newAdminList = len(admins())
+    newAdminList = admins()
+    if(type(newAdminList) != list):
+        newAdminList = ['a']
     db.session.delete(newAdmin)
     db.session.commit()
-    return newAdminList - oldAdminList
+    return len(newAdminList) - len(oldAdminList)
 
 def addDel():
     oldDelList = models.Delegate.query.all()
@@ -73,12 +85,16 @@ def addDel():
     return len(newDelList) - len(oldDelList)
 
 def addDelQuick():
-    oldDelList = len(delegates())
+    oldDelList = delegates()
+    if(type(oldDelList) != list):
+        oldDelList = ['a']
     newDel = addNewDel(999,"Ben Reed","Ben","pass",classes())
-    newDelList = len(delegates())
+    newDelList = delegates()
+    if(type(newDelList) != list):
+        newDelList = ['a']
     db.session.delete(newDel)
     db.session.commit()
-    return newDelList - oldDelList
+    return len(newDelList) - len(oldDelList)
 
 def addClass():
     oldClassList = models.Class.query.all()
@@ -91,25 +107,51 @@ def addClass():
     return len(newClassList) - len(oldClassList)
 
 def addClassQuick():
-    oldClassList = len(classes())
-    newClass = addNewClass(999,2011,"Web App","Learn to use flask for creating a web server.",90,rooms()[0].roomID,trainers()[0].trainerID,delegates())
-    newClassList = len(classes())
+    oldClassList = classes()
+    if(type(oldClassList) != list):
+        oldClassList = ['a']
+    #Make a fake room, trainer and del
+    a = models.Room(roomID=0)
+    b = models.Trainer(trainerID=0)
+    c = []
+    newClass = addNewClass(999,2011,"Web App","Learn to use flask for creating a web server.",90,a.roomID,b.trainerID,c)
+    newClassList = classes()
+    if(type(newClassList) != list):
+        newClassList = ['a']
     db.session.delete(newClass)
     db.session.commit()
-    return newClassList - oldClassList
+    return len(newClassList) - len(oldClassList)
 ################################################################################
 #Below is the actual test function, here tests are performed and there expected
 #outcomes declared.
 ################################################################################
 
 class TestCase( unittest.TestCase ):
-    #def setUp( self ):
-        #Add anything you need for these tests to run here.
-        #print("Nothing to set up.")
+    # def setUp( self ):
+    #     #Add anything you need for these tests to run here.
+    #     addNewAdmin(0,"TEST","TEST","TEST");
+    #     addNewTrainer(0,"TEST","TEST",0,"TEST","TEST","TEST")
+    #     addNewRoom(0,0,"TEST","TEST","TEST")
+    #     addNewClass(0,0,"TEST","TEST",0,rooms()[0].roomID,trainers()[0].trainerID,delegates())
+    #     addNewDel(0,"TEST","TEST","TEST",classes())
+    # def tearDown( self ):
+    #     #Remove anything you added in the setUp() function here.
+    #     a = admins(adminID=0)
+    #     db.session.delete(a)
+    #     db.session.commit()
+    #     a = trainers(trainerID=0)
+    #     db.session.delete(a)
+    #     db.session.commit()
+    #     a = rooms(roomID=0)
+    #     db.session.delete(a)
+    #     db.session.commit()
+    #     a = classes(classID=0)
+    #     db.session.delete(a)
+    #     db.session.commit()
+    #     a = delegates(delID=0)
+    #     db.session.delete(a)
+    #     db.session.commit()
 
-    #def tearDown( self ):
-        #Remove anything you added in the setUp() function here.
-        #print("Nothing to tear down.")
 
     ############################################################################
     #Add the tests and their expected outcomes below.
