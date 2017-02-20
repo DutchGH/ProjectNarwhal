@@ -1,3 +1,3 @@
 test:
   script:
-    Server/unitTest.py
+    sudo python Server/unitTest.py
