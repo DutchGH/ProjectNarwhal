@@ -39,7 +39,7 @@ class User(db.Model):
 	#This property should return True if this is an anonymous user. (Actual users should return False instead.)
 	def is_anonymous(self):
 		return False
-		
+
 	#This method must return a unicode that uniquely identifies this user, and can be used to load the user from the user_loader callback.
 	def get_id(self):
 		return self.userID
@@ -85,10 +85,12 @@ class Room(db.Model):
 	accessRating = db.Column(db.String(100))
 	location = db.Column(db.String(100))
 
-##Course
+##Class
 class Class(db.Model):
 	__tablename__ = 'Class'
 	classID = db.Column(db.Integer, primary_key = True)
+	coursePoint = db.Column(db.Integer, db.ForeignKey('Course.courseID'))
+	course = db.relationship("Course", foreign_keys = [coursePoint])
 	courseID = db.Column(db.Integer)
 	title = db.Column(db.String(100))
 	description = db.Column(db.String(100))
@@ -106,3 +108,10 @@ class Class(db.Model):
 	trainer = db.relationship("Trainer", foreign_keys = [trainerPoint])
 	attendanceList = db.relationship('Delegate', secondary = association_table)
 	waitList = db.relationship('Delegate', secondary = waiting_table)
+
+##courses
+class Course(db.Model):
+	__tablename__ = 'Course'
+	courseID = db.Column(db.Integer, primary_key = True)
+	title = db.Column(db.String(100))
+	description = db.Column(db.String(100))

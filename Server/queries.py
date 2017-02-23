@@ -18,6 +18,12 @@ def classes( **kwargs ):
     q = listConvert(q)
     return q
 
+#Return the list of courses
+def courses( **kwargs ):
+    q = models.Course.query.filter_by(**kwargs)
+    q = listConvert(q)
+    return q
+
 #Return a list of all trainers
 def trainers( **kwargs ):
     q = models.Trainer.query.filter_by(**kwargs)
@@ -111,10 +117,16 @@ def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
 
 #This will add a new class to the class database.
 def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,
-waitList):
-    x = models.Class(classID=ID,courseID=CourseID,title=Title,description=
+waitList ):
+    x = models.Class(classID=ID,coursePoint=CourseID,title=Title,description=
     Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,
     waitList=waitList)
+    db.session.add(x)
+    db.session.commit()
+    return x
+
+def addNewCourse(ID,Title,Description):
+    x = models.Course(courseID = ID, title=Title, description=Description)
     db.session.add(x)
     db.session.commit()
     return x
@@ -145,4 +157,4 @@ def genID(model):
         if (model( IDType = ID ) == []):
             return ID
         else:
-            ID += 1
+            ID += 1 
