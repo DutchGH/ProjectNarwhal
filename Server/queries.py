@@ -126,3 +126,23 @@ def addNewDel( ID, Name, Username, Password, Class ):
     db.session.add(x)
     db.session.commit()
     return x
+
+#This will generate a unique ID for a new database entry.
+def genID(model):
+    ID = len(model())
+    if ID == 0:
+        return 0
+    modelType = type(model()[0])
+    # if ( modelType == models.Admin or modelType == models.Trainer or modelType == models.Delegate ):
+    #     IDType = userID
+    if modelType == models.Room:
+        IDType = 'roomID'
+    if modelType == models.Class:
+        IDType = 'classID'
+
+    found = False
+    while found == False:
+        if (model( IDType = ID ) == []):
+            return ID
+        else:
+            ID += 1

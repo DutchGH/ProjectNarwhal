@@ -1,0 +1,73 @@
+INFO:root:Application launched on 02/23/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/23/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 275-549-976
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:03] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:03] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:03] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:08] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:08] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:14] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:14] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:14] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:14] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:37] "POST /login HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:37] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:43] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:43] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:43] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 12:59:43] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+DEBUG:migrate.versioning.repository:Loading repository /home/ben/Modules/Comp2931/narwhal/Server/db_repository...
+DEBUG:migrate.versioning.repository:Repository /home/ben/Modules/Comp2931/narwhal/Server/db_repository loaded successfully
+DEBUG:migrate.versioning.repository:Config: OrderedDict([('db_settings', OrderedDict([('repository_id', 'database repository'), ('version_table', 'migrate_version'), ('required_dbs', '[]'), ('use_timestamp_numbering', 'False')]))])
+DEBUG:migrate.versioning.util:Constructing engine
+DEBUG:migrate.versioning.repository:Loading repository /home/ben/Modules/Comp2931/narwhal/Server/db_repository...
+DEBUG:migrate.versioning.repository:Repository /home/ben/Modules/Comp2931/narwhal/Server/db_repository loaded successfully
+DEBUG:migrate.versioning.repository:Config: OrderedDict([('db_settings', OrderedDict([('repository_id', 'database repository'), ('version_table', 'migrate_version'), ('required_dbs', '[]'), ('use_timestamp_numbering', 'False')]))])
+DEBUG:migrate.versioning.util:Disposing SQLAlchemy engine Engine(sqlite:////home/ben/Modules/Comp2931/narwhal/Server/app.db)
+INFO:root:Application launched on 02/23/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/23/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 275-549-976
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:01:10] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:01:15] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:01:17] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:01:23] "POST /login HTTP/1.1" 200 -
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/23/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 275-549-976
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:01:48] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:01:53] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:02:00] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:02:06] "POST /login HTTP/1.1" 200 -
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/23/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 275-549-976
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:02:55] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:02:55] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:03:02] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [23/Feb/2017 13:03:02] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/ben/Modules/Comp2931/narwhal/Server/app/forms.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
+INFO:root:Application launched on 02/23/2017
