@@ -145,16 +145,18 @@ def genID(model):
     if ID == 0:
         return 0
     modelType = type(model()[0])
-    # if ( modelType == models.Admin or modelType == models.Trainer or modelType == models.Delegate ):
-    #     IDType = userID
-    if modelType == models.Room:
-        IDType = 'roomID'
-    if modelType == models.Class:
-        IDType = 'classID'
 
     found = False
     while found == False:
-        if (model( IDType = ID ) == []):
-            return ID
-        else:
-            ID += 1 
+        if ( modelType == models.Admin or modelType == models.Trainer or modelType == models.Delegate ):
+            if (delegates( delID = ID ) == [] and trainers( trainerID = ID) == [] and admins( adminID = ID ) == []):
+                return ID
+        elif modelType == models.Room:
+            if (model( roomID = ID ) == []):
+                return ID
+        elif modelType == models.Class:
+            if (model( classID = ID ) == []):
+                return ID
+        elif modelType == models.Course:
+            if (model( courseID = ID ) == [])
+        ID += 1
