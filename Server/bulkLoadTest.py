@@ -138,8 +138,8 @@ while x < classCount:
     print('.', end='', flush=True)
     courseNum = random.randint(0,10)
     capacity = random.randint(0,200)
-    roomNum = random.randint(0,roomCount)
-    trainerNum = random.randint(0,trainerCount)
+    roomNum = random.randint(0,roomCount-1)
+    trainerNum = random.randint(0,trainerCount-1)
     waitingList = []
     addNewClass(courses[courseNum].courseID, "Class Title",
                 "Some description for a class.", capacity,rooms[roomNum].roomID,
