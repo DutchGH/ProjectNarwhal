@@ -3,6 +3,7 @@ from queries import *
 import random
 import string
 
+#Lists for random generation.
 firstNames = ['Donny', 'Miles', 'Renaldo', 'Mitchel', 'Jamar', 'Kevin',
               'Zackary', 'Roy', 'Cedrick', 'Dorsey', 'Jamal', 'Ed', 'Jerrell',
               'Antony', 'Duncan', 'Harrison', 'Freddie', 'Demarcus', 'Ronny',
@@ -31,12 +32,15 @@ courseTitle = ['Business', 'Geography', 'Witchcraft', 'Drama', 'Mandarin',
                'Art of Manliness', 'Mathematics', 'Physics', 'Biology',
                'English', 'Computer Science']
 
+#Specified to decide how many database entries will be added.
 adminCount = 25
 trainerCount = 25
 roomCount = 15
 classCount = 30
 delCount = 40
 
+#This will generate a random 8 digit password made up of capital letters and
+#numbers.
 def createPassword():
     characters = string.ascii_uppercase + string.digits
     password = ''
@@ -46,6 +50,7 @@ def createPassword():
         x = x + 1
     return password
 
+#This will create a random phone number.
 def createPhoneNum():
     characters = string.digits
     phoneNum = '447'
@@ -55,14 +60,17 @@ def createPhoneNum():
         x = x + 1
     return int(phoneNum)
 
+#This will concatenate a random first and last name.
 def createName():
     name = random.choice(firstNames) + ' ' + random.choice(lastNames)
     return name
 
+#This will create a user name based on the name handed to the function.
 def createUsername(name):
     name = name + str(random.randint(0,999))
     return name
 
+#This will create a name and email address to together.
 def createNameandEmail():
     firstName = random.choice(firstNames)
     lastName = random.choice(lastNames)
@@ -70,6 +78,8 @@ def createNameandEmail():
     email = firstName[0] + lastName + '@email@com'
     return name, email
 
+#This is where the adding to the database begins.
+#First Admins.
 print("Creating admins.")
 x = 0
 while x < adminCount:
@@ -81,6 +91,7 @@ while x < adminCount:
     x = x + 1
 print('')
 
+#Then Trainers.
 print("Creating trainers.")
 x = 0
 while x < trainerCount:
@@ -94,6 +105,7 @@ while x < trainerCount:
     x = x + 1
 print('')
 
+#Next Rooms.
 print("Creating rooms.")
 x = 0
 while x < roomCount:
@@ -106,17 +118,20 @@ while x < roomCount:
     x = x + 1
 print('')
 
+#Forthly Courses.
 print("Creating courses.")
 for items in courseTitle:
     print('.', end='', flush=True)
     addNewCourse(items, "The description seriously does not matter.")
 print('')
 
+#Queries currently made databases for dependencies.
 rooms = rooms()
 trainers = trainers()
 delegates = delegates()
 courses = courses()
 
+#Penultimately Classes.
 print("Creating classes.")
 x = 0
 while x < classCount:
@@ -132,8 +147,10 @@ while x < classCount:
     x = x + 1
 print('')
 
+#Queries classes for dependency on delegates.
 classes = classes()
 
+#Finally Delegates.
 print("Creating delegates.")
 x = 0
 while x < delCount:
