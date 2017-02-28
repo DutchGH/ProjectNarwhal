@@ -93,14 +93,16 @@ def remove(item):
     db.session.delete(item)
 
 #This will add a new admin to the Admin database.
-def addNewAdmin( ID, Name, Username, Password ):
+def addNewAdmin(Name, Username, Password):
+    ID = genID(admins)
     x = models.Admin(adminID=ID,name=Name,username=Username,password=Password)
     db.session.add(x)
     db.session.commit()
     return x
 
 #This will add a new Trainer to the trainer database.
-def addNewTrainer( ID, Name, Address, Phone, Email, Username, Password ):
+def addNewTrainer(Name, Address, Phone, Email, Username, Password):
+    ID = genID(trainers)
     x = models.Trainer(trainerID=ID,name=Name,address=Address,phone=Phone,
     email=Email,username=Username,password=Password)
     db.session.add(x)
@@ -108,7 +110,8 @@ def addNewTrainer( ID, Name, Address, Phone, Email, Username, Password ):
     return x
 
 #This will add a new room to the room database.
-def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
+def addNewRoom(Capacity, RoomType, AccessRating, Location):
+    ID = genID(rooms)
     x = models.Room(roomID=ID,capacity=Capacity,roomType=RoomType,
     accessRating=AccessRating,location=Location)
     db.session.add(x)
@@ -116,8 +119,9 @@ def addNewRoom( ID, Capacity, RoomType, AccessRating, Location ):
     return x
 
 #This will add a new class to the class database.
-def addNewClass( ID, CourseID, Title, Description, Capacity, Location, Trainer ,
-waitList ):
+def addNewClass(CourseID, Title, Description, Capacity, Location, Trainer ,
+waitList):
+    ID = genID(classes)
     x = models.Class(classID=ID,coursePoint=CourseID,title=Title,description=
     Description,capacity=Capacity,locationPoint=Location,trainerPoint=Trainer,
     waitList=waitList)
@@ -125,14 +129,16 @@ waitList ):
     db.session.commit()
     return x
 
-def addNewCourse(ID,Title,Description):
+def addNewCourse(Title,Description):
+    ID = genID(courses)
     x = models.Course(courseID = ID, title=Title, description=Description)
     db.session.add(x)
     db.session.commit()
     return x
 
 #This will add a new delegate to the delegate database.
-def addNewDel( ID, Name, Username, Password, Class ):
+def addNewDel(Name, Username, Password, Class):
+    ID = genID(delegates)
     x = models.Delegate(delID=ID,name=Name,username=Username,password=Password,
     classList=Class)
     db.session.add(x)
@@ -141,11 +147,15 @@ def addNewDel( ID, Name, Username, Password, Class ):
 
 #This will generate a unique ID for a new database entry.
 def genID(model):
-    ID = len(model())
-    if ID == 0:
-        return 0
-    modelType = type(model()[0])
+    modelList = model()
+    try:
+        if modelList == []:
+            return 0
+        ID = len(modelList)
+    except:
+        return 1
 
+    modelType = type(model()[0])
     found = False
     while found == False:
         if ( modelType == models.Admin or modelType == models.Trainer or modelType == models.Delegate ):
@@ -158,5 +168,6 @@ def genID(model):
             if (model( classID = ID ) == []):
                 return ID
         elif modelType == models.Course:
-            if (model( courseID = ID ) == [])
+            if (model( courseID = ID ) == []):
+                return ID
         ID += 1
