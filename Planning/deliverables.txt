@@ -1,0 +1,50 @@
+Deliverables:
+  -Git Repo:
+    -Everyone needs to contribute, this will be checked.
+    -Commit messages need to be descriptive.
+    -Make sure we use tagging when appropriate, like at the end of each sprint
+     or when a version is completed.
+    -Distribution of commits over time will be marked so keep things regular.
+  -Issue Tracker:
+    -Someone needs to look at the proper way of doing this.
+    -Used on Gitlab, need to agree on a format.
+    -Someone needs to be allocated to this, we will be marked.
+  -Wiki:
+    -Basic team info.
+    -Notes from meeting.
+    -Design documents:
+      -User stories?
+      -Use case diagrams?
+      -Umls?
+    -User interface mock-ups.
+    -Coding style and team protocol.
+    -Testing progress, test plans and outcomes.
+    -User manual for finished project:
+      -There are ways of generating documentation with things like Ant, maybe
+       worth looking into?
+      -Needs a written explanation of how to use the product with screenshots.
+    -Anything else that is relevant.
+  -Software itself:
+    -Standardized coding / commenting style
+    -They will look for semantic design:
+      -Data modelling.
+      -Architecture of solution.
+      -Evolution of user interface.
+    -Maybe standardize dev tools? (maybe not)
+    -Good project automation and thorough testing will be marked well.
+    -This is going to be submitted as a Zip archive containing everything needed
+     to build and run software. Should not have the ".git" directory.
+      -Extra marks for a "Demo-mode" that is "Suitably foolproof", possibly using
+       a specifically built database.
+  -Individual reflective reports:
+    -2-3 pages of A4, submitted as PDF to Turnitin.
+    -Reflection of successes and failures.
+    -Will be detailed further at a later date. (Please update)
+    -Honest assessment of own contribution, this will be checked on Gitlab.
+
+Mark allocation:
+  -Group component worth 80 marks:
+    -Usually the same for all unless team agrees that someone didn't contribute.
+    -This will also be checked automatically on Gitlab, with or without group
+     action.
+  -Individual report worth 20 marks.

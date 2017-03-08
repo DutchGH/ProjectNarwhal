@@ -1,0 +1,59 @@
+The functional database will need to be able to perform the following actions, as
+such each of these should be tested:
+
+// Data base actions //
+User account DB:
+  -Add a new user account
+  -Remove a user account
+  -Change a user account to an admin account
+  -Edit the details of a user account
+
+Trainer account DB:
+  -Add a new trainer account
+  -Remove a trainer account
+  -Change a trainer account to an admin account
+  -Edit the details of a trainer account
+
+Admin account DB:
+  -Add an admin account
+  -Remove an admin account
+  -Change an admin account to a user account
+  -Edit the details of an admin account
+
+Room DB:
+  -Add a room to the database
+  -Remove a room from the database
+  -Edit the room details
+
+Lesson DB:
+  -Create a lesson
+  -Remove a lesson
+  -Change the lesson details
+
+// Queries //
+General:
+  -Compare username and password (log in)
+  -Check if an account is a user or an admin
+
+User:
+  -Return the user based on the PK
+  -Return a list of a user's lessons
+
+Trainer:
+  -Return the trainer based on the PK
+  -Return a list of a trainer's lessons
+
+
+Admin:
+  -Return the admin based on the PK
+
+Room:
+  -Return the room based on the PK
+  -Return a list of lessons being held in the room
+    -Check this list for a particular time slot, to avoid conflicts
+
+Lesson:
+  -Return the lesson based on the PK
+  -Return the teacher assigned to a lesson
+  -Return the room assigned to a lesson
+  -Return a list of students signed up for a lesson

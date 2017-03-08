@@ -1,0 +1,14 @@
+test:
+  script:
+    - apt-get update -qy
+    - apt-get install -y python-dev python-pip
+    - pip install flask
+    - pip install flask-login
+    - pip install flask-mail
+    - pip install flask-sqlalchemy
+    - pip install sqlalchemy-migrate
+    - pip install flask-whooshalchemy
+    - pip install flask-wtf
+    - pip install flask-babel
+    - pip install coverage
+    - python Server/unitTest.py

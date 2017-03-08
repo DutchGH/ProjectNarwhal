@@ -1,0 +1,18 @@
+Things to bring up tomorrow:
+
+-In the first sprint we intend to implement the database model and create some
+queries for the front end to use.
+-We won't have a huge amount of time  however so we need to prioritize which queries
+we will make. Ask the front end team what functionality they want from the first
+sprint and prioritize these queries.
+-We intend to use Flask-Security to control session authentication and encrypt
+passwords.
+-We also intend to use flask-mail to send emails for account authorization and
+session reminders etc.
+-Since flask security only controls use through login, it will not cover users
+creating accounts, as such the user will be sent an authorization email after
+creating an account and will be directed back into the login screen. This way they
+will only be able to modify database entries after they log in properly.
+-We need to know what forms we need to make to match the functionality required
+by the front-end.
+-Ask Si about the python to sms thing.

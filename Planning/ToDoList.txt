@@ -1,0 +1,34 @@
+TODO BY 10/12/2017
+
+DESIGN:
+  - Check Activity Diagrams
+    - Transition into wireframes from that 
+
+BACK END (Ben and Luke)
+  - Prioritise queries for first sprint w/ front end team
+  - Confirm apprpriate flask modules (Security and Mail)
+    - Make sure email confirmation technique is viable
+  - Check what forms need to be generated 
+
+FRONT END (Horsfield & Si)
+  - Si: SMS Feature walkthrough
+  - Agree on variable names for seamless form integration (Should be done via UML)
+
+BOTH TEAMS
+  - Confirm Activity Diagrams
+    - Make Wireframs from these
+    - As discussed earlier, making a UML diagram would be good before the sprint so intgration into master is less error prone...
+    - Agree on what user stories should be implemented for the sprint
+      - Create Trello Accounts to implement these stories
+    - Prioritise queries and forms needed for the first sprint
+
+SCRUM MASTER
+  - Look at backlog 
+    - Generate user Stories
+  - Prioritise User Stories with Team + Generate Estimates 
+    - Create a Sprint Backlog with the necessary assignments
+    //Make sure this creates a 'shippable increment - i.e user generation and modification'
+  - Confirm schedules with team and create status meetings
+  - Agree on a better way to write a todo list - Office 365 might be viable, or have a private wiki page instead...
+
+
