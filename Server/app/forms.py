@@ -24,9 +24,10 @@ class CreateClass(Form):
     room = IntegerField( 'room', validators= [InputRequired()] )
     reqFac = StringField( 'reqFac', validators = [InputRequired()] )
 
-# class CreateCourse(Form):
-#
-#
+class CreateCourse(Form):
+    title = StringField( 'title', validators = [InputRequired()] )
+    description = StringField( 'description', validators = [InputRequired()] )
+
 # class AddTrainer(Form):
 #
 # class AddDelegate(Form):

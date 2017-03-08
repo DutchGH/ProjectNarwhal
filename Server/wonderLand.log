@@ -181,3 +181,903 @@ INFO:root:Application launched on 03/08/2017
 INFO:root:Application launched on 03/08/2017
 INFO:root:Application launched on 03/08/2017
 INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:43] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:43] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:44] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:47] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:47] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:48] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:49] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:56] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:01:57] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:02:16] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:02:16] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:04] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:06] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:06] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:07] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:07] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:19] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:19] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:20] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:20] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:36] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:37] "GET /adminOnly HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:52] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:53] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:11:53] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:57] "GET /adminOnly HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:57] "GET /adminOnly?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:57] "GET /adminOnly?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:57] "GET /adminOnly?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:57] "GET /adminOnly?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:58] "GET /adminOnly?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:13:58] "GET /adminOnly?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:15:56] "GET /adminOnly HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:13] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:13] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:20] "GET /adminOnly HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:23] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:24] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:33] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:36] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:42] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:42] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:47] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:47] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:49] "GET /adminOnly HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:49] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:50] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:50] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:54] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:55] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:16:56] "GET /adminOnly HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:31:29] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:31:33] "GET /adminOnly HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:31:50] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:31:52] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:31:52] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:31:55] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:32:06] "GET /adminOnly HTTP/1.1" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:19] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:27] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:28] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:35] "GET /timetable HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:35] "GET /timetable?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:35] "GET /timetable?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:35] "GET /timetable?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:35] "GET /timetable?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:35] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:47:36] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:05] "GET /timetable HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:05] "GET /timetable?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:05] "GET /timetable?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:05] "GET /timetable?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:05] "GET /timetable?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:06] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:06] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:11] "GET /timetable HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:11] "GET /timetable?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:11] "GET /timetable?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:11] "GET /timetable?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:11] "GET /timetable?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:48:11] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:07] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:10] "GET /trainers HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:11] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:13] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:13] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:21] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:27] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:27] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:31] "GET /trainers HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:31] "GET /trainers?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:31] "GET /trainers?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:31] "GET /trainers?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:31] "GET /trainers?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:31] "GET /trainers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:32] "GET /trainers?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:39] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:54:50] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 15:55:03] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:40] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:10:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:12:03] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:12:03] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:12:03] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:12:03] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:12:03] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:12:03] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:18] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:18] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:18] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:18] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:18] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:18] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:13:19] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:26] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:26] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:28] "GET /adminOnly HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:48] "GET /timetable HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:48] "GET /timetable?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:48] "GET /timetable?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:48] "GET /timetable?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:48] "GET /timetable?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:16:48] "GET /timetable?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:01] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:29] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:29] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:30] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:30] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:30] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:17:30] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:13] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:13] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:13] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:13] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:13] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:13] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:18:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:19:35] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:19:37] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:19:40] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:15] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:16] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:17] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:18] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:18] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:55] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:21:57] "GET /trainers/38 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:00] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:03] "GET /trainers/37 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:03] "GET /trainers/37?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:03] "GET /trainers/37?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:03] "GET /trainers/37?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:04] "GET /trainers/37?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:04] "GET /trainers/37?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:04] "GET /trainers/37?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:06] "GET /trainers/35?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:09] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:09] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:09] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:09] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:09] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:09] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:10] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:30] "GET /trainers/42 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:33] "GET /trainers/38 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:43] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:43] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:43] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:43] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:44] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:44] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:46] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:49] "GET /trainers/40 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:49] "GET /trainers/40?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:49] "GET /trainers/40?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:49] "GET /trainers/40?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:50] "GET /trainers/40?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:50] "GET /trainers/40?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:50] "GET /trainers/40?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:52] "GET /trainers/41?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:56] "GET /trainers/48 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:22:58] "GET /trainers/54 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:01] "GET /trainers/59 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:03] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:05] "GET /trainers/48 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:07] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:09] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:11] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:13] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:15] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:15] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:15] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:15] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:15] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:15] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:26] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:30] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:30] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:30] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:30] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:30] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:23:30] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:24:37] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:24:42] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:24:43] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:24:45] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:24:47] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:24:53] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:53] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:54] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:57] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:57] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:57] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:57] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:57] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:57] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:58] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:25:59] "GET /trainers/6?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:40] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:43] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:43] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:43] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:43] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:43] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:43] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:45] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:47] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:49] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:49] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:49] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:49] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:49] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:26:49] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:16] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:16] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:16] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:16] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:16] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:16] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:25] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:25] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:25] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:25] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:25] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:29:25] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:01] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:01] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:01] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:01] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:01] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:01] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:10] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:10] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:10] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:10] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:10] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:11] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:24] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:24] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:24] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:24] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:24] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:24] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:27] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:27] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:27] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:27] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:27] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:27] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:29] "GET /trainers/6?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:44] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:45] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:54] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:55] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:55] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:56] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:30:56] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:32:41] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:32:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:32:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:32:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:32:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:32:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:43] "GET /timetable HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:43] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:46] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:46] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:49] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:49] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:36:52] "GET /timetable HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:39:20] "GET /timetable HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:39:29] "GET /timetable HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:25] "GET /trainers HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:25] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:28] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:28] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:30] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:31] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:33] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:35] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:36] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:36] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:36] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:36] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:36] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:38] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:41] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:41:41] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 16:42:15] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:00:23] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:00:23] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:00:23] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:00:23] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:00:23] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:00:23] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:17] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:17] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:18] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:42] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:43] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:43] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:43] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:43] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:44] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:44] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:53] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:54] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:54] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:54] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:54] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:54] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:01:54] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:06] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:06] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:06] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:06] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:07] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:07] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:07] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:02:22] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:44] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:44] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:50] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:50] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:50] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:51] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:51] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:05:51] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:11] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:12] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:12] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:12] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:12] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:12] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:31] "GET /trainers/5 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:31] "GET /trainers/5?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:31] "GET /trainers/5?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:31] "GET /trainers/5?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:31] "GET /trainers/5?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:07:31] "GET /trainers/5?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:19] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:21] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:21] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:21] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:21] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:21] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:22] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:33] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:34] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:34] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:34] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:34] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:35] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:35] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:51] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:52] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:54] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:08:54] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:09:06] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:09:09] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:44] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:45] "GET /trainers/4 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:45] "GET /trainers/4?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:46] "GET /trainers/4?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:46] "GET /trainers/4?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:10:48] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:17:30] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:17:30] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:17:32] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:17:34] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:19:42] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:19:43] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:19:44] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:19:48] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:26:53] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:05] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:06] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:09] "GET /ro0ms HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:17] "GET /ro0ms HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:19] "GET /ro0ms HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:20] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:21] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:25] "GET /rooms/0 HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:36] "GET /rooms/0 HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:27:42] "GET /rooms/0 HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:31:19] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:31:21] "GET /rooms/0 HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:31:23] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:31:24] "GET /rooms/0 HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:31:58] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:32:01] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:32:01] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:32:05] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:32:06] "GET /rooms/0 HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:36:04] "GET /rooms/0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:36:26] "GET /rooms/0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:05] "GET /rooms/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:07] "GET /rooms/2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:11] "GET /timetable HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:11] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:13] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:14] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:16] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:17] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:19] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:20] "GET /rooms/0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:37:21] "GET /rooms/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:43:41] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:43:43] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:43:46] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:43:47] "GET /rooms/0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:44:12] "GET /rooms/1 HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:45:04] "GET /loggedIn HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:45:05] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:45:07] "GET /trainers/35 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:45:10] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:45:21] "GET /rooms/11 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:46:19] "GET /rooms/10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:46:22] "GET /rooms/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:47:01] "GET /rooms/0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 17:47:41] "GET /rooms/0 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:03:57] "GET /loggedIn HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:04:02] "GET /home HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:04:34] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:04:37] "GET /timetable HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:04:37] "GET /loggedIn HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:04:40] "GET /timetable HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:04:40] "GET /loggedIn HTTP/1.1" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:12] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:14] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:16] "GET /timetable HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:16] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:18] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:19] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:24] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:25] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:27] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:29] "GET /trainers/37 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:32] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:36] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:05:58] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:06:00] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:06:02] "GET /delegates/60 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:06:10] "GET /delegates/71 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:06:13] "GET /delegates/9 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:06:14] "GET /delegates/73 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:07:09] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:07:10] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:07:39] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:15] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:16] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:18] "GET /delegates/9 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:20] "GET /delegates/64 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:22] "GET /delegates/65 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:26] "GET /delegates/71 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:29] "GET /delegates/77 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:45] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:47] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:49] "GET /delegates/62 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:08:58] "GET /delegates/65 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:09:06] "GET /delegates/65 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:09:08] "GET /delegates/80 HTTP/1.1" 200 -
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:root:Application launched on 03/08/2017
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:root:Application launched on 03/08/2017
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger pin code: 173-106-460
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:11:51] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:11:53] "GET /timetable HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:11:53] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:11:55] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:11:56] "GET /trainers/5 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:00] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:11] "GET /rooms/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:15] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:18] "GET /delegates/69 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:21] "GET /delegates/7 HTTP/1.1" 200 -

@@ -29,7 +29,7 @@ delegates = models.Delegate.query.all()
 courses = models.Course.query.all()
 addNewClass(courses[0].courseID,"Web App","Learn to use flask for creating a web server.",90,rooms[0].roomID,trainers[0].trainerID,delegates)
 addNewClass(courses[0].courseID,"Data Mining","Mining through bare data and that.",90,rooms[1].roomID,trainers[1].trainerID,delegates)
-addNewClass(courses[1].courseID,"Software Engineering","The art of developing software.",90,rooms[2].roomID,trainers[2].trainerID,delegates)
+addNewClass(courses[1].courseID,"Software Engineering","The art of developing software.",90,rooms[2].roomID,trainers[1].trainerID,delegates)
 
 print("Creating delegates.")
 classes = models.Class.query.all()

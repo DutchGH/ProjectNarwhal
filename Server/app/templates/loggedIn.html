@@ -13,7 +13,23 @@
             Hi {{ current_user.name }}
         </p>
     {% endif %}
-    <a href='/logout'>log out</a>
+
+    <p>
+        <a href='/logout'>log out</a>
+    </p>
+    <p>
+        <a href='/timetable'>timetable (delegate only)</a>
+    </p>
+    <p>
+        <a href='/trainers'>list of trainers (admin only)</a>
+    </p>
+    <p>
+        <a href='/rooms'>list of rooms (admin only)</a>
+    </p>
+    <p>
+        <a href='/delegates'>list of delegates (admin only)</a>
+    </p>
+
 </div>
 
 {% endblock %}
