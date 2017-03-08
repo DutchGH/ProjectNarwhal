@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import render_template, session, redirect, flash, url_for, request, g
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, models, login_manager
@@ -12,6 +13,17 @@ import logging
 def load_user(id):
 	return models.User.query.get(id)
 
+##The route used to pass a user accID to the view page
+@app.route('/')
+def home():
+    return render_template ('index.html', title="FDM TEST")
+
+
+@app.route('/timetable')
+def timetable():
+    return render_template ('timetable.html', title="FDM TEST")
+
+    
 ##The login page route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -124,3 +136,5 @@ def delSchedule(id):
 	delClassList = user.classList
 
 	return render_template('delsSched.html', title='Delegate Schedule', delClassList = delClassList)
+
+

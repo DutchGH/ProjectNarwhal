@@ -2,3 +2,5 @@
 Server/wonderLand.log
 Server/app.db
 Server/__pycache__
+*.pyc
+
