@@ -171,3 +171,13 @@ def genID(model):
             if (model( courseID = ID ) == []):
                 return ID
         ID += 1
+
+# A function that identifies a user as a delegate, a trainer or an adminID
+def checkUser(user):
+    if(type(user) == models.Delegate):
+        return "Delegate"
+    elif(type(user) == models.Admin):
+        return "Admin"
+    elif(type(user) == models.Trainer):
+        return "Trainer"
+    return "INVALID"
