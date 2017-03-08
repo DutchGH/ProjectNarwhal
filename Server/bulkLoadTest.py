@@ -112,7 +112,7 @@ while x < roomCount:
     print('.', end='', flush=True)
     capacity = random.randint(0,200)
     roomType = random.choice(roomType)
-    location = random.choice(locations)
+    location = random.choice(locations) + str(x)
     accessRating = random.choice(roomAccess)
     addNewRoom(capacity, roomType, accessRating, location)
     x = x + 1

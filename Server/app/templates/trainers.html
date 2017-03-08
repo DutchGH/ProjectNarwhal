@@ -1,0 +1,24 @@
+{% extends "header.html" %}
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+{% endfor %}
+
+<div>
+    {% if current_user.is_authenticated %}
+        <p>
+            Hi {{ current_user.name }}
+        </p>
+    {% endif %}
+
+    {% for item in trainerList %}
+        <p>
+            <a href='/trainers/{{item.userID}}'>{{item.name}}</a>
+        </p>
+    {% endfor %}
+</div>
+
+{% endblock %}
