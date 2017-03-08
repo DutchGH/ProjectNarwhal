@@ -1,4 +1,4 @@
-from flask import render_template, session, redirect, flash, url_for, request, g
+from flask import render_template, session, redirect, flash, url_for, request, g, abort
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, models, login_manager
 from .forms import LoginForm
@@ -11,6 +11,10 @@ import logging
 @login_manager.user_loader
 def load_user(id):
     return models.User.query.get(id)
+
+@app.errorhandler(403)
+def page_not_found(e):
+    return render_template('403.html'), 403
 
 ##The route used to pass a user accID to the view page
 @app.route('/')
@@ -48,7 +52,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect('/login')
+    return redirect('/')
 
 ##Once user is logged page is displayed <---example--->
 @login_required
@@ -71,8 +75,7 @@ def timetable():
 @login_required
 def trainerList():
     if current_user.type != 'Admin':
-        flash('This page is for admin only!')
-        return redirect('/home')
+        abort(403)
     trainerList = trainers()
     return render_template('trainers.html', title='Trainer List', trainerList = trainerList)
 
@@ -82,8 +85,7 @@ def trainerList():
 def trainerSchedule(id):
     trainerID = id
     if current_user.type != 'Admin':
-        flash('This page is for admin only!')
-        return redirect('/home')
+        abort(403)
 
     trainerClassList = classes(trainerPoint = trainerID)
     if type(trainerClassList) != list:
@@ -96,8 +98,7 @@ def trainerSchedule(id):
 @login_required
 def roomList():
     if current_user.type != 'Admin':
-        flash('This page is for admin only!')
-        return redirect('/home')
+        abort(403)
     roomList = rooms()
     return render_template('rooms.html', title='Room List', roomList = roomList)
 
@@ -107,8 +108,7 @@ def roomList():
 def roomSchedule(id):
     roomID = id
     if current_user.type != 'Admin':
-        flash('This page is for admin only!')
-        return redirect('/home')
+        abort(403)
 
     roomClassList = classes(locationPoint = roomID)
     if type(roomClassList) != list:
@@ -122,8 +122,7 @@ def roomSchedule(id):
 @login_required
 def delList():
     if current_user.type != 'Admin':
-        flash('This page is for admin only!')
-        return redirect('/home')
+        abort(403)
     delList = delegates()
     return render_template('delegates.html', title='Delegate List', delList = delList)
 
@@ -133,8 +132,7 @@ def delList():
 def delSchedule(id):
     delid = id
     if current_user.type != 'Admin':
-        flash('This page is for admin only!')
-        return redirect('/home')
+        abort(403)
 
     user = delegates(delID = delid)
     delClassList = user.classList

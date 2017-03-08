@@ -25,11 +25,13 @@
                         <li><a href="sass.html">Browse</a></li>
                     </ul>
                     <ul id="nav-mobile center" class="right">
-                        {% if current_user.is_authenticated %}
+                        {% if current_user.is_authenticated and current_user.type == 'Delegate'%}
                         <li><a href='/timetable'><i class="large material-icons">dns</i></a></li>
                         <li><a href='/timetable'>My Account</a></li>
-                         <li><a href='/timetable'>Logout</a></li>
-
+                         <li><a href='/logout'>Logout</a></li>
+                         {% elif current_user.is_authenticated and current_user.type == 'Admin'%}
+                         <li><a href = '/'>Admin Tools</a></li>
+                        <li><a href='/logout'>Logout</a></li>
                         {% else %}
                         <li><a href="/login">Sign In</a></li>
                         {% endif %}
