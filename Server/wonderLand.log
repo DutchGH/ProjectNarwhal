@@ -1081,3 +1081,30 @@ INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:11] "GET /rooms/1 HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:15] "GET /delegates HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:18] "GET /delegates/69 HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:12:21] "GET /delegates/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:15:49] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:15:52] "GET /trainers HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:15:54] "GET /trainers/40 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:15:56] "GET /trainers/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:15:59] "GET /trainers/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:00] "GET /trainers/35 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:03] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:05] "GET /rooms/7 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:09] "GET /delegates HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:10] "GET /delegates/8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:12] "GET /delegates/65 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:18] "GET /rooms HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:22] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:22] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:26] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:26] "GET /loggedIn HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:32] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:35] "GET /trainers HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:35] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:36] "GET /rooms HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:36] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:36] "GET /delegates HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:37] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:38] "GET /timetable HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Mar/2017 18:16:43] "GET /timetable HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Ben\\Desktop\\Project\\narwhal\\Server\\app\\views.py', reloading

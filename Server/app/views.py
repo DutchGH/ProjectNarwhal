@@ -25,7 +25,7 @@ def login():
 		if user is not None and (user.password == request.form['password']):
 			login_user(user)
 			flash('Logged in succesfully')
-			return redirect('/loggedIn')
+			return redirect('/home')
 		else:
 			flash('Invalid Credentials. Please Try Again')
 	return render_template('login.html', title='Log In', form = form)
