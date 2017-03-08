@@ -2,24 +2,60 @@
 {% block content %}
 <div class = "container">
 
-{% for message in get_flashed_messages() %}
-    <div>
-        {{ message }}
-    </div>
-{% endfor %}
-
 <div>
     {% if current_user.is_authenticated %}
-        <p>
-             Hi {{ current_user.name }}
-        </p>
+    <h3>Timetable for {{ current_user.name }}</h3>
+        
     {% endif %}
 
-    {% for item in classList %}
+            <div class = "row">
+            <div class = "col s6 m6 l6">
+                <ul class="collection">
+                    {% for item in classList %}
+                    <li class="collection-item ">
+                        <span class="title">{{item.title}}</span>
+                        <p>{{item.trainer.name}}<br>
+                        {{item.location.location}}
+                        </p>
+                    </li>
+                    {% endfor %}
+            </div>
+            <div class = "col s6 m6 l6">
+                <div class="card">
+                    <div class="card-image">
+                        <img  src="{{url_for('static', filename = 'images/rs.jpg')}}">
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab"><a href="#test4">Basic Info</a></li>
+                            <li class="tab"><a class="active" href="#test5">More Info</a></li>
+                            <li class="tab"><a href="#test6">Options</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-content grey lighten-4">
+                        <div id="test4"><h4>Web Application Development</h4>
+                        <br>
+                        <p>You will learn about flask 'n stuff</div>
+                        <div id="test5">Test 2</div>
+                        <div id="test6">
+                        <div class = "center-align">
+                            <ul>
+                            <li><a class="waves-effect waves-light btn valign">Send Reminder</a></li>
+                            <br>
+                            <li><a class="waves-effect waves-light btn red darken-2 valign">Cancel Appointment</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <p>
-            {{item.title}}
         </p>
-    {% endfor %}
 </div>
 </div>
 

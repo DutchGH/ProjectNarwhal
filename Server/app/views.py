@@ -55,18 +55,20 @@ def logout():
     return redirect('/')
 
 ##Once user is logged page is displayed <---example--->
+@app.route('/adminoptions')
 @login_required
-@app.route('/home')
-def index():
-    return render_template('loggedIn.html', title='Home Page')
+def admin():
+    if current_user.type != 'Admin':
+        abort(403)
+    else:
+        return render_template('loggedIn.html', title='Home Page')
 
 ##
 @app.route('/timetable')
 @login_required
 def timetable():
     if current_user.type != 'Delegate':
-        flash('This page is for delegates only!')
-        return redirect('/home')
+        abort(403)
     classList = current_user.classList
     return render_template('timetable.html', title='Timetable', classList = classList)
 
