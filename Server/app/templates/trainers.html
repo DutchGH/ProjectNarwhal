@@ -11,7 +11,9 @@
         <select class="icons" onChange="document.location = this.value">
         <option value="" disabled selected>Select Trainer</option>
         {% for item in trainerList %}
-        <option value="/trainers/{{item.userID}}">{{item.name}}</option>
+        <option value="/trainers/{{item.userID}}" 
+        data-icon="{{url_for('static', filename = 'images/unknown.jpg')}}" 
+        class="left circle">{{item.name}}</option>
         {% endfor %}
         </select>
     </div>

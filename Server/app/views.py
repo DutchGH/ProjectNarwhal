@@ -88,12 +88,13 @@ def trainerSchedule(id):
     trainerID = id
     if current_user.type != 'Admin':
         abort(403)
-
+    
+    current_trainer = trainers(trainerID = trainerID)
     trainerClassList = classes(trainerPoint = trainerID)
     if type(trainerClassList) != list:
         trainerClassList = [trainerClassList]
 
-    return render_template('trainersSched.html', title='Trainer Schedule', trainerClassList = trainerClassList)
+    return render_template('trainersSched.html', title='Trainer Schedule',current_trainer = current_trainer, trainerClassList = trainerClassList)
 
 ##
 @app.route('/rooms')
@@ -111,12 +112,12 @@ def roomSchedule(id):
     roomID = id
     if current_user.type != 'Admin':
         abort(403)
-
+    room = rooms(roomID = id)
     roomClassList = classes(locationPoint = roomID)
     if type(roomClassList) != list:
         roomClassList = [roomClassList]
 
-    return render_template('roomsSched.html', title='Room Schedule', roomClassList = roomClassList)
+    return render_template('roomsSched.html', title='Room Schedule', room = room, roomClassList = roomClassList)
 
 
 ##
