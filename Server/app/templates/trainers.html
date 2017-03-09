@@ -1,24 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for message in get_flashed_messages() %}
-    <div>
-        {{ message }}
+<div class = "container">
+<div class = "row">
+<h3>List of Trainers<h3>
+</h3>
+<div class = "row">
+<form class="col s12">
+    <div class="input-field col s12 m6">
+        <select class="icons" onChange="document.location = this.value">
+        <option value="" disabled selected>Select Trainer</option>
+        {% for item in trainerList %}
+        <option value="/trainers/{{item.userID}}">{{item.name}}</option>
+        {% endfor %}
+        </select>
     </div>
-{% endfor %}
-
-<div>
-    {% if current_user.is_authenticated %}
-        <p>
-            Hi {{ current_user.name }}
-        </p>
-    {% endif %}
-
-    {% for item in trainerList %}
-        <p>
-            <a href='/trainers/{{item.userID}}'>{{item.name}}</a>
-        </p>
-    {% endfor %}
+</form>
 </div>
+</div>
+
 
 {% endblock %}
