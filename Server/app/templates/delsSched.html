@@ -1,27 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for message in get_flashed_messages() %}
-    <div>
-        {{ message }}
+<div class = "container">
+<div class = "row">
+    <div class = "col l6 m6 s12">
+        <div class="card hoverable">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{url_for('static', filename = 'images/unknown.jpg')}}">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{user.name}}<i class="material-icons right">more_vert</i></span>
+            <p>Email: Not Available</p>
+        </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{user.name}}<i class="material-icons right">close</i></span>
+            <br>
+            <strong>Email</strong> <br>
+            <p><a href="">Not Available</a></p>
+            <br>
+            <strong>Contact Number</strong>
+            <p>Not Available</p>
+            <br>
+        </div>
+        </div>
     </div>
-{% endfor %}
-
-<div>
-    {% if current_user.is_authenticated %}
-        <p>
-            Hi {{ current_user.name }}
-        </p>
-    {% endif %}
-
-
-    {% for item in delClassList %}
-        <p>
-            {{item.title}}
-        </p>
-    {% endfor %}
+    <div class = "col l6 m6 s12">
+    <h3> Currently Enrolled In: </h3>
+        <ul>
+        {% for item in delClassList %}
+            <li>{{item.title}}</li>
+            {% endfor %}
+        </ul>
+    </div>
 
 
+</div>
 </div>
 
 {% endblock %}

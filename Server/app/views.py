@@ -140,6 +140,6 @@ def delSchedule(id):
     user = delegates(delID = delid)
     delClassList = user.classList
 
-    return render_template('delsSched.html', title='Delegate Schedule', delClassList = delClassList)
+    return render_template('delsSched.html', title='Delegate Schedule', user = user, delClassList = delClassList)
 
 
