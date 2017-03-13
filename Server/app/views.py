@@ -7,6 +7,10 @@ import datetime as dt
 import sys
 import logging
 
+##Default logging posts
+logging.basicConfig(filename='wonderLand.log',level=logging.DEBUG)
+logging.info('Application launched on '+dt.datetime.today().strftime("%m/%d/%Y"))
+
 ##This callback is used to reload the user object from the user ID stored in the session.
 @login_manager.user_loader
 def load_user(id):
