@@ -185,3 +185,16 @@ def checkUser(user):
     elif(type(user) == models.Trainer):
         return "Trainer"
     return "INVALID"
+
+# A function that adds a delegate to a classes attendanceList or waitingList, depending on capacity
+
+# A function that checks a classes prerequists against a delegates history
+
+# A function for removing entries
+def removeItem(item):
+    db.session.delete(item)
+    db.session.commit()
+    
+# A query for editing entries
+
+# A function which removes a user from a classList and moves someone over from the waitingList
