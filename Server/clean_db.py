@@ -5,12 +5,14 @@ trainers = models.Trainer.query.all()
 classes = models.Class.query.all()
 dels = models.Delegate.query.all()
 admin = models.Admin.query.all()
+courses = models.Course.query.all()
 
 adminItems = 0
 trainerItems = 0
 roomItems = 0
 classItems = 0
 delegateItems = 0
+courseItems = 0
 
 print("Removing admins")
 while(len(admin) > 0):
@@ -52,9 +54,18 @@ while(len(dels) > 0):
 	db.session.commit()
 	dels = models.Delegate.query.all()
 	delegateItems += 1
+print("Removing courses")
+while(len(courses) > 0):
+	c = len(courses) - 1
+	item = courses[c]
+	db.session.delete(item)
+	db.session.commit()
+	courses = models.Course.query.all()
+	courseItems += 1
 print("DONE")
 print("Removed "+str(adminItems)+" items from admin database.")
 print("Removed "+str(trainerItems)+" items from trainer database.")
 print("Removed "+str(roomItems)+" items from room database.")
 print("Removed "+str(classItems)+" items from class database.")
 print("Removed "+str(delegateItems)+" items from delegate database.")
+print("Removed "+str(courseItems)+" items from course database.")

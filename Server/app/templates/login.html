@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class = "container">
+{% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+{% endfor %}
+
+
+<h2>Sign In</h2>
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        username: {{form.username}}
+    </p>
+    <p>
+        password: {{ form.password }}
+    </p>
+    <p><input type="submit" value="Sign In"></p>
+</form>
+</div>
+{% endblock %}
