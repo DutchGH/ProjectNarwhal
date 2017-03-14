@@ -24,12 +24,11 @@
         <td>{{ item.location }}</td>
         <td>{{ item.roomType }}</td>
         <td>{{item.capacity}}</td>
-        <td>{{item.accessRating}}
+        <td>{{item.accessRating}}</td>
         <td>
         <a href = "/rooms/{{item.roomID}}">
         <button type="submit" href="/rooms/{{item.roomID}}" class="waves-effect waves-light btn green">View Schedule</button></a>
         </td>
-        <td>
     </tr>
     {%- endfor %}
     </tbody>
