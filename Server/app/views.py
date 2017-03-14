@@ -95,7 +95,6 @@ def trainerSchedule(id):
         trainerClassList = [trainerClassList]
 
     return render_template('trainersSched.html', title='Trainer Schedule',current_trainer = current_trainer, trainerClassList = trainerClassList)
->>>>>>> adminView
 
 ##
 @app.route('/rooms')
