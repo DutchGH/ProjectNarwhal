@@ -187,6 +187,11 @@ def checkUser(user):
     return "INVALID"
 
 # A function that adds a delegate to a classes attendanceList or waitingList, depending on capacity
+def addToClass(thisClass,del):
+    if(len(thisClass.classList) < thisClass.capacity):
+        thisClass.classList.append(del)
+    else:
+        thisClass.waitingList.append(del)
 
 # A function that checks a classes prerequists against a delegates history
 
@@ -194,7 +199,12 @@ def checkUser(user):
 def removeItem(item):
     db.session.delete(item)
     db.session.commit()
-    
+
 # A query for editing entries
 
 # A function which removes a user from a classList and moves someone over from the waitingList
+def removeFromClass(thisClass,del):
+    thisClass.classList.remove(del)
+    if(len(thisClass.waitingList) > 0):
+        thisClass.classList.append(thisClass.waitingList[0])
+        thisClass.waitingList.remove(thisClass.waitingList[0])
