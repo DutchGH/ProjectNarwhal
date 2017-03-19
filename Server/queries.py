@@ -1,6 +1,7 @@
 from app import models,db
 import datetime
 
+
 #Converts a query object into lists or a single item if only one is returned.
 def listConvert( x ):
     if( x.count() == 1 ):
