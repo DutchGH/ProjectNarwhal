@@ -23,6 +23,9 @@ lastNames = ['Thurber', 'Sase', 'Seoh', 'Mcneill', 'Foley', 'Flemming',
 
 locations = ['Here', 'There', 'Not There', 'Everywhere', 'Overhere', 'Where']
 
+buildings = ['Tall Building', 'Small Building', 'Ugly Building', 'Building',
+            'Old Building', 'Modern Building', 'Glass Building', 'Pentagon']
+
 roomType = ['Seminar Room', 'Lecture Theater', 'Computer Suite',
             'Conference Suite']
 
@@ -33,11 +36,11 @@ courseTitle = ['Business', 'Geography', 'Witchcraft', 'Drama', 'Mandarin',
                'English', 'Computer Science']
 
 #Specified to decide how many database entries will be added.
-adminCount = 25
-trainerCount = 25
+adminCount = 5
+trainerCount = 20
 roomCount = 15
-classCount = 30
-delCount = 40
+classCount = 40
+delCount = 80
 
 #This will generate a random 8 digit password made up of capital letters and
 #numbers.
@@ -60,10 +63,6 @@ def createPhoneNum():
         x = x + 1
     return int(phoneNum)
 
-#This will concatenate a random first and last name.
-def createName():
-    name = random.choice(firstNames) + ' ' + random.choice(lastNames)
-    return name
 
 #This will create a user name based on the name handed to the function.
 def createUsername(name):
@@ -84,10 +83,10 @@ print("Creating admins.")
 x = 0
 while x < adminCount:
     print('.', end='', flush=True)
-    name = createName()
+    name, email = createNameandEmail()
     username = createUsername(name)
     password = createPassword()
-    addNewAdmin(name, username, password)
+    addNewAdmin(name, username, password, email)
     x = x + 1
 print('')
 
@@ -112,9 +111,11 @@ while x < roomCount:
     print('.', end='', flush=True)
     capacity = random.randint(0,200)
     roomType = random.choice(roomType)
-    location = random.choice(locations) + str(x)
+    location = random.choice(locations)
+    building = random.choice(buildings)
+    roomCode = building[0] + building[len(building) - 8] + str(x)
     accessRating = random.choice(roomAccess)
-    addNewRoom(capacity, roomType, accessRating, location)
+    addNewRoom(capacity, roomType, accessRating, roomCode, building, location)
     x = x + 1
 print('')
 
@@ -138,10 +139,15 @@ while x < classCount:
     print('.', end='', flush=True)
     courseNum = random.randint(0,10)
     capacity = random.randint(0,200)
+    y = random.randint(5,10)
+    title = ''
+    while y > 0:
+        title = title + random.choice(string.ascii_lowercase)
+        y = y - 1
     roomNum = random.randint(0,roomCount-1)
     trainerNum = random.randint(0,trainerCount-1)
     waitingList = []
-    addNewClass(courses[courseNum].courseID, "Class Title",
+    addNewClass(courses[courseNum].courseID, title,
                 "Some description for a class.", capacity,rooms[roomNum].roomID,
                 trainers[trainerNum].trainerID, waitingList)
     x = x + 1
@@ -155,11 +161,11 @@ print("Creating delegates.")
 x = 0
 while x < delCount:
     print('.', end='', flush=True)
-    name = createName()
+    name, email = createNameandEmail()
     username = createUsername(name)
     password = createPassword()
     classList = random.sample(classes, 5)
-    addNewDel(name, username, password, classList)
+    addNewDel(name, username, password, classList, email)
     x = x + 1
 print('')
 

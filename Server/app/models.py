@@ -20,6 +20,7 @@ class User(db.Model):
 	userID = db.Column(db.Integer, primary_key = True)
 	name = db.Column(db.String(100))
 	username = db.Column(db.String(100))
+	email = db.Column(db.String(100))
 	password = db.Column(db.String(100))
 	type = db.Column(db.String(100))
 
@@ -59,7 +60,7 @@ class Trainer(User):
 	trainerID = db.Column(db.Integer,db.ForeignKey('User.userID'), primary_key = True)
 	address = db.Column(db.String(100))
 	phone = db.Column(db.Integer)
-	email = db.Column(db.String(100))
+
 
 	__mapper_args__ = {
 		'polymorphic_identity': 'Trainer',
@@ -81,9 +82,11 @@ class Room(db.Model):
 	roomID = db.Column(db.Integer, primary_key = True)
 	capacity = db.Column(db.Integer)
 	roomType = db.Column(db.String(100))
+	roomCode = db.Column(db.String(100))
+	building = db.Column(db.String(100))
+	location = db.Column(db.String(100))
 	picURL = db.Column(db.String(100))
 	accessRating = db.Column(db.String(100))
-	location = db.Column(db.String(100))
 
 ##Class
 class Class(db.Model):
