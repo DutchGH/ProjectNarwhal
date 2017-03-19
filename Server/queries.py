@@ -1,6 +1,7 @@
 from app import models,db
 import datetime
 
+
 #Converts a query object into lists or a single item if only one is returned.
 def listConvert( x ):
     if( x.count() == 1 ):
@@ -87,10 +88,6 @@ def capacity( thisClass ):
         return False
     else:
         return True
-
-#Removes an item from the database
-def remove(item):
-    db.session.delete(item)
 
 #This will add a new admin to the Admin database.
 def addNewAdmin(Name, Username, Password, Email):
@@ -187,6 +184,13 @@ def checkUser(user):
     return "INVALID"
 
 # A function that adds a delegate to a classes attendanceList or waitingList, depending on capacity
+def addToClass(thisClass,x):
+    if(len(thisClass.attendanceList) < thisClass.capacity):
+        thisClass.attendanceList.append(x)
+    else:
+        print("In second bit")
+        thisClass.waitList.append(x)
+    db.session.commit()
 
 # A function that checks a classes prerequists against a delegates history
 
@@ -196,9 +200,15 @@ def removeItem(item):
     db.session.commit()
 
 # A query for editing entries (doesn't work yet)
-def edit( item, **kwargs ):
-    for field, value in kwargs.items():
-        setattr(item,str(field),value)
-    db.session.commit()
+#def edit( item, **kwargs ):
+#    for field, value in kwargs.items():
+#        setattr(item,str(field),value)
+#    db.session.commit()
 
 # A function which removes a user from a classList and moves someone over from the waitingList
+def removeFromClass(thisClass,delegate):
+    thisClass.attendanceList.remove(delegate)
+    if(len(thisClass.waitList) > 0):
+        thisClass.attendanceList.append(thisClass.waitList[0])
+        thisClass.waitList.remove(thisClass.waitList[0])
+    db.session.commit()
