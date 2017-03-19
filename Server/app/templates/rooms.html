@@ -1,42 +1,43 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-<div class = "container">
-<h4>Delegates</h4>
-<div class = "row">
-<div class = "col s12">
-<table id = "todo-table" class="responsive-table">
-    <thead>
-        <tr>
-        <th>ID</th>
-        <th>Room</th>
-        <th>Room Code </th>
-        <th>Type</th>
-        <th>Capacity</th>
-        <th>Access Rating</th>
-        <th>View</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for item in roomList %}
-    <!-- Loop through all elements in DB -->
-    <tr>
-        <td>{{ item.roomID }} </td>
-        <td>{{ item.location }}</td>
-        <td>{{item.roomCode}}</td>
-        <td>{{ item.roomType }}</td>
-        <td>{{item.capacity}}</td>
-        <td>{{item.accessRating}}</td>
-        <td>
-        <a href = "/rooms/{{item.roomID}}">
-        <button type="submit" href="/rooms/{{item.roomID}}" class="waves-effect waves-light btn green">View Schedule</button></a>
-        </td>
-    </tr>
-    {%- endfor %}
-    </tbody>
-</table>
-</div>
-</div>
+<div class="container">
+    <h4>Delegates</h4>
+    <div class="row">
+        <div class="col s12">
+            <table id="todo-table" class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Location</th>
+                        <th>Building</th>
+                        <th>Room Code</th>
+                        <th>Type</th>
+                        <th>Capacity</th>
+                        <th>Access Rating</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in roomList %}
+                    <!-- Loop through all elements in DB -->
+                    <tr>
+                        <td>{{ item.roomID }} </td>
+                        <td>{{ item.location }}</td>
+                        <td>{{ item.building }}</td>
+                        <td>{{item.roomCode}}</td>
+                        <td>{{ item.roomType }}</td>
+                        <td>{{item.capacity}}</td>
+                        <td>{{item.accessRating}}</td>
+                        <td>
+                            <a href="/rooms/{{item.roomID}}">
+                                <button type="submit" href="/rooms/{{item.roomID}}" class="waves-effect waves-light btn green">View Schedule</button></a>
+                        </td>
+                    </tr>
+                    {%- endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

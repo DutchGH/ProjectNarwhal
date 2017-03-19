@@ -1,25 +1,36 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-<div class = "container">
-<div class = "row">
-<h3>List of Trainers<h3>
-</h3>
-<div class = "row">
-<form class="col s12">
-    <div class="input-field col s12 m6">
-        <select class="icons" onChange="document.location = this.value">
-        <option value="" disabled selected>Select Trainer</option>
-        {% for item in trainerList %}
-        <option value="/trainers/{{item.userID}}" 
-        data-icon="{{url_for('static', filename = 'images/unknown.jpg')}}" 
-        class="left circle">{{item.name}}</option>
-        {% endfor %}
-        </select>
+<div class="container">
+    <h4>Trainers</h4>
+    <div class="row">
+        <div class="col s12">
+            <table id="todo-table" class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%- for item in trainerList %}
+                    <!-- Loop through all elements in DB -->
+                    <tr>
+                        <td>{{ item.userID }} </td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.type }}</td>
+                        <td>
+                            <a href="/trainers/{{item.userID}}">
+                                <button type="submit" href="/delegates/{{item.userID}}" class="waves-effect waves-light btn green">View More</button></a>
+                        </td>
+                        <td>
+                    </tr>
+                    {%- endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-</form>
 </div>
-</div>
-
 
 {% endblock %}
