@@ -29,7 +29,7 @@
                         <li><a href='/timetable'><i class="large material-icons">dns</i></a></li>
                         <li><a href='/timetable'>My Account</a></li>
                          <li><a href='/logout'>Logout</a></li>
-                         {% if current_user.is_authenticated and current_user.type == 'Trainer'%}
+                         {% elif current_user.is_authenticated and current_user.type == 'Trainer'%}
                         <li><a href='/timetable'><i class="large material-icons">dns</i></a></li>
                         <li><a href='/timetable'>My Account</a></li>
                          <li><a href='/logout'>Logout</a></li>                        
@@ -75,7 +75,7 @@
             </div>-->
             <div class="footer-copyright blue darken-3">
                 <div class="container">
-                    © 2016 Team Narhwal
+                    © 2017 Team Narhwal
                     <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
                 </div>
             </div>
