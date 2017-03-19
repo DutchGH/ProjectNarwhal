@@ -1,6 +1,4 @@
 .DS_Store
-Server/wonderLand.log
-Server/app.db
+app.db
 Server/__pycache__
 *.pyc
-
