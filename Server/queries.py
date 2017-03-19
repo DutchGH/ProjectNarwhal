@@ -200,7 +200,11 @@ def removeItem(item):
     db.session.delete(item)
     db.session.commit()
 
-# A query for editing entries
+# A query for editing entries (doesn't work yet)
+def edit( item, **kwargs ):
+    for field, value in kwargs.items():
+        setattr(item,str(field),value)
+    db.session.commit()
 
 # A function which removes a user from a classList and moves someone over from the waitingList
 def removeFromClass(thisClass,del):
