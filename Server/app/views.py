@@ -7,10 +7,6 @@ import datetime as dt
 import sys
 import logging
 
-##Default logging posts
-logging.basicConfig(filename='wonderLand.log',level=logging.DEBUG)
-logging.info('Application launched on '+dt.datetime.today().strftime("%m/%d/%Y"))
-
 ##This callback is used to reload the user object from the user ID stored in the session.
 @login_manager.user_loader
 def load_user(id):
@@ -35,7 +31,7 @@ def home():
 def timetabletemp():
     return render_template ('timetable.html', title="FDM TEST")
 
-    
+
 ##The login page route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -92,7 +88,7 @@ def trainerSchedule(id):
     trainerID = id
     if current_user.type != 'Admin':
         abort(403)
-    
+
     current_trainer = trainers(trainerID = trainerID)
     trainerClassList = classes(trainerPoint = trainerID)
     if type(trainerClassList) != list:
@@ -145,6 +141,3 @@ def delSchedule(id):
     delClassList = user.classList
 
     return render_template('delsSched.html', title='Delegate Schedule', user = user, delClassList = delClassList)
-
-
-
