@@ -86,6 +86,7 @@ class Room(db.Model):
 	roomCode = db.Column(db.String(100))
 	building = db.Column(db.String(100))
 	location = db.Column(db.String(100))
+	facilities = db.Column(db.String(100))
 	picURL = db.Column(db.String(100))
 	accessRating = db.Column(db.String(100))
 

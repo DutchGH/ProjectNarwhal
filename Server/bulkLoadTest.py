@@ -88,6 +88,48 @@ def createTime():
     time = datetime(year, month, day, hour, minute)
     return time
 
+#This will create a random roomAccess value
+def createRoomAccess():
+    accessValue = ''
+    x = random.randint(0,1)
+    if x == 1:
+        accessValue = accessValue + 'A'
+    x = random.randint(0,1)
+    if x == 1:
+        accessValue = accessValue + 'L'
+    x = random.randint(0,1)
+    if x == 1:
+        accessValue = accessValue + 'W'
+    return accessValue
+
+#This will create a random facility value
+def createRoomFac():
+    facValue = ''
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'M'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'D'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'P'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'I'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'L'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'C'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'S'
+    x = random.randint(0,1)
+
+    return facValue
+
 #This is where the adding to the database begins.
 #First Admins.
 print("Creating admins.")
@@ -124,9 +166,10 @@ while x < roomCount:
     roomType = random.choice(roomTypes)
     location = random.choice(locations)
     building = random.choice(buildings)
+    facilities = createRoomFac()
     roomCode = building[0] + building[len(building) - 8] + str(x)
-    accessRating = random.choice(roomAccess)
-    addNewRoom(capacity, roomType, accessRating, roomCode, building, location)
+    accessRating = createRoomAccess()
+    addNewRoom(capacity, roomType, accessRating, roomCode, facilities, building, location)
     x = x + 1
 print('')
 

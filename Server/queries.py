@@ -108,10 +108,10 @@ def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     return x
 
 #This will add a new room to the room database.
-def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Building, Location):
+def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Location):
     ID = genID(rooms)
     x = models.Room(roomID = ID, capacity = Capacity, roomType = RoomType,
-    accessRating = AccessRating, location = Location, building = Building,
+    accessRating = AccessRating, location = Location, facilities = Fac, building = Building,
     roomCode = RoomCode)
     db.session.add(x)
     db.session.commit()
@@ -212,3 +212,34 @@ def removeFromClass(thisClass,delegate):
         thisClass.attendanceList.append(thisClass.waitList[0])
         thisClass.waitList.remove(thisClass.waitList[0])
     db.session.commit()
+
+# Function that checks a rooms accessRating, returning an array of properties.
+def checkAccess(rating):
+    accessRating = []
+    if 'A' in rating:
+        accessRating.append("Assistive learning system.")
+    if 'L' in rating:
+        accessRating.append("Level access.")
+    if 'W' in rating:
+        accessRating.append("Wheelchair access.")
+    return accessRating
+
+# Function that checks a room's facilities, returning an array of properties.
+def checkFacilities(facilities):
+    facList = []
+    if 'M' in facilities:
+        facList.append("Microphone.")
+    if 'D' in facilities:
+        facList.append("DVD player.")
+    if 'P' in facilities:
+        facList.append("Projector.")
+    if 'I' in facilities:
+        facList.append("Interactive white board.")
+    if 'L' in facilities:
+        facList.append("Lectern.")
+    if 'C' in facilities:
+        facList.append("Chalkboard.")
+    if 'S' in facilities:
+        facList.append("Computer suite.")
+
+    return facList
