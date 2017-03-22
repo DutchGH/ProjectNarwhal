@@ -30,7 +30,8 @@
             <h3> Currently Teaching </h3>
             <ul>
                 {% for item in trainerClassList %}
-                <li>{{item.title}}</li>
+                <li>{{item.title}}<br >{{item.startTime}}</li>
+
                 {% endfor %}
             </ul>
         </div>

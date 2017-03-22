@@ -1,5 +1,6 @@
 from app import db, models
 from queries import *
+from datetime import datetime
 
 
 print("Creating admins.")
@@ -23,13 +24,13 @@ addNewCourse("French", "Not the best course ever!")
 addNewCourse("English", "Really not the best course ever!")
 
 print("Creating classes.")
-rooms = models.Room.query.all()
-trainers = models.Trainer.query.all()
-delegates = models.Delegate.query.all()
-courses = models.Course.query.all()
-addNewClass(courses[0].courseID, "Web App", "Learn to use flask for creating a web server.", 90, rooms[0].roomID, trainers[0].trainerID, delegates)
-addNewClass(courses[0].courseID, "Data Mining", "Mining through bare data and that.", 90, rooms[1].roomID, trainers[1].trainerID, delegates)
-addNewClass(courses[1].courseID, "Software Engineering", "The art of developing software.", 90, rooms[2].roomID, trainers[1].trainerID, delegates)
+rooms = rooms()
+trainers = trainers()
+delegates = delegates()
+courses = courses()
+addNewClass(courses[0].courseID, "Web App", "Learn to use flask for creating a web server.", 90, rooms[0].roomID, trainers[0].trainerID, delegates, datetime.utcnow())
+addNewClass(courses[0].courseID, "Data Mining", "Mining through bare data and that.", 90, rooms[1].roomID, trainers[1].trainerID, delegates, datetime.utcnow())
+addNewClass(courses[1].courseID, "Software Engineering", "The art of developing software.", 90, rooms[2].roomID, trainers[1].trainerID, delegates, datetime.utcnow())
 
 print("Creating delegates.")
 classes = models.Class.query.all()

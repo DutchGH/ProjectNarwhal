@@ -1,5 +1,6 @@
 from app import db, models
 from queries import *
+from datetime import datetime
 import random
 import string
 
@@ -26,7 +27,7 @@ locations = ['Here', 'There', 'Not There', 'Everywhere', 'Overhere', 'Where']
 buildings = ['Tall Building', 'Small Building', 'Ugly Building', 'Building',
             'Old Building', 'Modern Building', 'Glass Building', 'Pentagon']
 
-roomType = ['Seminar Room', 'Lecture Theater', 'Computer Suite',
+roomTypes = ['Seminar Room', 'Lecture Theater', 'Computer Suite',
             'Conference Suite']
 
 roomAccess = ['W', 'A', 'L']
@@ -77,6 +78,16 @@ def createNameandEmail():
     email = firstName[0] + lastName + '@email@com'
     return name, email
 
+#This will create a random time.
+def createTime():
+    year = 2017
+    month = random.randint(1,12)
+    day = random.randint(1,28)
+    hour = random.randint(9,20)
+    minute = 0
+    time = datetime(year, month, day, hour, minute)
+    return time
+
 #This is where the adding to the database begins.
 #First Admins.
 print("Creating admins.")
@@ -110,7 +121,7 @@ x = 0
 while x < roomCount:
     print('.', end='', flush=True)
     capacity = random.randint(0,200)
-    roomType = random.choice(roomType)
+    roomType = random.choice(roomTypes)
     location = random.choice(locations)
     building = random.choice(buildings)
     roomCode = building[0] + building[len(building) - 8] + str(x)
@@ -147,9 +158,10 @@ while x < classCount:
     roomNum = random.randint(0,roomCount-1)
     trainerNum = random.randint(0,trainerCount-1)
     waitingList = []
+    startTime = createTime()
     addNewClass(courses[courseNum].courseID, title,
                 "Some description for a class.", capacity,rooms[roomNum].roomID,
-                trainers[trainerNum].trainerID, waitingList)
+                trainers[trainerNum].trainerID, waitingList, startTime)
     x = x + 1
 print('')
 

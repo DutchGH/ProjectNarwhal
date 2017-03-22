@@ -119,11 +119,11 @@ def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Building, Location):
 
 #This will add a new class to the class database.
 def addNewClass(CourseID, Title, Description, Capacity, Location, Trainer ,
-waitList):
+waitList, StartTime):
     ID = genID(classes)
     x = models.Class(classID = ID, coursePoint = CourseID, title = Title,
     description = Description, capacity = Capacity, locationPoint = Location,
-    trainerPoint = Trainer, waitList = waitList)
+    trainerPoint = Trainer, waitList = waitList, startTime = StartTime)
     db.session.add(x)
     db.session.commit()
     return x
