@@ -145,7 +145,8 @@ def addRoom():
         abort(403)
     form = CreateTrainingRoom()
     if form.validate_on_submit():
-        addNewRoom(form.capacity.data, form.roomType.data, 'W',
+        ar = ''.join(form.accessRating.data)
+        addNewRoom(form.capacity.data, form.roomType.data, ar,
                    form.roomCode.data, form.building.data, form.location.data)
         flash("CREATED SUCCESSFULY")
     else:
