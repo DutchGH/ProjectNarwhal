@@ -73,6 +73,14 @@ def admin():
 
 ##
 
+@app.route('/myaccount')
+@login_required
+def myAccount():
+    if current_user.type != 'Delegate':
+        abort(403)
+    else:
+        delClassList = current_user.classList
+        return render_template('myAccount.html', title='Timetable', delClassList = delClassList)
 
 @app.route('/timetable')
 @login_required
