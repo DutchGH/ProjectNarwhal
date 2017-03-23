@@ -16,7 +16,7 @@ class CreateTrainingRoom(Form):
                            choices=[('Seminar Room', 'Seminar Room'), ('Lecture Hall', 'Lecture Hall'), ('Conference Suite', 'Conference Suite')], validators=[InputRequired()])
     capacity = IntegerField('capacity', validators=[InputRequired()])
     # picURL = StringField( 'picURL', validators = [InputRequired()])
-    accessRating = SelectMultipleField('accessRating', choices=[('A', 'All'), ('W', 'Wheelchair Access')])
+    accessRating = SelectMultipleField('accessRating', choices=[('A', 'Assitive Learning System'), ('W', 'Wheelchair Access'), ('L', 'Level Access')])
 
 
 class CreateClass(Form):
