@@ -1,4 +1,5 @@
 from app import models,db
+from flask_mail import Message
 import datetime
 
 
@@ -59,6 +60,7 @@ def addToList( list,item ):
     else:
         list.classList.append( item )
     db.session.commit()
+
 
 #Checks for unique username. Returns false if the username is taken.
 def checkUserName( name ):
@@ -184,14 +186,21 @@ def checkUser(user):
     return "INVALID"
 
 # A function that adds a delegate to a classes attendanceList or waitingList, depending on capacity
-def addToClass(thisClass,x):
+def addToClass(thisClass,thisDel):
     if(len(thisClass.attendanceList) < thisClass.capacity):
-        thisClass.attendanceList.append(x)
+        thisClass.attendanceList.append(thisDel)
+        confirmEmail(thisClass,thisDel)
     else:
         print("In second bit")
-        thisClass.waitList.append(x)
-    db.session.commit()
+        thisClass.waitList.append(thisDel)
+    db.session.commit(thisDel)
 
+#Will send an email to the user email address confirming their place on the course.
+def confirmEmail(thisClass,thisDel):
+    time = thisClass.startTime
+    message = Message("Hi %s" % thisDel.name, recipients = ["ben.reed24@hotmail.co.uk"])
+    message.body = "This email is confirming your place on the class %s" % thisClass.title
+    mail.send(message)
 # A function that checks a classes prerequists against a delegates history
 
 # A function for removing entries
