@@ -30,11 +30,11 @@
                 <ul id="nav-mobile center" class="right">
                     {% if current_user.is_authenticated and current_user.type == 'Delegate'%}
                     <li><a href='/timetable'><i class="large material-icons">dns</i></a></li>
-                    <li><a href='/timetable'>My Account</a></li>
+                    <li><a href='/myaccount'>My Account</a></li>
                     <li><a href='/logout'>Logout</a></li>
                     {% elif current_user.is_authenticated and current_user.type == 'Trainer'%}
                     <li><a href='/timetable'><i class="large material-icons">dns</i></a></li>
-                    <li><a href='/timetable'>My Account</a></li>
+                    <li><a href='/myaccount'>My Account</a></li>
                     <li><a href='/logout'>Logout</a></li>
                     {% elif current_user.is_authenticated and current_user.type == 'Admin'%}
                     <li><a href='/adminoptions'>Admin Tools</a></li>

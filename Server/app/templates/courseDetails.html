@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <h2>{{current_course.title}}</h2>
+        <h5><i>{{current_course.description}}</i></h5>
+        <hr>
+    </div>
+    <div class = "row">
+
+    <h3>Current Classes </h3>
+            <div class="col s12">
+            <table id="todo-table" class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Trainer</th>
+                        <th>Location</th>
+                        <th>Capacity</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%- for item in courseClassList %}
+                    <!-- Loop through all elements in DB -->
+                    <tr>
+                        <td>{{ item.classID }} </td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.trainer.name }}</td>
+                        <td>{{ item.location.building}} {{item.location.roomCode}}</td>
+                        <td>{{ item.capacity }} </td>
+
+                        <td>
+                            <a href="/class/{{item.classID}}">
+                                <button type="submit" href="/class/{{item.classID}}" class="waves-effect waves-light btn green">View More</button></a>
+                        </td>
+                        <td>
+                    </tr>
+                    {%- endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+
+    {% endblock %}
