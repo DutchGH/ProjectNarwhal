@@ -1,6 +1,8 @@
-from app import models,db
+from flask import Flask
+from app import models,db, mail
 from flask_mail import Message
 import datetime
+
 
 
 #Converts a query object into lists or a single item if only one is returned.
@@ -198,9 +200,11 @@ def addToClass(thisClass,thisDel):
 #Will send an email to the user email address confirming their place on the course.
 def confirmEmail(thisClass,thisDel):
     time = thisClass.startTime
-    message = Message("Hi %s" % thisDel.name, recipients = ["ben.reed24@hotmail.co.uk"])
-    message.body = "This email is confirming your place on the class %s" % thisClass.title
+    time = time.strftime("%H:%M, %d/%m/%y")
+    message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
+    message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
     mail.send(message)
+
 # A function that checks a classes prerequists against a delegates history
 
 # A function for removing entries
