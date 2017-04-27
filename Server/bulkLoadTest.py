@@ -177,7 +177,7 @@ print('')
 print("Creating courses.")
 for items in courseTitle:
     print('.', end='', flush=True)
-    addNewCourse(items, "The description seriously does not matter.")
+    addNewCourse(items, "This is a description about a course,.")
 print('')
 
 #Queries currently made databases for dependencies.

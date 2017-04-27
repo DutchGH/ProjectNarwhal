@@ -14,9 +14,9 @@ addNewTrainer("Eric Atwell", "Dec-10", 0, "eatwell@leeds.ac.uk", "eric1", "pass"
 addNewTrainer("Hamish Carr", "Dec-10", 0, "hcarr@leeds.ac.uk", "hamish1", "pass")
 
 print("Creating rooms.")
-addNewRoom(20, "Seminar Room", "W", "ES1", "Whiteboard", "EC Stoner", "Leeds")
-addNewRoom(100, "Lecture hall", "W", "RS19", "Whiteboard", "Roger Stevens", "Leeds")
-addNewRoom(5, "Conference suite", "W", "ES33", "Whiteboard", "EC Stoner", "Leeds")
+addNewRoom(20, "Seminar Room", "WAL", "ES1", "DIPCS", "EC Stoner", "Leeds")
+addNewRoom(100, "Lecture hall", "WL", "RS19", "MPLC", "Roger Stevens", "Leeds")
+addNewRoom(5, "Conference suite", "", "ES33", "MDPIC", "EC Stoner", "Leeds")
 
 print("Creating courses.")
 addNewCourse("Computer Science", "The best course ever!")
