@@ -81,6 +81,31 @@ def trainerList():
     trainerList = trainers()
     return render_template('trainers.html', title='Trainer List', trainerList = trainerList)
 
+@app.route('/courses')
+@login_required
+def courseList():
+    if current_user.type != 'Admin':
+        abort(403)
+    courseList = courses()
+    return render_template('courses.html', title='Trainer List', courseList = courseList)
+
+@app.route('/course/<id>')
+@login_required
+def course(id):
+    courseID = id
+    if current_user.type != 'Admin':
+        abort(403)
+
+    current_course = courses(courseID = courseID)
+    #courseClassList = classes(courseID = current_course.courseID)
+    courseClassList = classes(course = current_course)
+    #courseClassList = models.Class.query.filter_by(courseID = current_course.courseID)
+    if type(courseClassList) != list:
+        courseClassList = [courseClassList]
+
+    return render_template('courseDetails.html', title='Trainer Schedule',current_course = current_course, courseClassList = courseClassList)
+
+
 ##accessed using <a href='/trainers/{{item.userID}}'></a>
 @app.route('/trainers/<id>')
 @login_required
