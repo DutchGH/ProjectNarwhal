@@ -106,6 +106,15 @@ def course(id):
     return render_template('courseDetails.html', title='Trainer Schedule',current_course = current_course, courseClassList = courseClassList)
 
 
+@app.route('/class/<id>')
+@login_required
+def adminClassDetails(id):
+    classID = id
+    if current_user.type != 'Admin':
+        abort(403)
+    current_class = classes(classID = classID)
+    return render_template('adminClassDetails.html', title = current_class.title + 'Details', current_class = current_class)
+    
 ##accessed using <a href='/trainers/{{item.userID}}'></a>
 @app.route('/trainers/<id>')
 @login_required
