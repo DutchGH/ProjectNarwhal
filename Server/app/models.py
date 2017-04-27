@@ -8,6 +8,7 @@ association_table = db.Table('association_table', db.Model.metadata,
 	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
 )
 
+
 #Association table for the classes' waiting lists.
 waiting_table = db.Table('waiting_table', db.Model.metadata,
 	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
@@ -85,6 +86,7 @@ class Room(db.Model):
 	roomCode = db.Column(db.String(100))
 	building = db.Column(db.String(100))
 	location = db.Column(db.String(100))
+	facilities = db.Column(db.String(100))
 	picURL = db.Column(db.String(100))
 	accessRating = db.Column(db.String(100))
 

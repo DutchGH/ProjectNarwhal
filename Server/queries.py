@@ -1,6 +1,7 @@
-from app import models,db
+from flask import Flask
+from app import models,db, mail
+from flask_mail import Message
 from datetime import datetime
-
 
 #Converts a query object into lists or a single item if only one is returned.
 def listConvert( x ):
@@ -60,6 +61,7 @@ def addToList( list,item ):
         list.classList.append( item )
     db.session.commit()
 
+
 #Checks for unique username. Returns false if the username is taken.
 def checkUserName( name ):
     dels = delegates()
@@ -108,10 +110,10 @@ def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     return x
 
 #This will add a new room to the room database.
-def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Building, Location):
+def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Location):
     ID = genID(rooms)
     x = models.Room(roomID = ID, capacity = Capacity, roomType = RoomType,
-    accessRating = AccessRating, location = Location, building = Building,
+    accessRating = AccessRating, location = Location, facilities = Fac, building = Building,
     roomCode = RoomCode)
     db.session.add(x)
     db.session.commit()
@@ -119,11 +121,11 @@ def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Building, Location):
 
 #This will add a new class to the class database.
 def addNewClass(CourseID, Title, Description, Capacity, Location, Trainer ,
-waitList):
+waitList, StartTime):
     ID = genID(classes)
     x = models.Class(classID = ID, coursePoint = CourseID, title = Title,
     description = Description, capacity = Capacity, locationPoint = Location,
-    trainerPoint = Trainer, waitList = waitList)
+    trainerPoint = Trainer, waitList = waitList, startTime = StartTime)
     db.session.add(x)
     db.session.commit()
     return x
@@ -184,13 +186,22 @@ def checkUser(user):
     return "INVALID"
 
 # A function that adds a delegate to a classes attendanceList or waitingList, depending on capacity
-def addToClass(thisClass,x):
+def addToClass(thisClass,thisDel):
     if(len(thisClass.attendanceList) < thisClass.capacity):
-        thisClass.attendanceList.append(x)
+        thisClass.attendanceList.append(thisDel)
+        confirmEmail(thisClass,thisDel)
     else:
         print("In second bit")
-        thisClass.waitList.append(x)
-    db.session.commit()
+        thisClass.waitList.append(thisDel)
+    db.session.commit(thisDel)
+
+#Will send an email to the user email address confirming their place on the course.
+def confirmEmail(thisClass,thisDel):
+    time = thisClass.startTime
+    time = time.strftime("%H:%M, %d/%m/%y")
+    message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
+    message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
+    mail.send(message)
 
 # A function that checks a classes prerequists against a delegates history
 
@@ -265,3 +276,34 @@ def schedule(delegate):
             classList.remove(i)
     # Return the result
     return classList
+
+# Function that checks a rooms accessRating, returning an array of properties.
+def checkAccess(rating):
+    accessRating = []
+    if 'A' in rating:
+        accessRating.append("Assistive learning system.")
+    if 'L' in rating:
+        accessRating.append("Level access.")
+    if 'W' in rating:
+        accessRating.append("Wheelchair access.")
+    return accessRating
+
+# Function that checks a room's facilities, returning an array of properties.
+def checkFacilities(facilities):
+    facList = []
+    if 'M' in facilities:
+        facList.append("Microphone.")
+    if 'D' in facilities:
+        facList.append("DVD player.")
+    if 'P' in facilities:
+        facList.append("Projector.")
+    if 'I' in facilities:
+        facList.append("Interactive white board.")
+    if 'L' in facilities:
+        facList.append("Lectern.")
+    if 'C' in facilities:
+        facList.append("Chalkboard.")
+    if 'S' in facilities:
+        facList.append("Computer suite.")
+
+    return facList

@@ -2,6 +2,7 @@ import os
 import unittest
 from app import db, models
 from queries import *
+from datetime import datetime
 
 ################################################################################
 #Place the functions used to perform tests below.
@@ -21,7 +22,7 @@ def addRoomQuick():
     oldRoomList = rooms()
     if(type(oldRoomList) != list):
         oldRoomList = ['a']
-    newRoom = addNewRoom(999,999,"TestRoom","All","Nowhere")
+    newRoom = addNewRoom(99, "test", "test", "test", "test", "test", "test")
     newRoomList = rooms()
     if(type(newRoomList) != list):
         newRoomList = ['a']
@@ -43,7 +44,7 @@ def addTrainerQuick():
     oldTrainerList = trainers()
     if(type(oldTrainerList) != list):
         oldTrainerList = ['a']
-    newTrainer = addNewTrainer(999,"Sam Wilson","Dec-10",0,"swilson@leeds.ac.uk",
+    newTrainer = addNewTrainer("Sam Wilson","Dec-10",0,"swilson@leeds.ac.uk",
     "sam1","pass")
     newTrainerList = trainers()
     if(type(newTrainerList) != list):
@@ -88,7 +89,7 @@ def addDelQuick():
     oldDelList = delegates()
     if(type(oldDelList) != list):
         oldDelList = ['a']
-    newDel = addNewDel(999,"Ben Reed","Ben","pass",classes())
+    newDel = addNewDel("Ben Reed","Ben","pass",classes(),"test@test.test")
     newDelList = delegates()
     if(type(newDelList) != list):
         newDelList = ['a']
@@ -114,7 +115,7 @@ def addClassQuick():
     a = models.Room(roomID=0)
     b = models.Trainer(trainerID=0)
     c = []
-    newClass = addNewClass(999,2011,"Web App","Learn to use flask for creating a web server.",90,a.roomID,b.trainerID,c)
+    newClass = addNewClass(2011,"Web App","Learn to use flask for creating a web server.",90,a.roomID,b.trainerID,c,datetime.utcnow())
     newClassList = classes()
     if(type(newClassList) != list):
         newClassList = ['a']
