@@ -1,5 +1,5 @@
 from app import models,db
-import datetime
+from datetime import datetime
 
 
 #Converts a query object into lists or a single item if only one is returned.
@@ -200,10 +200,10 @@ def removeItem(item):
     db.session.commit()
 
 # A query for editing entries (doesn't work yet)
-#def edit( item, **kwargs ):
-#    for field, value in kwargs.items():
-#        setattr(item,str(field),value)
-#    db.session.commit()
+def edit( item, **kwargs ):
+    for field, value in kwargs.items():
+        setattr(item,str(field),value)
+    db.session.commit()
 
 # A function which removes a user from a classList and moves someone over from the waitingList
 def removeFromClass(thisClass,delegate):
@@ -212,3 +212,56 @@ def removeFromClass(thisClass,delegate):
         thisClass.attendanceList.append(thisClass.waitList[0])
         thisClass.waitList.remove(thisClass.waitList[0])
     db.session.commit()
+
+# A function that recovers a list of classes yet to be taught.
+def futureClasses():
+    # Get the current time.
+    today = datetime.now()
+    # Get a list of all classes
+    classList = classes()
+    # Go through all the classes, removing any that have already happened
+    for i in classList:
+        if(i.startTime < today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# A function that recovers a list of classes already taught.
+def pastClasses():
+    # Get the current time.
+    today = datetime.now()
+    # Get a list of all classes
+    classList = classes()
+    # Go through all the classes, removing any that are yet to happen.
+    for i in classList:
+        if (i.startTime > today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# A function that recovers a list of classes already taught, from a delegates
+# classList.
+def history(delegate):
+    # Get the current time.
+    today = datetime.now()
+    # Get a list of all classes
+    classList = delegate.classList
+    # Go through all the classes, removing any that are yet to happen.
+    for i in classList:
+        if (i.startTime > today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# A function that recovers a list of classes a delegate is yet to take.
+def schedule(delegate):
+    # Get the current time.
+    today = datetime.now()
+    # Get the classList
+    classList = delegate.classList
+    # Go through all the classes, removing any that have already happened
+    for i in classList:
+        if(i.startTime < today):
+            classList.remove(i)
+    # Return the result
+    return classList
