@@ -1,12 +1,27 @@
 from flask_wtf import Form
 from wtforms import StringField, IntegerField, PasswordField, TextAreaField, validators, BooleanField, DateTimeField, SelectField, SelectMultipleField
-from wtforms.validators import InputRequired
+from wtforms.validators import InputRequired, Email, DataRequired
 
 
 class LoginForm(Form):
     username = StringField('username', validators=[InputRequired()])
     password = PasswordField('password', validators=[InputRequired()])
 
+class CreateTrainer(Form):
+    name = StringField('name', validators = [InputRequired()])
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    address = StringField('address', validators = [InputRequired()])
+    phone = IntegerField('phone', validators = [InputRequired()]);
+    username = StringField('username')
+    password = PasswordField('password', validators.EqualTo('confirm', message='Passwords must match'))
+    confirm = PasswordField('confirm')
+
+class CreateDelegate(Form):
+    name = StringField('name', validators = [InputRequired()])
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    username = StringField('username')
+    password = PasswordField('password', validators.EqualTo('confirm', message='Passwords must match'))
+    confirm = PasswordField('confirm')
 
 class CreateTrainingRoom(Form):
     building = StringField('building', validators=[InputRequired()])
