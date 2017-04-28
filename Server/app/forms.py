@@ -12,9 +12,10 @@ class CreateTrainer(Form):
     email = StringField('email', [validators.DataRequired(), validators.Email()])
     address = StringField('address', validators = [InputRequired()])
     phone = IntegerField('phone', validators = [InputRequired()]);
-    username = StringField('username')
-    password = PasswordField('password')
-    confirm = PasswordField('confirm')
+    username = StringField('username', filters = [lambda x: x or None])
+    password = PasswordField('password', validators =[EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
+
 
 class CreateDelegate(Form):
     name = StringField('name', validators = [InputRequired()])

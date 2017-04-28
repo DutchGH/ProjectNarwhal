@@ -208,10 +208,9 @@ def addTrainer():
         else:
             username = form.email.data
         if form.password.data is not None:
-            password = "pass"
-        else:
             password = form.password.data
-        password = form.password.data
+        else:
+            password = "pass"            
         addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
         flash("CREATED SUCCESSFULY")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
