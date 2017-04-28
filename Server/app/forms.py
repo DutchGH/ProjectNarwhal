@@ -1,6 +1,6 @@
 from flask_wtf import Form
 from wtforms import StringField, IntegerField, PasswordField, TextAreaField, validators, BooleanField, DateTimeField, SelectField, SelectMultipleField
-from wtforms.validators import InputRequired, Email, DataRequired
+from wtforms.validators import InputRequired, Email, DataRequired, EqualTo
 
 
 class LoginForm(Form):
@@ -13,15 +13,15 @@ class CreateTrainer(Form):
     address = StringField('address', validators = [InputRequired()])
     phone = IntegerField('phone', validators = [InputRequired()]);
     username = StringField('username')
-    password = PasswordField('password', validators.EqualTo('confirm', message='Passwords must match'))
+    password = PasswordField('password')
     confirm = PasswordField('confirm')
 
 class CreateDelegate(Form):
     name = StringField('name', validators = [InputRequired()])
     email = StringField('email', [validators.DataRequired(), validators.Email()])
-    username = StringField('username')
-    password = PasswordField('password', validators.EqualTo('confirm', message='Passwords must match'))
-    confirm = PasswordField('confirm')
+    username = StringField('username', filters = [lambda x: x or None])
+    password = PasswordField('password', validators =[EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
 class CreateTrainingRoom(Form):
     building = StringField('building', validators=[InputRequired()])

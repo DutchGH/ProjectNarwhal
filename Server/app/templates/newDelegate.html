@@ -6,19 +6,13 @@
     </div>
     {% endfor %}
     <h2>Create Trainer Account</h2>
-    <form action="" method="post" name="login">
+    <form action="" method="post" name="createAccount">
         {{ form.hidden_tag() }}
         <p class="input-field">
             Name : {{form.name}}
         </p>
         <p>
             E-mail: {{ form.email }}
-        </p>
-        <p>
-            Address: {{ form.address }}
-        </p>
-        <p>
-            Phone Number: {{ form.phone }}
         </p>
         <p>
             Username: {{ form.username }}
@@ -30,7 +24,7 @@
             Confirm: {{ form.confirm }}
         </p>
         <br>
-        <p><input type="submit" value="Add Trainer"></p>
+        <p><input type="submit" value="Add User"></p>
     </form>
     <br>
 </div>

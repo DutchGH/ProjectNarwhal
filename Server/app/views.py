@@ -1,7 +1,7 @@
 from flask import render_template, session, redirect, flash, url_for, request, g, abort
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, models, login_manager
-from .forms import LoginForm, CreateTrainingRoom
+from .forms import *
 from queries import *
 import datetime as dt
 import sys
@@ -194,9 +194,44 @@ def addRoom():
         addNewRoom(form.capacity.data, form.roomType.data, ar,
                    form.roomCode.data, form.building.data, form.location.data)
         flash("CREATED SUCCESSFULY")
-    else:
-        flash("There was a problem.")
     return render_template('newRoom.html', title='Add Room', form=form)
+
+@app.route('/addtrainer', methods=['GET', 'POST'])
+@login_required
+def addTrainer():
+    if current_user.type != 'Admin':
+        abort(403)
+    form = CreateTrainer()
+    if form.validate_on_submit():
+        if form.username.data is not None:
+            username = form.username.data
+        else:
+            username = form.email.data
+        if form.password.data is not None:
+            password = "pass"
+        else:
+            password = form.password.data
+        password = form.password.data
+        addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
+        flash("CREATED SUCCESSFULY")
+    return render_template('newTrainer.html', title='Add Trainer', form=form)
+
+@app.route('/createaccount', methods=['GET', 'POST'])
+def addDelegate():
+    form = CreateDelegate()
+    if form.validate_on_submit():
+        if form.username.data is not None:
+            username = form.username.data
+        else:
+            username = form.email.data
+        if form.password.data is not None:
+            password = form.password.data
+        else:
+            password = "pass"
+        addNewDel(form.name.data, username, password, [], form.email.data)
+        flash("CREATED SUCCESSFULY")
+    return render_template('newDelegate.html', title='Create Account', form=form)
+
 
 
 ##
