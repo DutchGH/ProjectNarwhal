@@ -323,3 +323,20 @@ def checkFacilities(facilities):
         facList.append("Computer suite.")
 
     return facList
+
+# Function that returns a list of available trainers at a given time
+def checkTrainer(time):
+    # Get a list of trainers
+    teachers = trainers()
+    # A list of classes that conflict with the given time
+    clashClass = []
+    # A list of all classes
+    classes = classes()
+    # Go through each class and determine if it's a clashClass
+    for( i in classes ):
+        if((i.startTime <= time) and ((i.startTime+duration) >= time)):
+            clashList.append(i)
+    # Go through each clashing class and get the teacher, remove it the teachers
+    for j in clashList:
+        teachers.remove(j.trainer)
+    return teachers
