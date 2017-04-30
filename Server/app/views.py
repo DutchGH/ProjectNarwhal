@@ -73,6 +73,7 @@ def admin():
 
 ##
 
+
 @app.route('/myaccount')
 @login_required
 def myAccount():
@@ -80,7 +81,8 @@ def myAccount():
         abort(403)
     else:
         delClassList = current_user.classList
-        return render_template('myAccount.html', title='Timetable', delClassList = delClassList)
+        return render_template('myAccount.html', title='Timetable', delClassList=delClassList)
+
 
 @app.route('/timetable')
 @login_required
@@ -104,14 +106,13 @@ def trainerList():
 # accessed using <a href='/trainers/{{item.userID}}'></a>
 
 
-
 @app.route('/courses')
 @login_required
 def courseList():
     if current_user.type != 'Admin':
         abort(403)
     courseList = courses()
-    return render_template('courses.html', title='Trainer List', courseList = courseList)
+    return render_template('courses.html', title='Trainer List', courseList=courseList)
 
 
 @app.route('/course/<id>')
@@ -121,14 +122,14 @@ def course(id):
     if current_user.type != 'Admin':
         abort(403)
 
-    current_course = courses(courseID = courseID)
+    current_course = courses(courseID=courseID)
     #courseClassList = classes(courseID = current_course.courseID)
-    courseClassList = classes(course = current_course)
+    courseClassList = classes(course=current_course)
     #courseClassList = models.Class.query.filter_by(courseID = current_course.courseID)
     if type(courseClassList) != list:
         courseClassList = [courseClassList]
 
-    return render_template('courseDetails.html', title='Trainer Schedule',current_course = current_course, courseClassList = courseClassList)
+    return render_template('courseDetails.html', title='Trainer Schedule', current_course=current_course, courseClassList=courseClassList)
 
 
 @app.route('/class/<id>')
@@ -137,10 +138,11 @@ def adminClassDetails(id):
     classID = id
     if current_user.type != 'Admin':
         abort(403)
-    current_class = classes(classID = classID)
-    return render_template('adminClassDetails.html', title = current_class.title + 'Details', current_class = current_class)
-    
-##accessed using <a href='/trainers/{{item.userID}}'></a>
+    current_class = classes(classID=classID)
+    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class)
+
+# accessed using <a href='/trainers/{{item.userID}}'></a>
+
 
 @app.route('/trainers/<id>')
 @login_required
@@ -156,8 +158,6 @@ def trainerSchedule(id):
 
     return render_template('trainersSched.html', title='Trainer Schedule', current_trainer=current_trainer, trainerClassList=trainerClassList)
 
-##
-
 
 @app.route('/rooms')
 @login_required
@@ -166,8 +166,6 @@ def roomList():
         abort(403)
     roomList = rooms()
     return render_template('rooms.html', title='Room List', roomList=roomList)
-
-##
 
 
 @app.route('/rooms/<id>')
@@ -212,8 +210,9 @@ def addTrainer():
         if form.password.data is not None:
             password = form.password.data
         else:
-            password = "pass"            
-        addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
+            password = "pass"
+        addNewTrainer(form.name.data, form.address.data,
+                      form.phone.data, form.email.data, username, password)
         flash("CREATED SUCCESSFULY")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
 
@@ -233,7 +232,6 @@ def addDelegate():
         addNewDel(form.name.data, username, password, [], form.email.data)
         flash("CREATED SUCCESSFULY")
     return render_template('newDelegate.html', title='Create Account', form=form)
-
 
 
 ##
@@ -260,11 +258,12 @@ def delSchedule(id):
 
     return render_template('delsSched.html', title='Delegate Schedule', user=user, delClassList=delClassList)
 
+
 @app.route('/signup/<id>')
 @login_required
 def signUp(id):
     classID = id
-    thisClass = classes(classID = id)
+    thisClass = classes(classID=id)
     if current_user.type == 'Delegate':
         if meetsRequirments(thisClass, current_user):
             addToClass(thisClass, current_user)
@@ -273,15 +272,14 @@ def signUp(id):
         flash("You are not authorised to do this")
     return redirect('/browse/classes/class/' + classID)
 
+
 @app.route('/browse/classes/class/<id>')
 def viewClassDetails(id):
     classID = id
-    current_class = classes(classID = classID)
+    current_class = classes(classID=classID)
     classSize = classAttendenceLen(current_class)
     if current_user.type == 'Delegate':
         userQualify = meetsRequirements(current_user, current_class)
     else:
         userQualify = False
-    return render_template('viewClass.html', title = "Course", current_class = current_class, classSize = classSize, userQualify = userQualify)
-
-
+    return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
