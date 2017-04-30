@@ -260,12 +260,28 @@ def delSchedule(id):
 
     return render_template('delsSched.html', title='Delegate Schedule', user=user, delClassList=delClassList)
 
+@app.route('/signup/<id>')
+@login_required
+def signUp(id):
+    classID = id
+    thisClass = classes(classID = id)
+    if current_user.type == 'Delegate':
+        if meetsRequirments(thisClass, current_user):
+            addToClass(thisClass, current_user)
+            flash("You have been added.")
+    else:
+        flash("You are not authorised to do this")
+    return redirect('/browse/classes/class/' + classID)
 
 @app.route('/browse/classes/class/<id>')
 def viewClassDetails(id):
     classID = id
     current_class = classes(classID = classID)
     classSize = classAttendenceLen(current_class)
-    return render_template('viewClass.html', title = "Course", current_class = current_class)
+    if current_user.type == 'Delegate':
+        userQualify = meetsRequirements(current_user, current_class)
+    else:
+        userQualify = False
+    return render_template('viewClass.html', title = "Course", current_class = current_class, classSize = classSize, userQualify = userQualify)
 
 

@@ -234,7 +234,7 @@ def addToClass(thisClass,thisDel):
         print("In second bit")
         thisClass.waitList.append(thisDel)
         waitingEmail(thisClass,thisDel)
-    db.session.commit(thisDel)
+    db.session.commit()
 
 #Will send an email to the user email address confirming their place on the course.
 def confirmEmail(thisClass,thisDel):

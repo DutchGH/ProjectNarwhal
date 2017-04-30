@@ -15,7 +15,7 @@
         <img src="{{url_for('static', filename = 'images/rs.jpg')}}"> <!-- random image -->
         <div class="caption left-align">
           <h3>{{current_class.title}}</h3>
-          <h5 class="light grey-text text-lighten-3">Part of the {{current_class.course.title}} Course</h5>
+          <h5 class=" lightgrey-text text-lighten-3">Part of the {{current_class.course.title}} Course</h5>
         </div>
       </li>
       </ul>
@@ -28,7 +28,7 @@
         <ul>
         <li>Course: {{current_class.course.title}}</li>
         <li>Trainer: <a href="/trainers/{{current_class.trainer.trainerID}}">{{current_class.trainer.name}}</a></li>
-        <li>Start Time: {{current_class.startTime}}</li>
+        <li>Start Time: {{current_class.startTime.strftime('%H:%M %b-%d-%Y')}}</li>
         <li>Duration: {{current_class.duration}} Minutes</li>
         </ul>
         </div>
@@ -43,8 +43,7 @@
     </div>
     <div class = "row">
     <div class = "col s12 center-align">
-    <a href="">
-        <button type="submit" href="" class="waves-effect waves-light btn green">Sign Up</button></a>
+        <button type="submit" href="/signup/{{current_class.classID}}" class="waves-effect waves-light btn green {% if userQualify == False %}disabled{% endif %}">{% if current_class.capacity == classSize %}Add to Waiting List{%elif userQualify == False %}Requirements Not Met{%else%}Sign Up{% endif %}</button>
     </div>
     </div>
     </div>
