@@ -1,5 +1,7 @@
-from app import models, db
-import datetime
+from flask import Flask
+from app import models,db, mail
+from flask_mail import Message
+from datetime import *
 
 
 # Converts a query object into lists or a single item if only one is returned.
@@ -74,13 +76,20 @@ def addToList(list, item):
         list.classList.append(item)
     db.session.commit()
 
-# Checks for unique username. Returns false if the username is taken.
 
-
-def checkUserName(name):
+#Checks for unique username. Returns false if the username is taken.
+def checkUserName( name ):
     dels = delegates()
+    train = trainers()
+    admin = admins()
     for i in dels:
         if(i.username == name):
+            return False
+    for i in train:
+        if( i.username == name ):
+            return False
+    for i in admins:
+        if( i.username == name ):
             return False
     return True
 
@@ -133,27 +142,23 @@ def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     db.session.commit()
     return x
 
-# This will add a new room to the room database.
-
-
-def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Building, Location):
+#This will add a new room to the room database.
+def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Location):
     ID = genID(rooms)
-    x = models.Room(roomID=ID, capacity=Capacity, roomType=RoomType,
-                    accessRating=AccessRating, location=Location, building=Building,
-                    roomCode=RoomCode)
+    x = models.Room(roomID = ID, capacity = Capacity, roomType = RoomType,
+    accessRating = AccessRating, location = Location, facilities = Fac, building = Building,
+    roomCode = RoomCode)
     db.session.add(x)
     db.session.commit()
     return x
 
-# This will add a new class to the class database.
-
-
-def addNewClass(CourseID, Title, Description, Capacity, Location, Trainer,
-                waitList):
+#This will add a new class to the class database.
+def addNewClass(CourseID, preReqs, Title, Description, Capacity, Location, Trainer ,
+waitList, StartTime):
     ID = genID(classes)
-    x = models.Class(classID=ID, coursePoint=CourseID, title=Title,
-                     description=Description, capacity=Capacity, locationPoint=Location,
-                     trainerPoint=Trainer, waitList=waitList)
+    x = models.Class(classID = ID, preTrain = preReqs, coursePoint = CourseID, title = Title,
+    description = Description, capacity = Capacity, locationPoint = Location,
+    trainerPoint = Trainer, waitList = waitList, startTime = StartTime)
     db.session.add(x)
     db.session.commit()
     return x
@@ -220,40 +225,196 @@ def checkUser(user):
         return "Trainer"
     return "INVALID"
 
-# A function that adds a delegate to a classes attendanceList or
-# waitingList, depending on capacity
-
-
-def addToClass(thisClass, x):
+# A function that adds a delegate to a classes attendanceList or waitingList, depending on capacity
+def addToClass(thisClass,thisDel):
     if(len(thisClass.attendanceList) < thisClass.capacity):
-        thisClass.attendanceList.append(x)
+        thisClass.attendanceList.append(thisDel)
+        confirmEmail(thisClass,thisDel)
     else:
         print("In second bit")
-        thisClass.waitList.append(x)
-    db.session.commit()
+        thisClass.waitList.append(thisDel)
+        waitingEmail(thisClass,thisDel)
+    db.session.commit(thisDel)
 
-# A function that checks a classes prerequists against a delegates history
+#Will send an email to the user email address confirming their place on the course.
+def confirmEmail(thisClass,thisDel):
+    time = thisClass.startTime
+    time = time.strftime("%H:%M, %d/%m/%y")
+    message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
+    message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
+    mail.send(message)
+
+#Will send an email to the user email address notfying them they have been put on a waiting list.
+def waitingEmail(thisClass,thisDel):
+    message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
+    message.body = "The course "  + thisClass.title + " is currently full you have been placed on a waiting list. You will automatically be moved on to the course if a place becomes available, and will receive an email confirming."
+    mail.send(message)
 
 # A function for removing entries
-
-
 def removeItem(item):
     db.session.delete(item)
     db.session.commit()
 
-# A query for editing entries (doesn't work yet)
-# def edit( item, **kwargs ):
-#    for field, value in kwargs.items():
-#        setattr(item,str(field),value)
-#    db.session.commit()
+# A query for editing entries
+def edit( item, **kwargs ):
+    for field, value in kwargs.items():
+        setattr(item,str(field),value)
+    db.session.commit()
 
 # A function which removes a user from a classList and moves someone over
 # from the waitingList
-
-
 def removeFromClass(thisClass, delegate):
     thisClass.attendanceList.remove(delegate)
     if(len(thisClass.waitList) > 0):
         thisClass.attendanceList.append(thisClass.waitList[0])
         thisClass.waitList.remove(thisClass.waitList[0])
+        confirmEmail(thisClass,delegate)
     db.session.commit()
+
+# A function that recovers a list of classes yet to be taught.
+def futureClasses():
+    # Get the current time.
+    today = datetime.now()
+    # Get a list of all classes
+    classList = classes()
+    # Go through all the classes, removing any that have already happened
+    for i in classList:
+        if(i.startTime < today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# A function that recovers a list of classes already taught.
+def pastClasses():
+    # Get the current time.
+    today = datetime.now()
+    # Get a list of all classes
+    classList = classes()
+    # Go through all the classes, removing any that are yet to happen.
+    for i in classList:
+        if (i.startTime > today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# A function that recovers a list of classes already taught, from a delegates
+# classList.
+def history(delegate):
+    # Get the current time.
+    today = datetime.now()
+    # Get a list of all classes
+    classList = delegate.classList
+    # Go through all the classes, removing any that are yet to happen.
+    for i in classList:
+        if (i.startTime > today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# A function that recovers a list of classes a delegate is yet to take.
+def schedule(delegate):
+    # Get the current time.
+    today = datetime.now()
+    # Get the classList
+    classList = delegate.classList
+    # Go through all the classes, removing any that have already happened
+    for i in classList:
+        if(i.startTime < today):
+            classList.remove(i)
+    # Return the result
+    return classList
+
+# Function that checks a rooms accessRating, returning an array of properties.
+def checkAccess(rating):
+    accessRating = []
+    if 'A' in rating:
+        accessRating.append("Assistive learning system.")
+    if 'L' in rating:
+        accessRating.append("Level access.")
+    if 'W' in rating:
+        accessRating.append("Wheelchair access.")
+    return accessRating
+
+# Function that checks a room's facilities, returning an array of properties.
+def checkFacilities(facilities):
+    facList = []
+    if 'M' in facilities:
+        facList.append("Microphone.")
+    if 'D' in facilities:
+        facList.append("DVD player.")
+    if 'P' in facilities:
+        facList.append("Projector.")
+    if 'I' in facilities:
+        facList.append("Interactive white board.")
+    if 'L' in facilities:
+        facList.append("Lectern.")
+    if 'C' in facilities:
+        facList.append("Chalkboard.")
+    if 'S' in facilities:
+        facList.append("Computer suite.")
+
+    return facList
+
+# Function that returns a list of available trainers at a given time
+def checkTrainer(time):
+    # Get a list of trainers
+    teachers = trainers()
+    # A list of classes that conflict with the given time
+    clashList = []
+    # A list of all classes
+    allClass = classes()
+    # Go through each class and determine if it's a clashClass
+    for i in allClass:
+        if((i.startTime <= time) and ((i.startTime+timedelta(minutes = i.duration)) >= time)):
+            clashList.append(i)
+    # Go through each clashing class and get the teacher, remove it the teachers
+    for j in clashList:
+        teachers.remove(j.trainer)
+    return teachers
+
+# Function that returns a list of available rooms at a given time
+def checkRoom(time):
+    # Get a list of trainers
+    classRooms = rooms()
+    # A list of classes that conflict with the given time
+    clashList = []
+    # A list of all classes
+    allClass = classes()
+    # Go through each class and determine if it's a clashClass
+    for i in allClass:
+        if((i.startTime <= time) and ((i.startTime+timedelta(minutes = i.duration)) >= time)):
+            clashList.append(i)
+    # Go through each clashing class and get the room, remove it the classRooms
+    for j in clashList:
+        classRooms.remove(j.location)
+    return classRooms
+
+# Get a list of classes with the same course number
+def getCourseClasses(thisCourse):
+    preReqs = listConvert(models.Class.query.filter_by(course = thisCourse))
+    if(type(preReqs) != type([])):
+        preReqs = [preReqs]
+    return preReqs
+
+# Function that checks if a delegate meets the prerequists of a classRooms
+def checkPrereq(delegate,thisClass):
+    # Get the list of required classes for the class
+    preReqs = thisClass.preTrain
+    # Get the delegates history
+    completedClasses = history(delegate)
+    # A list of all non-met preReqs
+    notMet = []
+    # Go through all the preReqs and check if they are in the completedClasses
+    # adding them to notMet if not.
+    for i in preReqs:
+        if((i in completedClasses) == False):
+            notMet.append(i)
+    return(notMet)
+
+# Function that gives a simple True/False answer to whether or not a delegate hamish1
+# met the prerequists for a class.
+def meetsRequirements(delegate,thisClass):
+    returnedList = checkPrereq(delegate,thisClass)
+    if(len(returnedList) == 0):
+        return True
+    return False

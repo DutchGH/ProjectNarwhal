@@ -14,6 +14,12 @@ waiting_table = db.Table('waiting_table', db.Model.metadata,
 	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
 )
 
+#Association table for the classes' prerequists
+prerequists_table = db.Table('prerequists_table',db.Model.metadata,
+	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
+	db.Column('classID', db.Integer, db.ForeignKey('Class.classID'))
+)
+
 ##User
 class User(db.Model):
 	__tablename__ = 'User'
@@ -85,6 +91,7 @@ class Room(db.Model):
 	roomCode = db.Column(db.String(100))
 	building = db.Column(db.String(100))
 	location = db.Column(db.String(100))
+	facilities = db.Column(db.String(100))
 	picURL = db.Column(db.String(100))
 	accessRating = db.Column(db.String(100))
 
@@ -104,7 +111,7 @@ class Class(db.Model):
 	duration = db.Column(db.Integer, default = 60)
 	#Both the follow fields default to None unless specified.
 	reqFac = db.Column(db.String(100), default = 'None')
-	preTrain = db.Column(db.String(100), default = 'None')
+	preTrain = db.relationship('Class', secondary = prerequists_table)
 	locationPoint = db.Column(db.Integer, db.ForeignKey('Room.roomID'))
 	location = db.relationship("Room", foreign_keys = [locationPoint])
 	trainerPoint = db.Column(db.Integer, db.ForeignKey('Trainer.trainerID'))

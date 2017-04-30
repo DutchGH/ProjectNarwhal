@@ -1,5 +1,6 @@
 from app import db, models
 from queries import *
+from datetime import datetime
 import random
 import string
 
@@ -26,7 +27,7 @@ locations = ['Here', 'There', 'Not There', 'Everywhere', 'Overhere', 'Where']
 buildings = ['Tall Building', 'Small Building', 'Ugly Building', 'Building',
             'Old Building', 'Modern Building', 'Glass Building', 'Pentagon']
 
-roomType = ['Seminar Room', 'Lecture Theater', 'Computer Suite',
+roomTypes = ['Seminar Room', 'Lecture Theater', 'Computer Suite',
             'Conference Suite']
 
 roomAccess = ['W', 'A', 'L']
@@ -77,6 +78,58 @@ def createNameandEmail():
     email = firstName[0] + lastName + '@email@com'
     return name, email
 
+#This will create a random time.
+def createTime():
+    year = 2017
+    month = random.randint(1,12)
+    day = random.randint(1,28)
+    hour = random.randint(9,20)
+    minute = 0
+    time = datetime(year, month, day, hour, minute)
+    return time
+
+#This will create a random roomAccess value
+def createRoomAccess():
+    accessValue = ''
+    x = random.randint(0,1)
+    if x == 1:
+        accessValue = accessValue + 'A'
+    x = random.randint(0,1)
+    if x == 1:
+        accessValue = accessValue + 'L'
+    x = random.randint(0,1)
+    if x == 1:
+        accessValue = accessValue + 'W'
+    return accessValue
+
+#This will create a random facility value
+def createRoomFac():
+    facValue = ''
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'M'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'D'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'P'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'I'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'L'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'C'
+    x = random.randint(0,1)
+    if x == 1:
+        facValue = facValue + 'S'
+    x = random.randint(0,1)
+
+    return facValue
+
 #This is where the adding to the database begins.
 #First Admins.
 print("Creating admins.")
@@ -110,12 +163,13 @@ x = 0
 while x < roomCount:
     print('.', end='', flush=True)
     capacity = random.randint(0,200)
-    roomType = random.choice(roomType)
+    roomType = random.choice(roomTypes)
     location = random.choice(locations)
     building = random.choice(buildings)
+    facilities = createRoomFac()
     roomCode = building[0] + building[len(building) - 8] + str(x)
-    accessRating = random.choice(roomAccess)
-    addNewRoom(capacity, roomType, accessRating, roomCode, building, location)
+    accessRating = createRoomAccess()
+    addNewRoom(capacity, roomType, accessRating, roomCode, facilities, building, location)
     x = x + 1
 print('')
 
@@ -123,7 +177,7 @@ print('')
 print("Creating courses.")
 for items in courseTitle:
     print('.', end='', flush=True)
-    addNewCourse(items, "The description seriously does not matter.")
+    addNewCourse(items, "This is a description about a course,.")
 print('')
 
 #Queries currently made databases for dependencies.
@@ -147,9 +201,12 @@ while x < classCount:
     roomNum = random.randint(0,roomCount-1)
     trainerNum = random.randint(0,trainerCount-1)
     waitingList = []
-    addNewClass(courses[courseNum].courseID, title,
+    startTime = createTime()
+    classCourse = courses[courseNum]
+    preReqs = getCourseClasses(classCourse)
+    addNewClass(courses[courseNum].courseID, preReqs, title,
                 "Some description for a class.", capacity,rooms[roomNum].roomID,
-                trainers[trainerNum].trainerID, waitingList)
+                trainers[trainerNum].trainerID, waitingList, startTime)
     x = x + 1
 print('')
 
