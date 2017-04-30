@@ -203,8 +203,6 @@ def confirmEmail(thisClass,thisDel):
     message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
     mail.send(message)
 
-# A function that checks a classes prerequists against a delegates history
-
 # A function for removing entries
 def removeItem(item):
     db.session.delete(item)
