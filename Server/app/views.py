@@ -113,6 +113,7 @@ def courseList():
     courseList = courses()
     return render_template('courses.html', title='Trainer List', courseList = courseList)
 
+
 @app.route('/course/<id>')
 @login_required
 def course(id):
@@ -196,6 +197,7 @@ def addRoom():
         flash("CREATED SUCCESSFULY")
     return render_template('newRoom.html', title='Add Room', form=form)
 
+
 @app.route('/addtrainer', methods=['GET', 'POST'])
 @login_required
 def addTrainer():
@@ -214,6 +216,7 @@ def addTrainer():
         addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
         flash("CREATED SUCCESSFULY")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
+
 
 @app.route('/createaccount', methods=['GET', 'POST'])
 def addDelegate():
@@ -256,3 +259,13 @@ def delSchedule(id):
     delClassList = user.classList
 
     return render_template('delsSched.html', title='Delegate Schedule', user=user, delClassList=delClassList)
+
+
+@app.route('/browse/classes/class/<id>')
+def viewClassDetails(id):
+    classID = id
+    current_class = classes(classID = classID)
+    classSize = classAttendenceLen(current_class)
+    return render_template('viewClass.html', title = "Course", current_class = current_class)
+
+
