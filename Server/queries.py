@@ -65,7 +65,15 @@ def addToList( list,item ):
 #Checks for unique username. Returns false if the username is taken.
 def checkUserName( name ):
     dels = delegates()
+    train = trainers()
+    admin = admins()
     for i in dels:
+        if( i.username == name ):
+            return False
+    for i in train:
+        if( i.username == name ):
+            return False
+    for i in admins:
         if( i.username == name ):
             return False
     return True
@@ -193,6 +201,7 @@ def addToClass(thisClass,thisDel):
     else:
         print("In second bit")
         thisClass.waitList.append(thisDel)
+        waitingEmail(thisClass,thisDel)
     db.session.commit(thisDel)
 
 #Will send an email to the user email address confirming their place on the course.
@@ -202,6 +211,14 @@ def confirmEmail(thisClass,thisDel):
     message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
     message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
     mail.send(message)
+
+#Will send an email to the user email address notfying them they have been put on a waiting list.
+def waitingEmail(thisClass,thisDel):
+    message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
+    message.body = "The course "  + thisClass.title + " is currently full you have been placed on a waiting list. You will automatically be moved on to the course if a place becomes available, and will receive an email confirming.
+    mail.send(message)
+
+# A function that checks a classes prerequists against a delegates history
 
 # A function for removing entries
 def removeItem(item):
@@ -220,6 +237,7 @@ def removeFromClass(thisClass,delegate):
     if(len(thisClass.waitList) > 0):
         thisClass.attendanceList.append(thisClass.waitList[0])
         thisClass.waitList.remove(thisClass.waitList[0])
+        confirmEmail(thisClass,delegate)
     db.session.commit()
 
 # A function that recovers a list of classes yet to be taught.
@@ -305,3 +323,20 @@ def checkFacilities(facilities):
         facList.append("Computer suite.")
 
     return facList
+
+# Function that returns a list of available trainers at a given time
+def checkTrainer(time):
+    # Get a list of trainers
+    teachers = trainers()
+    # A list of classes that conflict with the given time
+    clashClass = []
+    # A list of all classes
+    classes = classes()
+    # Go through each class and determine if it's a clashClass
+    for( i in classes ):
+        if((i.startTime <= time) and ((i.startTime+duration) >= time)):
+            clashList.append(i)
+    # Go through each clashing class and get the teacher, remove it the teachers
+    for j in clashList:
+        teachers.remove(j.trainer)
+    return teachers
