@@ -129,10 +129,10 @@ def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Locati
     return x
 
 #This will add a new class to the class database.
-def addNewClass(CourseID, Title, Description, Capacity, Location, Trainer ,
+def addNewClass(CourseID, preReqs, Title, Description, Capacity, Location, Trainer ,
 waitList, StartTime):
     ID = genID(classes)
-    x = models.Class(classID = ID, coursePoint = CourseID, title = Title,
+    x = models.Class(classID = ID, preTrain = preReqs, coursePoint = CourseID, title = Title,
     description = Description, capacity = Capacity, locationPoint = Location,
     trainerPoint = Trainer, waitList = waitList, startTime = StartTime)
     db.session.add(x)
@@ -358,3 +358,33 @@ def checkRoom(time):
     for j in clashList:
         classRooms.remove(j.location)
     return classRooms
+
+# Get a list of classes with the same course number
+def getCourseClasses(thisCourse):
+    preReqs = listConvert(models.Class.query.filter_by(course = thisCourse))
+    if(type(preReqs) != type([])):
+        preReqs = [preReqs]
+    return preReqs
+
+# Function that checks if a delegate meets the prerequists of a classRooms
+def checkPrereq(delegate,thisClass):
+    # Get the list of required classes for the class
+    preReqs = thisClass.preTrain
+    # Get the delegates history
+    completedClasses = history(delegate)
+    # A list of all non-met preReqs
+    notMet = []
+    # Go through all the preReqs and check if they are in the completedClasses
+    # adding them to notMet if not.
+    for i in preReqs:
+        if((i in completedClasses) == False):
+            notMet.append(i)
+    return(notMet)
+
+# Function that gives a simple True/False answer to whether or not a delegate hamish1
+# met the prerequists for a class.
+def meetsRequirements(delegate,thisClass):
+    returnedList = checkPrereq(delegate,thisClass)
+    if(len(returnedList) == 0):
+        return True
+    return False

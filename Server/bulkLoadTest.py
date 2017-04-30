@@ -202,7 +202,9 @@ while x < classCount:
     trainerNum = random.randint(0,trainerCount-1)
     waitingList = []
     startTime = createTime()
-    addNewClass(courses[courseNum].courseID, title,
+    classCourse = courses[courseNum]
+    preReqs = getCourseClasses(classCourse)
+    addNewClass(courses[courseNum].courseID, preReqs, title,
                 "Some description for a class.", capacity,rooms[roomNum].roomID,
                 trainers[trainerNum].trainerID, waitingList, startTime)
     x = x + 1
