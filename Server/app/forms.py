@@ -1,12 +1,28 @@
 from flask_wtf import Form
 from wtforms import StringField, IntegerField, PasswordField, TextAreaField, validators, BooleanField, DateTimeField, SelectField, SelectMultipleField
-from wtforms.validators import InputRequired
+from wtforms.validators import InputRequired, Email, DataRequired, EqualTo
 
 
 class LoginForm(Form):
     username = StringField('username', validators=[InputRequired()])
     password = PasswordField('password', validators=[InputRequired()])
 
+class CreateTrainer(Form):
+    name = StringField('name', validators = [InputRequired()])
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    address = StringField('address', validators = [InputRequired()])
+    phone = IntegerField('phone', validators = [InputRequired()]);
+    username = StringField('username', filters = [lambda x: x or None])
+    password = PasswordField('password', validators =[EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
+
+
+class CreateDelegate(Form):
+    name = StringField('name', validators = [InputRequired()])
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    username = StringField('username', filters = [lambda x: x or None])
+    password = PasswordField('password', validators =[EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
 class CreateTrainingRoom(Form):
     building = StringField('building', validators=[InputRequired()])

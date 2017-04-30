@@ -5,31 +5,32 @@
         {{ message }}
     </div>
     {% endfor %}
-
-
-    <h2>Add Room</h2>
+    <h2>Create Trainer Account</h2>
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
         <p class="input-field">
-            Building : {{form.building}}
+            Name : {{form.name}}
         </p>
         <p>
-            Room Code: {{ form.roomCode }}
+            E-mail: {{ form.email }}
         </p>
         <p>
-            Location: {{ form.location }}
+            Address: {{ form.address }}
         </p>
         <p>
-            Room Type: {{ form.roomType }}
+            Phone Number: {{ form.phone }}
         </p>
         <p>
-            Capacity: {{ form.capacity }}
+            Username: {{ form.username }}
         </p>
         <p>
-            Access Rating: {{ form.accessRating }}
+            Password: {{ form.password }}
+        </p>
+        <p>
+            Confirm: {{ form.confirm }}
         </p>
         <br>
-        <p><input type="submit" value="Add Room"></p>
+        <p><input type="submit" value="Add Trainer"></p>
     </form>
     <br>
 </div>
