@@ -1,7 +1,8 @@
 from flask import Flask
 from app import models,db, mail
 from flask_mail import Message
-from datetime import datetime
+from datetime import *
+#from datetime import datetime
 
 #Converts a query object into lists or a single item if only one is returned.
 def listConvert( x ):
@@ -215,7 +216,7 @@ def confirmEmail(thisClass,thisDel):
 #Will send an email to the user email address notfying them they have been put on a waiting list.
 def waitingEmail(thisClass,thisDel):
     message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
-    message.body = "The course "  + thisClass.title + " is currently full you have been placed on a waiting list. You will automatically be moved on to the course if a place becomes available, and will receive an email confirming.
+    message.body = "The course "  + thisClass.title + " is currently full you have been placed on a waiting list. You will automatically be moved on to the course if a place becomes available, and will receive an email confirming."
     mail.send(message)
 
 # A function that checks a classes prerequists against a delegates history
@@ -329,14 +330,31 @@ def checkTrainer(time):
     # Get a list of trainers
     teachers = trainers()
     # A list of classes that conflict with the given time
-    clashClass = []
+    clashList = []
     # A list of all classes
-    classes = classes()
+    allClass = classes()
     # Go through each class and determine if it's a clashClass
-    for( i in classes ):
-        if((i.startTime <= time) and ((i.startTime+duration) >= time)):
+    for i in allClass:
+        if((i.startTime <= time) and ((i.startTime+timedelta(minutes = i.duration)) >= time)):
             clashList.append(i)
     # Go through each clashing class and get the teacher, remove it the teachers
     for j in clashList:
         teachers.remove(j.trainer)
     return teachers
+
+# Function that returns a list of available rooms at a given time
+def checkRoom(time):
+    # Get a list of trainers
+    classRooms = rooms()
+    # A list of classes that conflict with the given time
+    clashList = []
+    # A list of all classes
+    allClass = classes()
+    # Go through each class and determine if it's a clashClass
+    for i in allClass:
+        if((i.startTime <= time) and ((i.startTime+timedelta(minutes = i.duration)) >= time)):
+            clashList.append(i)
+    # Go through each clashing class and get the room, remove it the classRooms
+    for j in clashList:
+        classRooms.remove(j.location)
+    return classRooms
