@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+
+    <h2>Add Class</h2>
+    <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p class="input-field">
+            Title: {{ form.title }}
+        </p>
+        <p>
+            Description: {{ form.description }}
+        </p>
+        <p>
+            Course: {{ form.course }}
+        </p>
+        <p>
+            Prerequisits: {{ form.preReqs }}
+        </p>
+        <p>
+            Capacity: {{ form.capacity }}
+        </p>
+        <p>
+            Start Date: {{ form.startTime }}
+        </p>
+        <p>
+            Duration: {{ form.duration }}
+        </p>
+        <p>
+            Trainer: {{ form.trainer }}
+        </p>
+        <p>
+            Room: {{ form.room }}
+        </p>
+        <p>
+            Required Facilities: {{ form.reqFac }}
+        </p>
+        <br>
+        <p><input type="submit" value="Add Class"></p>
+    </form>
+    <br>
+</div>
+{% endblock %}

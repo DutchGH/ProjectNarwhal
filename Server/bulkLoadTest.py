@@ -83,9 +83,8 @@ def createTime():
     year = 2017
     month = random.randint(1,12)
     day = random.randint(1,28)
-    hour = random.randint(9,20)
-    minute = 0
-    time = datetime(year, month, day, hour, minute)
+    hour = random.randint(9,18)
+    time = datetime(year, month, day, hour)
     return time
 
 #This will create a random roomAccess value
@@ -193,6 +192,7 @@ while x < classCount:
     print('.', end='', flush=True)
     courseNum = random.randint(0,10)
     capacity = random.randint(0,200)
+    duration = random.randint(1,12)
     y = random.randint(5,10)
     title = ''
     while y > 0:
@@ -204,9 +204,10 @@ while x < classCount:
     startTime = createTime()
     classCourse = courses[courseNum]
     preReqs = getCourseClasses(classCourse)
+    reqFacs = createRoomFac()
     addNewClass(courses[courseNum].courseID, preReqs, title,
                 "Some description for a class.", capacity,rooms[roomNum].roomID,
-                trainers[trainerNum].trainerID, waitingList, startTime)
+                trainers[trainerNum].trainerID, waitingList, startTime, duration, reqFacs)
     x = x + 1
 print('')
 

@@ -32,11 +32,6 @@ def home():
         return render_template('index.html', title="FDM TEST")
 
 
-@app.route('/timetabletemp')
-def timetabletemp():
-    return render_template('timetable.html', title="FDM TEST")
-
-
 # The login page route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -90,6 +85,18 @@ def timetable():
     classList = current_user.classList
     return render_template('timetable.html', title='Timetable', classList=classList)
 
+@app.route('/timetabletemp')
+@login_required
+def timetabletemp():
+    if current_user.type != 'Delegate':
+        abort(403)
+    date = datetime.today().strftime("%m/%d/%Y")
+
+    classList = current_user.classList
+    days = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"]
+    return render_template('timetabletemp.html', title='Timetable', classList=classList, days = days, hours = hours)
+
 # Displays a list of trainers which can link to the trainers schedule.
 
 
@@ -138,7 +145,7 @@ def adminClassDetails(id):
         abort(403)
     current_class = classes(classID = classID)
     return render_template('adminClassDetails.html', title = current_class.title + 'Details', current_class = current_class)
-    
+
 ##accessed using <a href='/trainers/{{item.userID}}'></a>
 
 @app.route('/trainers/<id>')
@@ -210,7 +217,7 @@ def addTrainer():
         if form.password.data is not None:
             password = form.password.data
         else:
-            password = "pass"            
+            password = "pass"
         addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
         flash("CREATED SUCCESSFULY")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
@@ -231,7 +238,39 @@ def addDelegate():
         flash("CREATED SUCCESSFULY")
     return render_template('newDelegate.html', title='Create Account', form=form)
 
+@app.route('/addcourse', methods=['GET', 'POST'])
+@login_required
+def addCourse():
+    if current_user.type != 'Admin':
+        abort(403)
+    form = CreateCourse()
+    if form.validate_on_submit():
+        addNewCourse(form.title.data, form.description.data)
+        flash("CREATED SUCCESSFULY")
+    return render_template('newCourse.html', title='Add Course', form=form)
 
+@app.route('/addclass', methods=['GET', 'POST'])
+@login_required
+def addClass():
+    if current_user.type != 'Admin':
+        abort(403)
+    form = CreateClass()
+    courseList = courses()
+    classList = classes()
+    roomList = rooms()
+    trainerList = trainers()
+    courseChoices = [(course.courseID, course.title) for course in courseList]
+    preReqChoices = [(item.classID, item.title) for item in classList]
+    trainerChoices = [(item.trainerID, item.name) for item in trainerList]
+    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in roomList]
+    form.course.choices = courseChoices
+    form.preReqs.choices = preReqChoices
+    form.trainer.choices = trainerChoices
+    form.room.choices = roomChoices
+    if form.validate_on_submit():
+        addNewCourse(form.title.data, form.description.data)
+        flash("CREATED SUCCESSFULY")
+    return render_template('newClass.html', title='Add Class', form=form)
 
 ##
 @app.route('/delegates')

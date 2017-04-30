@@ -29,9 +29,10 @@ trainers = trainers()
 delegates = delegates()
 courses = courses()
 preReq = []
-addNewClass(courses[0].courseID, preReq, "Web App", "Learn to use flask for creating a web server.", 90, rooms[0].roomID, trainers[0].trainerID, delegates, datetime.utcnow())
-addNewClass(courses[0].courseID, preReq, "Data Mining", "Mining through bare data and that.", 90, rooms[1].roomID, trainers[1].trainerID, delegates, datetime.utcnow())
-addNewClass(courses[1].courseID, preReq, "Software Engineering", "The art of developing software.", 90, rooms[2].roomID, trainers[1].trainerID, delegates, datetime.utcnow())
+date = datetime.strptime("14:00 24 Feb 2017", "%H:%M %d %b %Y")
+addNewClass(courses[0].courseID, preReq, "Web App", "Learn to use flask for creating a web server.", 90, rooms[0].roomID, trainers[0].trainerID, delegates, date, 1)
+addNewClass(courses[0].courseID, preReq, "Data Mining", "Mining through bare data and that.", 90, rooms[1].roomID, trainers[1].trainerID, delegates, date, 6)
+addNewClass(courses[1].courseID, preReq, "Software Engineering", "The art of developing software.", 90, rooms[2].roomID, trainers[1].trainerID, delegates, date, 12)
 
 print("Creating delegates.")
 classes = models.Class.query.all()

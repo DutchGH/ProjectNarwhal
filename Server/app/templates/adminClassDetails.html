@@ -13,8 +13,8 @@
         <ul>
         <li>Course: {{current_class.course.title}}</li>
         <li>Trainer: <a href="/trainers/{{current_class.trainer.trainerID}}">{{current_class.trainer.name}}</a></li>
-        <li>Start Time: {{current_class.startTime}}</li>
-        <li>Duration: {{current_class.duration}} Minutes</li>
+        <li>Start Date: {{current_class.startDate.strftime('%H:%M %d-%b-%Y') }}</li>
+        <li>Duration: {{current_class.duration}} Weeks</li>
         </ul>
         <div class = "row">
         <div class ="col s12">

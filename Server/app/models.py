@@ -1,6 +1,7 @@
 from app import db
 from datetime import datetime
-from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy import Column, Integer, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 
 #Association table for the delegate's class lists.
 association_table = db.Table('association_table', db.Model.metadata,
@@ -14,11 +15,6 @@ waiting_table = db.Table('waiting_table', db.Model.metadata,
 	db.Column('delID', db.Integer, db.ForeignKey('Delegate.delID'))
 )
 
-#Association table for the classes' prerequists
-prerequists_table = db.Table('prerequists_table',db.Model.metadata,
-	db.Column('classID', db.Integer, db.ForeignKey('Class.classID')),
-	db.Column('classID', db.Integer, db.ForeignKey('Class.classID'))
-)
 
 ##User
 class User(db.Model):
@@ -105,13 +101,16 @@ class Class(db.Model):
 	title = db.Column(db.String(100))
 	description = db.Column(db.String(100))
 	capacity = db.Column(db.Integer)
-	#Temporarily set the default to the time now for ease of testing.
-	startTime = db.Column(db.DateTime, default = datetime.utcnow )
-	#Set the default 60 need to discuss the unit of time.
-	duration = db.Column(db.Integer, default = 60)
+	#Date and time the class will commence
+	startDate = db.Column(db.DateTime)
+	#Number of weeks the course will span across
+	duration = db.Column(db.Integer)
+	# Date the course will end.
+	endDate = db.Column(db.DateTime)
 	#Both the follow fields default to None unless specified.
 	reqFac = db.Column(db.String(100), default = 'None')
-	preTrain = db.relationship('Class', secondary = prerequists_table)
+	preTrain = relationship("Class")
+	parent_id = Column(db.Integer, ForeignKey('Class.classID'))
 	locationPoint = db.Column(db.Integer, db.ForeignKey('Room.roomID'))
 	location = db.relationship("Room", foreign_keys = [locationPoint])
 	trainerPoint = db.Column(db.Integer, db.ForeignKey('Trainer.trainerID'))

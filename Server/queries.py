@@ -94,8 +94,6 @@ def checkUserName( name ):
     return True
 
 # Returns the delegates taking a class
-
-
 def classAttendence(thisClass):
     dels = delegates()
     at = []
@@ -106,14 +104,10 @@ def classAttendence(thisClass):
     return at
 
 # Returns the number of delegates taking a class
-
-
 def classAttendenceLen(thisClass):
     return len(classAttendence(thisClass))
 
 # Checks if a class is at capacity
-
-
 def capacity(thisClass):
     if(thisClass.capacity >= (classAttendenceLen(thisClass))):
         return False
@@ -121,8 +115,6 @@ def capacity(thisClass):
         return True
 
 # This will add a new admin to the Admin database.
-
-
 def addNewAdmin(Name, Username, Password, Email):
     ID = genID(admins)
     x = models.Admin(adminID=ID, name=Name, username=Username,
@@ -132,8 +124,6 @@ def addNewAdmin(Name, Username, Password, Email):
     return x
 
 # This will add a new Trainer to the trainer database.
-
-
 def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     ID = genID(trainers)
     x = models.Trainer(trainerID=ID, name=Name, address=Address,
@@ -153,12 +143,14 @@ def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Locati
     return x
 
 #This will add a new class to the class database.
-def addNewClass(CourseID, preReqs, Title, Description, Capacity, Location, Trainer ,
-waitList, StartTime):
+def addNewClass(CourseID, preReqs, Title, Description, Capacity, Location, Trainer,
+waitList, StartDate, duration, reqFac = None):
     ID = genID(classes)
+    EndDate = StartDate+timedelta(weeks=duration)+timedelta(hours=1)
     x = models.Class(classID = ID, preTrain = preReqs, coursePoint = CourseID, title = Title,
     description = Description, capacity = Capacity, locationPoint = Location,
-    trainerPoint = Trainer, waitList = waitList, startTime = StartTime)
+    trainerPoint = Trainer, waitList = waitList, startDate = StartDate, reqFac = reqFac,
+    duration = duration, endDate = EndDate)
     db.session.add(x)
     db.session.commit()
     return x
@@ -172,8 +164,6 @@ def addNewCourse(Title, Description):
     return x
 
 # This will add a new delegate to the delegate database.
-
-
 def addNewDel(Name, Username, Password, Class, Email):
     ID = genID(delegates)
     x = models.Delegate(delID=ID, name=Name, username=Username,
@@ -183,8 +173,6 @@ def addNewDel(Name, Username, Password, Class, Email):
     return x
 
 # This will generate a unique ID for a new database entry.
-
-
 def genID(model):
     modelList = model()
     try:
@@ -214,8 +202,6 @@ def genID(model):
         ID += 1
 
 # A function that identifies a user as a delegate, a trainer or an adminID
-
-
 def checkUser(user):
     if(type(user) == models.Delegate):
         return "Delegate"
@@ -238,7 +224,7 @@ def addToClass(thisClass,thisDel):
 
 #Will send an email to the user email address confirming their place on the course.
 def confirmEmail(thisClass,thisDel):
-    time = thisClass.startTime
+    time = thisClass.startDate
     time = time.strftime("%H:%M, %d/%m/%y")
     message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
     message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
@@ -279,7 +265,7 @@ def futureClasses():
     classList = classes()
     # Go through all the classes, removing any that have already happened
     for i in classList:
-        if(i.startTime < today):
+        if(i.endDate < today):
             classList.remove(i)
     # Return the result
     return classList
@@ -292,7 +278,7 @@ def pastClasses():
     classList = classes()
     # Go through all the classes, removing any that are yet to happen.
     for i in classList:
-        if (i.startTime > today):
+        if (i.endDate > today):
             classList.remove(i)
     # Return the result
     return classList
@@ -306,7 +292,7 @@ def history(delegate):
     classList = delegate.classList
     # Go through all the classes, removing any that are yet to happen.
     for i in classList:
-        if (i.startTime > today):
+        if (i.endDate > today):
             classList.remove(i)
     # Return the result
     return classList
@@ -319,7 +305,7 @@ def schedule(delegate):
     classList = delegate.classList
     # Go through all the classes, removing any that have already happened
     for i in classList:
-        if(i.startTime < today):
+        if(i.endDate < today):
             classList.remove(i)
     # Return the result
     return classList
@@ -365,8 +351,10 @@ def checkTrainer(time):
     allClass = classes()
     # Go through each class and determine if it's a clashClass
     for i in allClass:
-        if((i.startTime <= time) and ((i.startTime+timedelta(minutes = i.duration)) >= time)):
-            clashList.append(i)
+        # Get the range of sessions in this class
+        for j in range(0,i.duration):
+            if((i.startDate+timedelta(weeks = j) <= time) and ((i.startDate+timedelta(weeks = j)+timedelta(minutes = 60)) >= time)):
+                clashList.append(i)
     # Go through each clashing class and get the teacher, remove it the teachers
     for j in clashList:
         teachers.remove(j.trainer)
@@ -382,8 +370,10 @@ def checkRoom(time):
     allClass = classes()
     # Go through each class and determine if it's a clashClass
     for i in allClass:
-        if((i.startTime <= time) and ((i.startTime+timedelta(minutes = i.duration)) >= time)):
-            clashList.append(i)
+        # Get the range of sessions in this class
+        for j in range(0,i.duration):
+            if((i.startDate+timedelta(weeks = j) <= time) and ((i.startDate+timedelta(weeks = j)+timedelta(minutes = i.duration)) >= time)):
+                clashList.append(i)
     # Go through each clashing class and get the room, remove it the classRooms
     for j in clashList:
         classRooms.remove(j.location)
@@ -418,3 +408,21 @@ def meetsRequirements(delegate,thisClass):
     if(len(returnedList) == 0):
         return True
     return False
+
+# Function that returns the timetable for a given delegate
+def timetable(delegate):
+    # Get the non finished classes for this delegate.
+     classList = schedule(delegate)
+     lessons = []
+     for i in classList:
+         for j in range(0,i.duration):
+             lessons.append([i.startDate+timedelta(weeks=j),i.title,i.trainer.name,i.location.location])
+     # Sort the list by time
+     lessons = sorted(lessons, key = lambda x: x[0])
+     #Get the current datetime
+     today = datetime.now()
+     # Go through the classList and remove all classes gone
+     for i in lessons:
+         if(i[0] < today):
+             lessons.remove(i)
+     return lessons
