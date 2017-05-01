@@ -421,7 +421,7 @@ def delTimeTable(delegate):
              b = a.strftime("%d/%m/%Y")
              c = a.strftime("%I.%M%p")
              d = a.strftime("%A")
-             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d,i.description])
+             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d,i.description, i.classID])
      # Sort the list by time
      lessons = sorted(lessons, key = lambda x: x[5])
      #Get the current datetime

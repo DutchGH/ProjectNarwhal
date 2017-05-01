@@ -9,7 +9,7 @@
             <div class="col s12 m6 l6" id = "timetable">
                 <ul class="collection">
                     {% for item in classList %}
-                    <li class="collection-item " style = "cursor: pointer" onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}'])">
+                    <li class="collection-item " style = "cursor: pointer" onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}','{{item[8]}}'])">
                         <span class="title">{{item[2]}}</span>
                         <p><span>{{item[1]}}<br>{{item[6]}}&nbsp&nbsp&nbsp{{item[0]}}<br>{{item[4]}}</span><br>
                             {{item[3]}}
@@ -23,7 +23,7 @@
                         <img src="{{url_for('static', filename = 'images/rs.jpg')}}">
                     </div>
                     <div id = "buildingBox" class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        <p></p>
                     </div>
                     <div class="card-tabs">
                         <ul class="tabs tabs-fixed-width">
@@ -34,16 +34,16 @@
                     </div>
                     <div class="card-content grey lighten-4">
                         <div id="test4">
-                            <h4 id = "titleBox">Web Application Development</h4>
+                            <h4 id = "titleBox"></h4>
                             <br>
-                            <p id = "tutorBox">You will learn about flask 'n stuff</div>
+                            <p id = "tutorBox"></div>
                         <div id="test5">Test 2</div>
                         <div id="test6">
                             <div class="center-align">
                                 <ul>
                                     <li><a class="waves-effect waves-light btn valign">Send Reminder</a></li>
                                     <br>
-                                    <li><a class="waves-effect waves-light btn red darken-2 valign">Cancel Appointment</a></li>
+                                    <li><a id ="cancelClass" href="" class="waves-effect waves-light btn red darken-2 valign">Cancel Appointment</a></li>
                                 </ul>
                             </div>
                         </div>
