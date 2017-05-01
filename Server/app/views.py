@@ -323,5 +323,6 @@ def viewClassDetails(id):
 
 @app.route('/function/cancel/<classID>')
 def cancelClass(classID):
-    print("[" + str(current_user.userID) + "] " + "Cancel class with ID " + str(classID))
+    current_class = classes(classID=classID)
+    removeFromClass(current_class, current_user)
     return timetable()
