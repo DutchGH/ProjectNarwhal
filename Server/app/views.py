@@ -320,3 +320,8 @@ def viewClassDetails(id):
     else:
         userQualify = False
     return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
+
+@app.route('/function/cancel/<classID>')
+def cancelClass(classID):
+    print("[" + str(current_user.userID) + "] " + "Cancel class with ID " + str(classID))
+    return timetable()
