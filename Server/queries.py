@@ -421,14 +421,14 @@ def deltimetable(delegate):
              b = a.strftime("%d/%m/%Y")
              c = a.strftime("%I.%M%p")
              d = a.strftime("%A")
-             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d])
+             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d,i.description])
      # Sort the list by time
      lessons = sorted(lessons, key = lambda x: x[0])
      #Get the current datetime
      today = datetime.now()
      # Go through the classList and remove all classes gone
      newLessons = deepcopy(lessons)
-     for i in lessons:
-         if(i[5] < today):
-             newLessons.remove(i)
+    #  for i in lessons:
+    #      if(i[5] < today):
+    #          newLessons.remove(i)
      return newLessons

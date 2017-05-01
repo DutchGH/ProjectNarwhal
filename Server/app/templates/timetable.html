@@ -9,7 +9,7 @@
             <div class="col s6 m6 l6" id = "timetable">
                 <ul class="collection">
                     {% for item in classList %}
-                    <li class="collection-item ">
+                    <li class="collection-item " onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}'])">
                         <span class="title">{{item[2]}}</span>
                         <p><span>{{item[1]}}<br>{{item[6]}}&nbsp&nbsp&nbsp{{item[0]}}<br>{{item[4]}}</span><br>
                             {{item[3]}}
@@ -22,13 +22,13 @@
                     <div class="card-image">
                         <img src="{{url_for('static', filename = 'images/rs.jpg')}}">
                     </div>
-                    <div class="card-content">
+                    <div id = "buildingBox" class="card-content">
                         <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-tabs">
                         <ul class="tabs tabs-fixed-width">
-                            <li class="tab"><a href="#test4">Basic Info</a></li>
-                            <li class="tab"><a class="active" href="#test5">More Info</a></li>
+                            <li class="tab"><a class="active" href="#test4">Basic Info</a></li>
+                            <li class="tab"><a href="#test5">More Info</a></li>
                             <li class="tab"><a href="#test6">Options</a></li>
                         </ul>
                     </div>
@@ -36,7 +36,7 @@
                         <div id="test4">
                             <h4 id = "titleBox">Web Application Development</h4>
                             <br>
-                            <p>You will learn about flask 'n stuff</div>
+                            <p id = "tutorBox">You will learn about flask 'n stuff</div>
                         <div id="test5">Test 2</div>
                         <div id="test6">
                             <div class="center-align">

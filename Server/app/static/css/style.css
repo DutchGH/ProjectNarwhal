@@ -4,7 +4,7 @@ html
 }
 
 #timetable{
-  max-height: 500px;
+  max-height: 580px;
   overflow-y: scroll;
 }
 
