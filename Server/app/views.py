@@ -65,7 +65,12 @@ def admin():
     else:
         return render_template('loggedIn.html', title='Home Page')
 
-##
+
+@app.route('/browse/classes')
+def browseClasses():
+    classList = browseItems()
+    courseList = browseCourses()
+    return render_template('browseClasses.html', title = 'Browse Clases', classList = classList, courseList = courseList)
 
 
 @app.route('/myaccount')

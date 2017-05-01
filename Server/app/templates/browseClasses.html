@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h3>Browse Classes</h3>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col l3">
+                <h5>Filter</h5>
+                <p><b>By Course</b></p>
+                <form action ="#">
+                    {% for item in courseList %}
+                        <p>
+                            <input type="checkbox" id="courseid{{item[1]}}" />
+                            <label for="courseid{{item[1]}}">{{item[1]}}</label>
+                        </p>
+                        {%endfor%}
+                    </form>
+                    <p><b>By Duration</b></p>
+                    <p><b>Prerequestites?</b></p>
+                </div>
+                <div class = "col l9">
+                    <h5>Results</h5>
+                    
+                    <table class = "responsive-table highlight">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Course</th>
+                                <th>Start Date</th>
+                                <th>View Details<th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {%for item in classList%}
+                            <tr>
+                                <td>{{item[1]}}</td>
+                                <td>{{item[4]}}</td>
+                                <td>{{item[3]}}</td>
+                                <td><a href="/browse/classes/class/{{item[0]}}"">
+                                <button type="submit" href="/browse/classes/class/{{item[0]}}" class="waves-effect waves-light btn green">View More</button></a></td>
+                            </tr>
+                        {%endfor%}
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    {% endblock %}

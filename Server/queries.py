@@ -454,6 +454,17 @@ def browseItems():
         browsableItems.append(entry)
     return browsableItems
 
+
+def browseCourses():
+    #Get All Courses
+    courseList = courses()
+    browseableItems = []
+    for i in courseList:
+        entry = [i.courseID, i.title, i.description]
+        browseableItems.append(entry)
+    return browseableItems
+
+
 # A function to get a the timetable for a room
 def roomTimeTable(room):
     # Get a list of classes.
