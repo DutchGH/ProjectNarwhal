@@ -65,7 +65,12 @@ def admin():
     else:
         return render_template('loggedIn.html', title='Home Page')
 
-##
+
+@app.route('/browse/classes')
+def browseClasses():
+    classList = browseItems()
+    courseList = browseCourses()
+    return render_template('browseClasses.html', title = 'Browse Clases', classList = classList, courseList = courseList)
 
 
 @app.route('/myaccount')
@@ -302,9 +307,11 @@ def signUp(id):
     classID = id
     thisClass = classes(classID=id)
     if current_user.type == 'Delegate':
-        if meetsRequirments(thisClass, current_user):
+        if meetsRequirements(current_user, thisClass):
             addToClass(thisClass, current_user)
             flash("You have been added.")
+        else:
+            flash("You don't meet the requirements")
     else:
         flash("You are not authorised to do this")
     return redirect('/browse/classes/class/' + classID)
