@@ -134,11 +134,11 @@ def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     return x
 
 #This will add a new room to the room database.
-def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Location):
+def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Location, pic):
     ID = genID(rooms)
     x = models.Room(roomID = ID, capacity = Capacity, roomType = RoomType,
     accessRating = AccessRating, location = Location, facilities = Fac, building = Building,
-    roomCode = RoomCode)
+    roomCode = RoomCode, picURL=pic)
     db.session.add(x)
     db.session.commit()
     return x
@@ -421,7 +421,7 @@ def delTimeTable(delegate):
              b = a.strftime("%d/%m/%Y")
              c = a.strftime("%I.%M%p")
              d = a.strftime("%A")
-             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d,i.description])
+             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d,i.description,i.location.picURL])
      # Sort the list by time
      lessons = sorted(lessons, key = lambda x: x[5])
      #Get the current datetime
