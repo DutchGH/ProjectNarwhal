@@ -83,7 +83,7 @@ def myAccount():
 def timetable():
     if current_user.type != 'Delegate':
         abort(403)
-    classList = deltimetable(current_user)
+    classList = delTimeTable(current_user)
     return render_template('timetable.html', title='Timetable', classList=classList)
 
 @app.route('/timetabletemp')

@@ -411,7 +411,7 @@ def meetsRequirements(delegate,thisClass):
     return False
 
 # Function that returns the timetable for a given delegate
-def deltimetable(delegate):
+def delTimeTable(delegate):
     # Get the non finished classes for this delegate.
      classList = schedule(delegate)
      lessons = []
@@ -423,7 +423,7 @@ def deltimetable(delegate):
              d = a.strftime("%A")
              lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d,i.description])
      # Sort the list by time
-     lessons = sorted(lessons, key = lambda x: x[0])
+     lessons = sorted(lessons, key = lambda x: x[5])
      #Get the current datetime
      today = datetime.now()
      # Go through the classList and remove all classes gone
@@ -432,3 +432,63 @@ def deltimetable(delegate):
     #      if(i[5] < today):
     #          newLessons.remove(i)
      return newLessons
+
+# Function that returns a list of classes for use in the browse page
+def browseItems():
+    # Get all the classes
+    classList = classes()
+    # The array to return
+    browsableItems = []
+    for i in classList:
+        a = i.startDate.strftime("%d/%m/%Y")
+        entry = [i.classID, i.title, i.description, a, i.course.title]
+        browsableItems.append(entry)
+    return browsableItems
+
+# A function to get a the timetable for a room
+def roomTimeTable(room):
+    # Get a list of classes.
+    classList = classes()
+    # Make a list of classes that use this room.
+    items = []
+    for i in classList:
+        if(i.location == room):
+            for j in range(0,i.duration):
+                a = i.startDate+timedelta(weeks=j)
+                b = a.strftime("%d/%m/%Y")
+                c = a.strftime("%I.%M%p")
+                d = a.strftime("%A")
+                items.append([c,b,i.title,i.trainer.name,a,d])
+    # Filter out the ones that have already been.
+    today = datetime.now()
+    itemList = deepcopy(items)
+    for i in items:
+        if(i[4] < today):
+            itemList.remove(i)
+    # Sort them
+    itemList = sorted(itemList, key = lambda x: x[4])
+    return itemList
+
+# A function to get a timetable for a trainer.
+def trainerTimeTable(trainer):
+    # Get a list of classes.
+    classList = classes()
+    # Make a list of classes that use this room.
+    items = []
+    for i in classList:
+        if(i.trainer == trainer):
+            for j in range(0,i.duration):
+                a = i.startDate+timedelta(weeks=j)
+                b = a.strftime("%d/%m/%Y")
+                c = a.strftime("%I.%M%p")
+                d = a.strftime("%A")
+                items.append([c,b,i.title,i.location.location,a,d])
+    # Filter out the ones that have already been.
+    today = datetime.now()
+    itemList = deepcopy(items)
+    for i in items:
+        if(i[4] < today):
+            itemList.remove(i)
+    # Sort them
+    itemList = sorted(itemList, key = lambda x: x[4])
+    return itemList
