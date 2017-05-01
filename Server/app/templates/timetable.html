@@ -10,7 +10,7 @@
                 <ul id = "timetable" class="collection">
                     {% for item in classList %}
                     <li class="collection-item " style = "cursor: pointer" onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}','{{item[8]}}',{{item[9]}}])">
-                        <span class="title">{{item[2]}}</span>
+                        <span class="title"><h4>{{item[2]}}</h4></span>
                         <p><span>{{item[1]}}<br>{{item[6]}}&nbsp&nbsp&nbsp{{item[0]}}<br>{{item[4]}}</span><br>
                             {{item[3]}}
                         </p>
