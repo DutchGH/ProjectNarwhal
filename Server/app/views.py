@@ -266,10 +266,19 @@ def addClass():
     form.preReqs.choices = preReqChoices
     form.trainer.choices = trainerChoices
     form.room.choices = roomChoices
-    if form.validate_on_submit():
-        addNewCourse(form.title.data, form.description.data)
-        flash("CREATED SUCCESSFULY")
+    if request.method == 'POST':
+        dateString = form.dateHour.data + form.dateDay.data + form.dateMonth.data + form.dateYear.data
+        date = datetime.strptime(dateString, "%H:%M %d %m %Y")
+        waitList = []
+        if form.validate_on_submit():
+            addNewClass(form.course.data, form.preReqs.data, form.title.data, form.description.data,
+            form.capacity.data, form.room.data, form.trainer.data, waitList, date, form.duration.data)
+            flash("CREATED SUCCESSFULY")
+        else:
+            flash("Error")
     return render_template('newClass.html', title='Add Class', form=form)
+
+
 
 
 ##
