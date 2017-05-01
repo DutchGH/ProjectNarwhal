@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block content %}
     <div class="container">
+        {% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
         <div class="row">
             <div class = "col s12">
                 <h2>{{current_class.title}}</h2>
@@ -33,6 +38,9 @@
             </div>
             <div class ="col s12 l4">
                 <h4>Prerequisties</h4>
+                {%for item in current_class.preTrain%}
+                <p>{{item.title}}</p>
+                {%endfor%}
             </div>
         </div>
     </div>
@@ -42,7 +50,7 @@
         </div>
         <div class = "row">
             <div class = "col s12 center-align">
-                <button type="submit" href="/signup/{{current_class.classID}}" class="waves-effect waves-light btn green {% if userQualify == False %}disabled{% endif %}">{% if current_class.capacity == classSize %}Add to Waiting List{%elif userQualify == False %}Requirements Not Met{%else%}Sign Up{% endif %}</button>
+                <a href="/signup/{{current_class.classID}}" class="waves-effect waves-light btn green {% if userQualify == False %}disabled{% endif %}">{% if current_class.capacity == classSize %}Add to Waiting List{%elif userQualify == False %}Requirements Not Met{%else%}Sign Up{% endif %}</a>
             </div>
         </div>
     </div>

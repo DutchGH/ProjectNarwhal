@@ -307,9 +307,11 @@ def signUp(id):
     classID = id
     thisClass = classes(classID=id)
     if current_user.type == 'Delegate':
-        if meetsRequirments(thisClass, current_user):
+        if meetsRequirements(current_user, thisClass):
             addToClass(thisClass, current_user)
             flash("You have been added.")
+        else:
+            flash("You don't meet the requirements")
     else:
         flash("You are not authorised to do this")
     return redirect('/browse/classes/class/' + classID)
