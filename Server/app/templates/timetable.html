@@ -9,7 +9,7 @@
             <div class="col s12 m6 l6" id = "timetable">
                 <ul class="collection">
                     {% for item in classList %}
-                    <li class="collection-item " style = "cursor: pointer" onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}','{{item[8]}}'])">
+                    <li class="collection-item " style = "cursor: pointer" onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}','{{item[8]}}',{{item[9]}}])">
                         <span class="title">{{item[2]}}</span>
                         <p><span>{{item[1]}}<br>{{item[6]}}&nbsp&nbsp&nbsp{{item[0]}}<br>{{item[4]}}</span><br>
                             {{item[3]}}
@@ -43,7 +43,7 @@
                                 <ul>
                                     <li><a class="waves-effect waves-light btn valign">Send Reminder</a></li>
                                     <br>
-                                    <li><a id ="cancelClass" href="" class="waves-effect waves-light btn red darken-2 valign">Cancel Appointment</a></li>
+                                    <li><a id ="cancelClass" onClick ="alert('nothing yet')" class="waves-effect waves-light btn red darken-2 valign">Cancel Appointment</a></li>
                                 </ul>
                             </div>
                         </div>
