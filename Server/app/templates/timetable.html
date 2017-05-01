@@ -10,9 +10,9 @@
                 <ul class="collection">
                     {% for item in classList %}
                     <li class="collection-item ">
-                        <span class="title">{{item.title}}</span>
+                        <span class="title"><h5>{{item.title}}</h5></span>
                         <p>{{item.trainer.name}}<br> {{item.location.location}}<br>
-                            {{item.startTime}}
+                        {{item.startTime}}
                         </p>
                     </li>
                     {% endfor %}
