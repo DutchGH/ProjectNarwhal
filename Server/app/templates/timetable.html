@@ -6,8 +6,8 @@
         <h3>Timetable for {{ current_user.name }}</h3> {% endif %}
 
         <div class="row">
-            <div class="col s12 m6 l6" id = "timetable">
-                <ul class="collection">
+            <div class="col s12 m6 l6" >
+                <ul id = "timetable" class="collection">
                     {% for item in classList %}
                     <li class="collection-item " style = "cursor: pointer" onclick="changeCards(['{{item[2]}}','{{item[3]}}','{{item[7]}}','{{item[4]}}','{{item[8]}}',{{item[9]}}])">
                         <span class="title">{{item[2]}}</span>
@@ -16,6 +16,8 @@
                         </p>
                     </li>
                     {% endfor %}
+                  </ul>
+                <p> Click on a class to learn more </p>
             </div>
             <div class="col s12 m6 l6">
                 <div class="card">
@@ -32,7 +34,7 @@
                             <li class="tab"><a href="#test6">Options</a></li>
                         </ul>
                     </div>
-                    <div class="card-content grey lighten-4">
+                    <div id ="greyBox" class="card-content grey lighten-4">
                         <div id="test4">
                             <h4 id = "titleBox"></h4>
                             <br>
@@ -56,5 +58,10 @@
         </p>
     </div>
 </div>
+<script type="text/javascript" src="{{url_for('static', filename='js/jsFunctions.js')}}"></script>
+<script>
+
+window.onload = changeCards(['{{classList[0][2]}}','{{classList[0][3]}}','{{classList[0][7]}}','{{classList[0][4]}}','{{classList[0][8]}}',{{classList[0][9]}}]);
+</script>
 
 {% endblock %}

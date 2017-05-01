@@ -231,6 +231,14 @@ def confirmEmail(thisClass,thisDel):
     message.body = "This email is confirming your place on the class -" + thisClass.title + " commencing on " + time + "."
     mail.send(message)
 
+# Send an email to a user reminding them of an upcoming class.
+def reminderEmail(thisClass,thisDel):
+    time = thisClass.startDate
+    time = time.strftime("%H:%M, %d/%m/%y")
+    message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
+    message.body = "Just reminding you about the upcoming " + thisClass.title + " class starting at " + time + "!"
+    mail.send(message);
+
 #Will send an email to the user email address notfying them they have been put on a waiting list.
 def waitingEmail(thisClass,thisDel):
     message = Message("Hi %s" % thisDel.name, sender = "luketestacc.gmail.com", recipients = [thisDel.email])
