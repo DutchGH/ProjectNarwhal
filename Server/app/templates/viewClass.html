@@ -16,7 +16,7 @@
                 <div class="slider">
                     <ul class="slides">
                         <li>
-                            <img src="{{url_for('static', filename = 'images/rs.jpg')}}"> <!-- random image -->
+                            <img src="{{current_class.location.picURL}}"> <!-- random image -->
                             <div class="caption left-align">
                                 <h3>{{current_class.title}}</h3>
                                 <h5 class=" lightgrey-text text-lighten-3">Part of the {{current_class.course.title}} Course</h5>
@@ -33,6 +33,7 @@
                     <li>Course: {{current_class.course.title}}</li>
                     <li>Trainer: <a href="/trainers/{{current_class.trainer.trainerID}}">{{current_class.trainer.name}}</a></li>
                     <li>Start Time: {{current_class.startDate.strftime('%H:%M %d-%b-%Y') }}</li>
+                    <li>Location: {{current_class.location.building}} {{current_class.location.roomCode}} ({{current_class.location.location}})<li>
                     <li>Duration: {{current_class.duration}} Minutes</li>
                 </ul>
             </div>
