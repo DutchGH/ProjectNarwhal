@@ -31,7 +31,6 @@ def home():
     else:
         return render_template('index.html', title="FDM TEST")
 
-
 # The login page route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -84,7 +83,7 @@ def myAccount():
 def timetable():
     if current_user.type != 'Delegate':
         abort(403)
-    classList = current_user.classList
+    classList = deltimetable(current_user)
     return render_template('timetable.html', title='Timetable', classList=classList)
 
 @app.route('/timetabletemp')

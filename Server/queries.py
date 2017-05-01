@@ -1,6 +1,7 @@
 from flask import Flask
 from app import models,db, mail
 from flask_mail import Message
+from copy import deepcopy
 from datetime import *
 
 
@@ -410,19 +411,24 @@ def meetsRequirements(delegate,thisClass):
     return False
 
 # Function that returns the timetable for a given delegate
-def timetable(delegate):
+def deltimetable(delegate):
     # Get the non finished classes for this delegate.
      classList = schedule(delegate)
      lessons = []
      for i in classList:
          for j in range(0,i.duration):
-             lessons.append([i.startDate+timedelta(weeks=j),i.title,i.trainer.name,i.location.location])
+             a = i.startDate+timedelta(weeks=j)
+             b = a.strftime("%d/%m/%Y")
+             c = a.strftime("%I.%M%p")
+             d = a.strftime("%A")
+             lessons.append([c,b,i.title,i.trainer.name,i.location.location,a,d])
      # Sort the list by time
      lessons = sorted(lessons, key = lambda x: x[0])
      #Get the current datetime
      today = datetime.now()
      # Go through the classList and remove all classes gone
+     newLessons = deepcopy(lessons)
      for i in lessons:
-         if(i[0] < today):
-             lessons.remove(i)
-     return lessons
+         if(i[5] < today):
+             newLessons.remove(i)
+     return newLessons

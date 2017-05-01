@@ -3,6 +3,10 @@ html
   font-family: 'Raleway', sans-serif;
 }
 
+#timetable{
+  max-height: 500px;
+  overflow-y: scroll;
+}
 
 .Site {
     display: flex;
@@ -18,4 +22,3 @@ html
   {
   	font-weight: 200 !important;
   }
-
