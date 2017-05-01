@@ -3,7 +3,9 @@
 
     <div>
         {% if current_user.is_authenticated %}
-        <h3>Timetable for {{ current_user.name }}</h3> {% endif %}
+        <h3>Timetable for {{ current_user.name }}</h3>
+        <h5>Click on a class for more info</h5>
+        {% endif %}
 
         <div class="row">
             <div class="col s12 m6 l6" >
@@ -17,7 +19,6 @@
                     </li>
                     {% endfor %}
                   </ul>
-                <p> Click on a class to learn more </p>
             </div>
             <div class="col s12 m6 l6">
                 <div class="card">
