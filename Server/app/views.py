@@ -253,26 +253,41 @@ def addCourse():
 def addClass():
     if current_user.type != 'Admin':
         abort(403)
+    #Create a new form
     form = CreateClass()
+    #Get list of courses, classes, rooms and trainers for using as choices in the drop down boxes.
     courseList = courses()
     classList = classes()
     roomList = rooms()
     trainerList = trainers()
+    #Loop through each of these lists adding to the dictionaries for each choice.
     courseChoices = [(course.courseID, course.title) for course in courseList]
     preReqChoices = [(item.classID, item.title) for item in classList]
     trainerChoices = [(item.trainerID, item.name) for item in trainerList]
     roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in roomList]
+    #Allocate each of the choices to the form.
     form.course.choices = courseChoices
     form.preReqs.choices = preReqChoices
     form.trainer.choices = trainerChoices
     form.room.choices = roomChoices
+    #If a post request is made
     if request.method == 'POST':
+        #Date saved into a string of the format HH:MM DD MM YYYY
         dateString = form.dateHour.data + form.dateDay.data + form.dateMonth.data + form.dateYear.data
+        #Date object is in created for this string
         date = datetime.strptime(dateString, "%H:%M %d %m %Y")
+        #Empty waiting list to create a new class with
         waitList = []
+        #Join of the characters from the reqFac array and combine them into one string.
+        reqFacilities = ''.join(form.reqFac.data)
+        #Loop through all of the classID's in the array to get a list of class objects.
+        preReqList = []
+        for classid in form.preReqs.data:
+            classObj = classes( classID = classid )
+            preReqList.append(classObj)
         if form.validate_on_submit():
-            addNewClass(form.course.data, form.preReqs.data, form.title.data, form.description.data,
-            form.capacity.data, form.room.data, form.trainer.data, waitList, date, form.duration.data)
+            addNewClass(form.course.data, preReqList, form.title.data, form.description.data,
+            form.capacity.data, form.room.data, form.trainer.data, waitList, date, form.duration.data, reqFacilities)
             flash("CREATED SUCCESSFULY")
         else:
             flash("Error")
