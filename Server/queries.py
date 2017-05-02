@@ -450,7 +450,7 @@ def browseItems():
     browsableItems = []
     for i in classList:
         a = i.startDate.strftime("%d/%m/%Y")
-        entry = [i.classID, i.title, i.description, a, i.course.title]
+        entry = [i.classID, i.title, i.description, a, i.course.title, i.duration, i.location.location]
         browsableItems.append(entry)
     return browsableItems
 
@@ -512,3 +512,22 @@ def trainerTimeTable(trainer):
     # Sort them
     itemList = sorted(itemList, key = lambda x: x[4])
     return itemList
+
+# A function to get the different durations
+def getDurations():
+    classList = classes()
+    durationList = []
+    for i in classList:
+        if(i.duration not in durationList):
+            durationList.append(i.duration)
+    durationList = sorted(durationList)
+    return durationList
+
+# A function to get the different locations
+def getLocations():
+    classList = classes()
+    locationList = []
+    for i in classList:
+        if(i.location.location not in locationList):
+            locationList.append(i.location.location)
+    return locationList

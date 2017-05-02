@@ -12,40 +12,58 @@
                 <form action ="#">
                     {% for item in courseList %}
                         <p>
-                            <input type="checkbox" id="courseid{{item[1]}}" />
+                            <input type="checkbox" id="courseid{{item[1]}}" onchange="hideItems('{{item[1]}}',1, this)" />
                             <label for="courseid{{item[1]}}">{{item[1]}}</label>
                         </p>
                         {%endfor%}
                     </form>
                     <p><b>By Duration</b></p>
-                    <p><b>Prerequestites?</b></p>
+                    {% for item in durations %}
+                      <p>
+                        <input type="checkbox" id="duration{{item}}" onchange="hideItems('{{item}}',3, this)" />
+                        <label for="duration{{item}}">{{item}}</label>
+                      </p>
+                    {%endfor%}
+                    <p><b>By Location</b></p>
+                    {% for item in locations %}
+                      <p>
+                        <input type="checkbox" id="location{{item}}" onchange="hideItems('{{item}}',4, this)" />
+                        <label for="location{{item}}">{{item}}</label>
+                      </p>
+                    {%endfor%}
                 </div>
                 <div class = "col l9">
                     <h5>Results</h5>
-                    
+
                     <table class = "responsive-table highlight">
                         <thead>
                             <tr>
                                 <th>Title</th>
                                 <th>Course</th>
                                 <th>Start Date</th>
+                                <th style="display:none">Duration</th>
+                                <th style="display:none">Location</th>
                                 <th>View Details<th>
+
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id = "browseBox">
                         {%for item in classList%}
                             <tr>
                                 <td>{{item[1]}}</td>
                                 <td>{{item[4]}}</td>
                                 <td>{{item[3]}}</td>
+                                <td style="display:none">{{item[5]}}</td>
+                                <td style="display:none">{{item[6]}}</td>
                                 <td><a href="/browse/classes/class/{{item[0]}}"">
                                 <button href="/browse/classes/class/{{item[0]}}" class="waves-effect waves-light btn green">View More</button></a></td>
                             </tr>
                         {%endfor%}
                         </tbody>
                     </table>
-                    
+
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="{{url_for('static', filename='js/jsFunctions.js')}}"></script>
     {% endblock %}

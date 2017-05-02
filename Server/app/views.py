@@ -74,7 +74,9 @@ def admin():
 def browseClasses():
     classList = browseItems()
     courseList = browseCourses()
-    return render_template('browseClasses.html', title = 'Browse Clases', classList = classList, courseList = courseList)
+    durations = getDurations()
+    locations = getLocations()
+    return render_template('browseClasses.html', title = 'Browse Clases', classList = classList, courseList = courseList, durations = durations, locations = locations)
 
 
 @app.route('/myaccount')
