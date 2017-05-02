@@ -1,47 +1,128 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
-    {% for message in get_flashed_messages() %}
-    <div>
-        {{ message }}
+    <div class="row">
+        <div class="col s12">
+            {% for message in get_flashed_messages() %}
+            <div class = "toast">
+            {{ message }}
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 
-
-    <h2>Add Class</h2>
+    <div class="row">
+        <div class="col s12">
+            <div class="col s12">
+                <h2>Add Class</h2>
+            </div>
+        </div>
+    </div>
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
-        <p class="input-field">
-            Title: {{ form.title }}
-        </p>
-        <p>
-            Description: {{ form.description }}
-        </p>
-        <p>
-            Course: {{ form.course }}
-        </p>
-        <p>
-            Prerequisits: {{ form.preReqs }}
-        </p>
-        <p>
-            Capacity: {{ form.capacity }}
-        </p>
-        <p>
-            Start Date: {{ form.dateHour }}{{ form.dateDay }}{{ form.dateMonth }}{{ form.dateYear }}
-        </p>
-        <p>
-            Duration: {{ form.duration }}
-        </p>
-        <p>
-            Trainer: {{ form.trainer }}
-        </p>
-        <p>
-            Room: {{ form.room }}
-        </p>
-        <p>
-            Required Facilities: {{ form.reqFac }}
-        </p>
-        <br>
-        <p><input type="submit" value="Add Class"></p>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s5">
+                    <p>
+                        Title: {{ form.title }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s12">
+                    <p>
+                        Description: {{ form.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s6">
+                    <p>
+                        Course: {{ form.course }}
+                    </p>
+                </div>
+                <div class="col s6">
+                    <p>
+                        Prerequisits: {{ form.preReqs }}
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="col s1">
+                            <p>
+                                Capacity: {{ form.capacity }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s3">
+                    <p>Start Date:{{ form.dateHour }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s2">
+                    <p>
+                        Day:{{ form.dateDay }}</p>
+                </div>
+                <div class="col s2">
+                    <p>Month:{{ form.dateMonth }}</p>
+                </div>
+                <div class="col s2">
+                    <p>Year:{{ form.dateYear }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="col s2">
+                    <p>
+                        Duration: {{ form.duration }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4">
+                    <p>
+                        Trainer: {{ form.trainer }}
+                    </p>
+                </div>
+                <div class="col s4">
+                    <p>
+                        Room: {{ form.room }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s4">
+                    <p>
+                        Required Facilities: {{ form.reqFac }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s12">
+                    <button class="btn waves-effect waves-light" input type="submit" value="Add Class">Submit
+   <i class="material-icons right">send</i>
+ </button>
+                </div>
+            </div>
+        </div>
     </form>
     <br>
 </div>

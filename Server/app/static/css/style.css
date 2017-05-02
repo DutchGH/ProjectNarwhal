@@ -1,21 +1,26 @@
-html
-{
-  font-family: 'Raleway', sans-serif;
+html {
+    font-family: 'Raleway', sans-serif;
 }
-
 
 .Site {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
-  .Site-content {
+.Site-content {
     flex: 1 0 auto;
-  }
+}
 
-  .brand-logo
-  {
-  	font-weight: 200 !important;
-  }
+.brand-logo {
+    font-weight: 200 !important;
+}
 
+.toast {
+    background-color: #333;
+    /* Black background color */
+    color: #fff;
+    top: 5px;
+    /* White text color */
+    float: left !important;
+}
