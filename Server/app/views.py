@@ -1,5 +1,5 @@
 from flask import render_template, session, redirect, flash, url_for, request, g, abort
-from flask_login import login_user, logout_user, current_user, login_required
+from flask_login import login_user, logout_user, current_user, login_required, AnonymousUserMixin
 from app import app, db, models, login_manager
 from .forms import *
 from queries import *
@@ -14,6 +14,10 @@ import logging
 @login_manager.user_loader
 def load_user(id):
     return models.User.query.get(id)
+
+class Anonymous(AnonymousUserMixin):
+    def __init__(self):
+        self.type = 'Guest'
 
 
 @app.errorhandler(403)
@@ -322,10 +326,13 @@ def viewClassDetails(id):
     classID = id
     current_class = classes(classID=classID)
     classSize = classAttendenceLen(current_class)
-    if current_user.type == 'Delegate':
-        userQualify = meetsRequirements(current_user, current_class)
+    if current_user.is_authenticated:
+        if current_user.type == 'Delegate':
+            userQualify = meetsRequirements(current_user, current_class)
+        else:
+            userQualify = False
     else:
-        userQualify = False
+        userQualify = "Sign"
     return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
 
 @app.route('/function/cancel/<classID>')
