@@ -62,7 +62,9 @@
 <script type="text/javascript" src="{{url_for('static', filename='js/jsFunctions.js')}}"></script>
 <script>
 
+{% if classList|length > 0 %}
 window.onload = changeCards(['{{classList[0][2]}}','{{classList[0][3]}}','{{classList[0][7]}}','{{classList[0][4]}}','{{classList[0][8]}}',{{classList[0][9]}}]);
+{% endif %}
 </script>
 
 {% endblock %}
