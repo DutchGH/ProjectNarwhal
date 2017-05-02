@@ -11,6 +11,11 @@
             <p><b>Username:</b> {{current_user.username}}</p>
             <p><b>Name:</b> {{current_user.name}}</p>
             <p><b>Email: </b> {{current_user.email}}</p>
+            {% if current_user.type == 'Delegate' %}
+                <a href='/editdel'><p>Edit details</p></a>
+            {% elif current_user.type == 'Trainer' %}
+                <a href='/edittrain'><p>Edit details</p></a>
+            {% endif %}
         </div>
         <div class="col l6 s12">
             <h4>Currently Enrolled Modules</h4>

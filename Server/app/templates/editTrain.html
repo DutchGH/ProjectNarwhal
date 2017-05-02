@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <h2>Edit Account</h2>
+    <form action="" method="post" name="createAccount">
+        {{ form.hidden_tag() }}
+        <p class="input-field">
+            Username: {{ form.username }}
+        </p>
+        <p>
+            E-mail: {{ form.email }}
+        </p>
+        <p>
+            Phone Number: {{ form.phone }}
+        </p>
+        <p>
+            Address: {{ form.address }}
+        </p>
+        <p>
+            Old Password: {{ form.oldPassword }}
+        </p>
+        <p>
+            New Password: {{ form.password }}
+        </p>
+        <p>
+            Confirm: {{ form.confirm }}
+        </p>
+        <br>
+        <p><input type="submit" value="Change Details"></p>
+    </form>
+    <br>
+</div>
+{% endblock %}

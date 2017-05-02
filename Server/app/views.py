@@ -72,11 +72,13 @@ def admin():
 @app.route('/myaccount')
 @login_required
 def myAccount():
-    if current_user.type != 'Delegate':
-        abort(403)
-    else:
+    if current_user.type == 'Delegate':
         delClassList = current_user.classList
-        return render_template('myAccount.html', title='Timetable', delClassList=delClassList)
+        return render_template('myAccount.html', title='Account Details', delClassList=delClassList)
+    elif current_user.type == 'Trainer':
+        return render_template('myAccount.html', title='Account Details')
+    else:
+        abort(403)
 
 
 @app.route('/timetable')
@@ -236,6 +238,50 @@ def addDelegate():
         addNewDel(form.name.data, username, password, [], form.email.data)
         flash("CREATED SUCCESSFULY")
     return render_template('newDelegate.html', title='Create Account', form=form)
+
+
+@app.route('/editdel', methods=['GET', 'POST'])
+def editDelegate():
+    form = EditDelegate()
+    if form.validate_on_submit():
+        if form.username.data is not None:
+            username = form.username.data
+        else:
+            username = form.email.data
+        if form.password.data is not None:
+            password = form.password.data
+        else:
+            password = "pass"
+        if form.oldPassword.data == current_user.password:
+            edit( current_user, username = username, password=password, email = form.email.data)
+            return redirect('/myaccount')
+        else:
+            flash("Old password was incorrect.")
+    else:
+        flash("Confirm password did not match.")
+    return render_template('editDel.html', title='Edit Account', form=form)
+
+
+@app.route('/edittrain', methods=['GET', 'POST'])
+def editTrainer():
+    form = EditTrainer()
+    if form.validate_on_submit():
+        if form.username.data is not None:
+            username = form.username.data
+        else:
+            username = form.email.data
+        if form.password.data is not None:
+            password = form.password.data
+        else:
+            password = "pass"
+        if form.oldPassword.data == current_user.password:
+            edit( current_user, username = username, password=password, email = form.email.data, phone = form.phone.data, address = form.address.data)
+            return redirect('/myaccount')
+        else:
+            flash("Old password was incorrect.")
+    else:
+        flash("Confirm password did not match.")
+    return render_template('editTrain.html', title='Edit Account', form=form)
 
 
 @app.route('/addcourse', methods=['GET', 'POST'])
