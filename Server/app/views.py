@@ -237,6 +237,7 @@ def addDelegate():
         flash("CREATED SUCCESSFULY")
     return render_template('newDelegate.html', title='Create Account', form=form)
 
+
 @app.route('/addcourse', methods=['GET', 'POST'])
 @login_required
 def addCourse():
@@ -248,6 +249,7 @@ def addCourse():
         flash("CREATED SUCCESSFULY")
     return render_template('newCourse.html', title='Add Course', form=form)
 
+
 @app.route('/addclass', methods=['GET', 'POST'])
 @login_required
 def addClass():
@@ -255,19 +257,26 @@ def addClass():
         abort(403)
     #Create a new form
     form = CreateClass()
-    #Get list of courses, classes, rooms and trainers for using as choices in the drop down boxes.
+
+    #Get list of courses, classes for using as choices in the drop down boxes.
     courseList = courses()
     classList = classes()
+
     #Loop through each of these lists adding to the dictionaries for each choice.
     courseChoices = [(course.courseID, course.title) for course in courseList]
     preReqChoices = [(item.classID, item.title) for item in classList]
+
+    #This will loop through the list of available trainers and add them to the choices.
     trainerChoices = [(item.trainerID, item.name) for item in checkTrainer(session['classDate'])]
+    #This will loop through the available rooms and add them to the choices.
     roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in checkRoom(session['classDate'])]
+
     #Allocate each of the choices to the form.
     form.course.choices = courseChoices
     form.preReqs.choices = preReqChoices
     form.trainer.choices = trainerChoices
     form.room.choices = roomChoices
+
     #If a post request is made
     if request.method == 'POST':
         #Empty waiting list to create a new class with
@@ -287,6 +296,7 @@ def addClass():
             flash("Error")
     return render_template('newClass.html', title='Add Class', form=form)
 
+
 @app.route('/addclassdate', methods=['GET', 'POST'])
 @login_required
 def addClassDate():
@@ -294,23 +304,20 @@ def addClassDate():
         abort(403)
     #Create a new form
     form = CreateClassDate()
-
     #If a post request is made
     if request.method == 'POST':
         if form.validate_on_submit():
-            #Date saved into a string of the format HH:MM DD MM YYYY
-            dateString = form.dateHour.data + form.dateDay.data + form.dateMonth.data + form.dateYear.data
-            #Date object is in created for this string
-            classDate = datetime.strptime(dateString, "%H:%M %d %m %Y")
-            session['classDate'] = classDate
-            return redirect('/addclass')
-        else:
-            flash("Please enter a valid date.")
+            #Try and create a date object for given form data.
+            try:
+                classDate = datetime(form.dateYear.data, form.dateMonth.data, form.dateDay.data, form.dateHour.data, 00)
+                session['classDate'] = classDate
+                return redirect('/addclass')
+            #If this fails it will flash the error on screen.
+            except:
+                flash("Please enter a valid date")
     return render_template('newClassDate.html', title='Add Class', form=form)
 
 
-
-##
 @app.route('/delegates')
 @login_required
 def delList():
@@ -318,8 +325,6 @@ def delList():
         abort(403)
     delList = delegates()
     return render_template('delegates.html', title='Delegate List', delList=delList)
-
-##
 
 
 @app.route('/delegates/<id>')
