@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+
+    <h2>Add Date for Class</h2>
+    <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p class="input-field">
+            Start Date: {{ form.dateHour }}{{ form.dateDay }}{{ form.dateMonth }}{{ form.dateYear }}
+        </p>
+        <br>
+        <p><input type="submit" value="Choose Date"></p>
+    </form>
+    <br>
+</div>
+{% endblock %}

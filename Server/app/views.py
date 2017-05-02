@@ -258,13 +258,11 @@ def addClass():
     #Get list of courses, classes, rooms and trainers for using as choices in the drop down boxes.
     courseList = courses()
     classList = classes()
-    roomList = rooms()
-    trainerList = trainers()
     #Loop through each of these lists adding to the dictionaries for each choice.
     courseChoices = [(course.courseID, course.title) for course in courseList]
     preReqChoices = [(item.classID, item.title) for item in classList]
-    trainerChoices = [(item.trainerID, item.name) for item in trainerList]
-    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in roomList]
+    trainerChoices = [(item.trainerID, item.name) for item in checkTrainer(session['classDate'])]
+    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in checkRoom(session['classDate'])]
     #Allocate each of the choices to the form.
     form.course.choices = courseChoices
     form.preReqs.choices = preReqChoices
@@ -272,10 +270,6 @@ def addClass():
     form.room.choices = roomChoices
     #If a post request is made
     if request.method == 'POST':
-        #Date saved into a string of the format HH:MM DD MM YYYY
-        dateString = form.dateHour.data + form.dateDay.data + form.dateMonth.data + form.dateYear.data
-        #Date object is in created for this string
-        date = datetime.strptime(dateString, "%H:%M %d %m %Y")
         #Empty waiting list to create a new class with
         waitList = []
         #Join of the characters from the reqFac array and combine them into one string.
@@ -287,12 +281,32 @@ def addClass():
             preReqList.append(classObj)
         if form.validate_on_submit():
             addNewClass(form.course.data, preReqList, form.title.data, form.description.data,
-            form.capacity.data, form.room.data, form.trainer.data, waitList, date, form.duration.data, reqFacilities)
+            form.capacity.data, form.room.data, form.trainer.data, waitList, session['classDate'], form.duration.data, reqFacilities)
             flash("CREATED SUCCESSFULY")
         else:
             flash("Error")
     return render_template('newClass.html', title='Add Class', form=form)
 
+@app.route('/addclassdate', methods=['GET', 'POST'])
+@login_required
+def addClassDate():
+    if current_user.type != 'Admin':
+        abort(403)
+    #Create a new form
+    form = CreateClassDate()
+
+    #If a post request is made
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            #Date saved into a string of the format HH:MM DD MM YYYY
+            dateString = form.dateHour.data + form.dateDay.data + form.dateMonth.data + form.dateYear.data
+            #Date object is in created for this string
+            classDate = datetime.strptime(dateString, "%H:%M %d %m %Y")
+            session['classDate'] = classDate
+            return redirect('/addclass')
+        else:
+            flash("Please enter a valid date.")
+    return render_template('newClassDate.html', title='Add Class', form=form)
 
 
 
