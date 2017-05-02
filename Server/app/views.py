@@ -237,6 +237,7 @@ def addDelegate():
         flash("CREATED SUCCESSFULY")
     return render_template('newDelegate.html', title='Create Account', form=form)
 
+
 @app.route('/addcourse', methods=['GET', 'POST'])
 @login_required
 def addCourse():
@@ -248,31 +249,75 @@ def addCourse():
         flash("CREATED SUCCESSFULY")
     return render_template('newCourse.html', title='Add Course', form=form)
 
+
 @app.route('/addclass', methods=['GET', 'POST'])
 @login_required
 def addClass():
     if current_user.type != 'Admin':
         abort(403)
+    #Create a new form
     form = CreateClass()
+
+    #Get list of courses, classes for using as choices in the drop down boxes.
     courseList = courses()
     classList = classes()
-    roomList = rooms()
-    trainerList = trainers()
+
+    #Loop through each of these lists adding to the dictionaries for each choice.
     courseChoices = [(course.courseID, course.title) for course in courseList]
     preReqChoices = [(item.classID, item.title) for item in classList]
-    trainerChoices = [(item.trainerID, item.name) for item in trainerList]
-    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in roomList]
+
+    #This will loop through the list of available trainers and add them to the choices.
+    trainerChoices = [(item.trainerID, item.name) for item in checkTrainer(session['classDate'])]
+    #This will loop through the available rooms and add them to the choices.
+    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in checkRoom(session['classDate'])]
+
+    #Allocate each of the choices to the form.
     form.course.choices = courseChoices
     form.preReqs.choices = preReqChoices
     form.trainer.choices = trainerChoices
     form.room.choices = roomChoices
-    if form.validate_on_submit():
-        addNewCourse(form.title.data, form.description.data)
-        flash("CREATED SUCCESSFULY")
+
+    #If a post request is made
+    if request.method == 'POST':
+        #Empty waiting list to create a new class with
+        waitList = []
+        #Join of the characters from the reqFac array and combine them into one string.
+        reqFacilities = ''.join(form.reqFac.data)
+        #Loop through all of the classID's in the array to get a list of class objects.
+        preReqList = []
+        for classid in form.preReqs.data:
+            classObj = classes( classID = classid )
+            preReqList.append(classObj)
+        if form.validate_on_submit():
+            addNewClass(form.course.data, preReqList, form.title.data, form.description.data,
+            form.capacity.data, form.room.data, form.trainer.data, waitList, session['classDate'], form.duration.data, reqFacilities)
+            flash("CREATED SUCCESSFULY")
+        else:
+            flash("Error")
     return render_template('newClass.html', title='Add Class', form=form)
 
 
-##
+@app.route('/addclassdate', methods=['GET', 'POST'])
+@login_required
+def addClassDate():
+    if current_user.type != 'Admin':
+        abort(403)
+    #Create a new form
+    form = CreateClassDate()
+    #If a post request is made
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            #Try and create a date object for given form data.
+            try:
+                classDate = datetime(form.dateYear.data, form.dateMonth.data, form.dateDay.data, form.dateHour.data, 00)
+                session['classDate'] = classDate
+                return redirect('/addclass')
+            #If this fails it will flash the error on screen.
+            except:
+                flash("Please enter a valid date")
+    return render_template('newClassDate.html', title='Add Class', form=form)
+
+
 @app.route('/delegates')
 @login_required
 def delList():
@@ -280,8 +325,6 @@ def delList():
         abort(403)
     delList = delegates()
     return render_template('delegates.html', title='Delegate List', delList=delList)
-
-##
 
 
 @app.route('/delegates/<id>')
