@@ -5,4 +5,5 @@ function changeCards(item){
   document.getElementById("buildingBox").innerHTML = item[3];
   document.getElementById("cardImage").src = item[4];
   document.getElementById("cancelClass").href = "/function/cancel/" + item[5];
+  document.getElementById("remindClass").href = "/function/remind/" + item[5];
 }
