@@ -4,7 +4,7 @@
     <div>
         {% if current_user.is_authenticated %}
         <h3>Timetable for {{ current_user.name }}</h3>
-        <h5>Click on a class for more info</h5>
+        <h5 id="info">Click on a class for more info</h5>
         {% endif %}
 
         <div class="row">
@@ -64,6 +64,8 @@
 
 {% if classList|length > 0 %}
 window.onload = changeCards(['{{classList[0][2]}}','{{classList[0][3]}}','{{classList[0][7]}}','{{classList[0][4]}}','{{classList[0][8]}}',{{classList[0][9]}}]);
+{% else %}
+document.getElementById("info").innerHTML = "You have no classes! :(";
 {% endif %}
 </script>
 
