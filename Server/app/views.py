@@ -352,3 +352,9 @@ def cancelClass(classID):
     current_class = classes(classID=classID)
     removeFromClass(current_class, current_user)
     return redirect('/timetable')
+
+@app.route('/function/remind/<classID>')
+def remindClass(classID):
+    current_class = classes(classID=classID)
+    reminderEmail(current_class, current_user)
+    return redirect('/timetable')
