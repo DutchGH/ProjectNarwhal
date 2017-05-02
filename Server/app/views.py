@@ -351,4 +351,4 @@ def viewClassDetails(id):
 def cancelClass(classID):
     current_class = classes(classID=classID)
     removeFromClass(current_class, current_user)
-    return timetable()
+    return redirect('/timetable')
