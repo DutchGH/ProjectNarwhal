@@ -15,7 +15,9 @@ import logging
 def load_user(id):
     return models.User.query.get(id)
 
+
 class Anonymous(AnonymousUserMixin):
+
     def __init__(self):
         self.type = 'Guest'
 
@@ -36,6 +38,8 @@ def home():
         return render_template('index.html', title="FDM TEST")
 
 # The login page route
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -74,7 +78,7 @@ def admin():
 def browseClasses():
     classList = browseItems()
     courseList = browseCourses()
-    return render_template('browseClasses.html', title = 'Browse Clases', classList = classList, courseList = courseList)
+    return render_template('browseClasses.html', title='Browse Clases', classList=classList, courseList=courseList)
 
 
 @app.route('/myaccount')
@@ -95,6 +99,7 @@ def timetable():
     classList = delTimeTable(current_user)
     return render_template('timetable.html', title='Timetable', classList=classList)
 
+
 @app.route('/timetabletemp')
 @login_required
 def timetabletemp():
@@ -103,9 +108,11 @@ def timetabletemp():
     date = datetime.today().strftime("%m/%d/%Y")
 
     classList = current_user.classList
-    days = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"]
-    return render_template('timetabletemp.html', title='Timetable', classList=classList, days = days, hours = hours)
+    days = ["", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday", "Sunday"]
+    hours = ["09:00", "10:00", "11:00", "12:00", "13:00",
+             "14:00", "15:00", "16:00", "17:00", "18:00"]
+    return render_template('timetabletemp.html', title='Timetable', classList=classList, days=days, hours=hours)
 
 # Displays a list of trainers which can link to the trainers schedule.
 
@@ -153,8 +160,8 @@ def adminClassDetails(id):
     classID = id
     if current_user.type != 'Admin':
         abort(403)
-    current_class = classes(classID = classID)
-    return render_template('adminClassDetails.html', title = current_class.title + 'Details', current_class = current_class)
+    current_class = classes(classID=classID)
+    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class)
 
 
 @app.route('/trainers/<id>')
@@ -224,7 +231,8 @@ def addTrainer():
             password = form.password.data
         else:
             password = "pass"
-        addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
+        addNewTrainer(form.name.data, form.address.data,
+                      form.phone.data, form.email.data, username, password)
         flash("CREATED SUCCESSFULY")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
 
@@ -245,6 +253,7 @@ def addDelegate():
         flash("CREATED SUCCESSFULY")
     return render_template('newDelegate.html', title='Create Account', form=form)
 
+
 @app.route('/addcourse', methods=['GET', 'POST'])
 @login_required
 def addCourse():
@@ -255,6 +264,7 @@ def addCourse():
         addNewCourse(form.title.data, form.description.data)
         flash("CREATED SUCCESSFULY")
     return render_template('newCourse.html', title='Add Course', form=form)
+
 
 @app.route('/addclass', methods=['GET', 'POST'])
 @login_required
@@ -269,7 +279,8 @@ def addClass():
     courseChoices = [(course.courseID, course.title) for course in courseList]
     preReqChoices = [(item.classID, item.title) for item in classList]
     trainerChoices = [(item.trainerID, item.name) for item in trainerList]
-    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in roomList]
+    roomChoices = [(item.roomID, item.roomCode + " " +
+                    item.building + item.location) for item in roomList]
     form.course.choices = courseChoices
     form.preReqs.choices = preReqChoices
     form.trainer.choices = trainerChoices
@@ -334,6 +345,7 @@ def viewClassDetails(id):
     else:
         userQualify = "Sign"
     return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
+
 
 @app.route('/function/cancel/<classID>')
 def cancelClass(classID):
