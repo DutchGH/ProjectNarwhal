@@ -90,7 +90,7 @@ def myAccount():
     if current_user.type != 'Delegate':
         abort(403)
     else:
-        delClassList = current_user.classList
+        delClassList = getClasses(current_user)
         return render_template('myAccount.html', title='Timetable', delClassList=delClassList)
 
 

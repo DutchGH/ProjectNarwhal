@@ -348,12 +348,13 @@ def history(delegate):
     today = datetime.now()
     # Get a list of all classes
     classList = delegate.classList
+    results = []
     # Go through all the classes, removing any that are yet to happen.
     for i in classList:
-        if (i.endDate > today):
-            classList.remove(i)
+        if (i.endDate < today):
+            results.append(i)
     # Return the result
-    return classList
+    return results
 
 # A function that recovers a list of classes a delegate is yet to take.
 
@@ -363,12 +364,13 @@ def schedule(delegate):
     today = datetime.now()
     # Get the classList
     classList = delegate.classList
+    results = []
     # Go through all the classes, removing any that have already happened
     for i in classList:
-        if(i.endDate < today):
-            classList.remove(i)
+        if(i.endDate > today):
+            results.append(i)
     # Return the result
-    return classList
+    return results
 
 # Function that checks a rooms accessRating, returning an array of properties.
 
@@ -506,9 +508,9 @@ def delTimeTable(delegate):
     today = datetime.now()
     # Go through the classList and remove all classes gone
     newLessons = deepcopy(lessons)
-    #  for i in lessons:
-    #      if(i[5] < today):
-    #          newLessons.remove(i)
+    for i in lessons:
+        if(i[5] < today):
+            newLessons.remove(i)
     return newLessons
 
 # Function that returns a list of classes for use in the browse page
@@ -604,3 +606,11 @@ def getLocations():
         if(i.location.location not in locationList):
             locationList.append(i.location.location)
     return locationList
+
+def getClasses(dele):
+    classList = classes()
+    results = []
+    for i in classList:
+        if dele in i.attendanceList:
+            results.append(i)
+    return results
