@@ -13,7 +13,7 @@ function hideItems(course, pos, checkBox){
   var rows = box.rows.length;
   for (var i = 0; i < rows;  i++) {
     var thisrow = box.rows[i]
-    if(thisrow.cells[pos].innerHTML == course){
+    if(thisrow.cells[pos].innerHTML != course){
       if(checkBox.checked){
         if(thisrow.style.display != "none"){
           thisrow.style.display = "none";

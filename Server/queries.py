@@ -239,11 +239,11 @@ def checkUser(user):
 def addToClass(thisClass, thisDel):
     if(len(thisClass.attendanceList) < thisClass.capacity):
         thisClass.attendanceList.append(thisDel)
-        confirmEmail(thisClass, thisDel)
+        #confirmEmail(thisClass, thisDel)
     else:
         print("In second bit")
         thisClass.waitList.append(thisDel)
-        waitingEmail(thisClass, thisDel)
+        #waitingEmail(thisClass, thisDel)
     db.session.commit()
 
 # Will send an email to the user email address confirming their place on
