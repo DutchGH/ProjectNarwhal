@@ -2,16 +2,24 @@
 
 <div class="container">
     <h3>{{room.building}} {{room.roomCode}}</h3>
+    <div class = "row">
+        <div class = "col s12">
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <img class = "responsive-img" src="{{room.picURL}}"> <!-- random image -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col l6 m6 s12">
             <h4>Room Information</h4>
             <p><strong>Capacity: </strong>{{room.capacity}}</p>
             <p><strong>Room Type: </strong>{{room.roomType}}</p>
-            <p><strong>Access Rating: </strong> {% if room.accessRating == "W" %} Wheelchair Accessible {%else%} {{room.accessRating}}
-            </p>
-            {%endif%}
-
-
+            <p><strong>Access Rating:</strong>{%for item in ac %} {{item}}{%endfor%}</p>
+            <p><strong>Facilities: </strong> {%for item in fac %} {{item}}{%endfor%}</p></p>
         </div>
         <div class="col l6 m6 s12">
             <h4>Booked Classes</h4> {% for item in roomClassList %}
@@ -22,12 +30,24 @@
             {% endfor %}
         </div>
     </div>
-    <hr>
-    <br>
     <div class="row">
-        <div class="col l12">
+            <div class="col s12 m6 l6" >
+                <h4>Timetable</h4>
+                <ul id = "timetable" class="collection">
+                    {% for item in tt %}
+                    <li class="collection-item">
+                        <span class="title"><h4>{{item[2]}}</h4></span>
+                        <p><span>{{item[1]}}<br>{{item[6]}}{{item[0]}}</span><br>
+                            {{item[3]}}
+                        </p>
+                    </li>
+                    {% endfor %}
+                  </ul>
+            </div>
+        <div class="col s12 l6">
             <div class="center-align">
-                <a class="waves-effect waves-light btn green">Edit Room</a>
+                <h4>Options</h4>
+                <a class="waves-effect waves-light btn green">Edit Room</a><br><br>
                 <a class="waves-effect waves-light btn red">Delete Room</a>
             </div>
         </div>

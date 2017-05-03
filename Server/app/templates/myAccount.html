@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col l6 s12 ">
+        <div class="{% if current_user.type == 'Delegate' %}col l4 s12{%else%}col l6 s12{%endif%} ">
             <h4>Account Details</h4>
             <p><b>Username:</b> {{current_user.username}}</p>
             <p><b>Name:</b> {{current_user.name}}</p>
@@ -17,14 +17,33 @@
                 <a href='/edittrain'><p>Edit details</p></a>
             {% endif %}
         </div>
-        <div class="col l6 s12">
-            <h4>Currently Enrolled Modules</h4>
+        {% if current_user.type == 'Delegate' %}
+        <div class="col l4 s12">
+            <h4>Previous Modules</h4>
             <ul>
-                {% for item in delClassList %}
+                {% for item in pastClass %}
                 <li>{{item.title}}</li>
                 {% endfor %}
             </ul>
         </div>
+        <div class="col l4 s12">
+            <h4>Current Modules</h4>
+            <ul>
+                {% for item in futureClass %}
+                <li>{{item.title}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {%else%}
+        <div class="col l6 s12">
+            <h4>Currently Teaching</h4>
+            <ul>
+                {% for item in teachingList %}
+                <li>{{item.title}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {%endif%}
     </div>
 </div>
 {% endblock %}

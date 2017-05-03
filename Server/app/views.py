@@ -88,11 +88,15 @@ def browseClasses():
 def myAccount():
     if current_user.type == 'Delegate':
         delClassList = getClasses(current_user)
-        return render_template('myAccount.html', title='Account Details', delClassList=delClassList)
+        pastClass = history(current_user)
+        futureClass = schedule(current_user)
+        return render_template('myAccount.html', title='Account Details', pastClass=pastClass, futureClass=futureClass)
     elif current_user.type == 'Trainer':
-        return render_template('myAccount.html', title='Account Details')
+        teachingList = classes(trainerPoint = current_user.trainerID)
+        return render_template('myAccount.html', title='Account Details', teachingList = teachingList)
     else:
         abort(403)
+
 
 
 @app.route('/timetable')
@@ -149,9 +153,7 @@ def course(id):
         abort(403)
 
     current_course = courses(courseID=courseID)
-    #courseClassList = classes(courseID = current_course.courseID)
     courseClassList = classes(course=current_course)
-    #courseClassList = models.Class.query.filter_by(courseID = current_course.courseID)
     if type(courseClassList) != list:
         courseClassList = [courseClassList]
 
@@ -165,7 +167,8 @@ def adminClassDetails(id):
     if current_user.type != 'Admin':
         abort(403)
     current_class = classes(classID=classID)
-    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class)
+    attSize = len(current_class.attendanceList)
+    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class, attSize = attSize)
 
 
 @app.route('/trainers/<id>')
@@ -199,11 +202,14 @@ def roomSchedule(id):
     if current_user.type != 'Admin':
         abort(403)
     room = rooms(roomID=id)
+    fac = checkFacilities(room.facilities)
+    ac = checkAccess(room.accessRating)
     roomClassList = classes(locationPoint=roomID)
+    tt = roomTimeTable(room)
     if type(roomClassList) != list:
         roomClassList = [roomClassList]
 
-    return render_template('roomsSched.html', title='Room Schedule', room=room, roomClassList=roomClassList)
+    return render_template('roomsSched.html', title='Room Schedule', room=room, roomClassList=roomClassList, fac = fac, ac = ac, tt = tt)
 
 
 @app.route('/addroom', methods=['GET', 'POST'])
@@ -214,8 +220,9 @@ def addRoom():
     form = CreateTrainingRoom()
     if form.validate_on_submit():
         ar = ''.join(form.accessRating.data)
+        fac = ''.join(form.facilities.data)
         addNewRoom(form.capacity.data, form.roomType.data, ar,
-                   form.roomCode.data, form.building.data, form.location.data)
+                   form.roomCode.data, fac, form.building.data, form.location.data, "http://www.leeds.ac.uk/mtc/images/rooms/mlt.jpg")
         flash("CREATED SUCCESSFULY")
     return render_template('newRoom.html', title='Add Room', form=form)
 
@@ -413,8 +420,11 @@ def signUp(id):
     thisClass = classes(classID=id)
     if current_user.type == 'Delegate':
         if meetsRequirements(current_user, thisClass):
-            addToClass(thisClass, current_user)
-            flash("You have been added.")
+            if noTimeTableClash(current_user, thisClass):
+                addToClass(thisClass, current_user)
+                flash("You have been added.")
+            else:
+                flash("Cannot sign up. This module clashes with another class.")
         else:
             flash("You don't meet the requirements")
     else:
@@ -429,12 +439,13 @@ def viewClassDetails(id):
     classSize = classAttendenceLen(current_class)
     if current_user.is_authenticated:
         if current_user.type == 'Delegate':
+            clash = noTimeTableClash(current_user, current_class)
             userQualify = meetsRequirements(current_user, current_class)
         else:
             userQualify = False
     else:
         userQualify = "Sign"
-    return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
+    return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify, clash = clash)
 
 
 @app.route('/function/cancel/<classID>')
