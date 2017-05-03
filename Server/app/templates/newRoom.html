@@ -1,10 +1,13 @@
 {% extends "base.html" %} {% block content %}
-<div class="container">
-    {% for message in get_flashed_messages() %}
-    <div>
+<div class="row">
+    <div class="col s12">
+        {% for message in get_flashed_messages() %}
+        <div class = "toast">
         {{ message }}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+</div>
 
 
     <h2>Add Room</h2>

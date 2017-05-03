@@ -48,7 +48,6 @@ def login():
             username=request.form['username']).first()
         if user is not None and (user.password == request.form['password']):
             login_user(user)
-            flash('Logged in succesfully')
             return redirect('/')
         else:
             flash('Invalid Credentials. Please Try Again')
@@ -108,19 +107,7 @@ def timetable():
     return render_template('timetable.html', title='Timetable', classList=classList)
 
 
-@app.route('/timetabletemp')
-@login_required
-def timetabletemp():
-    if current_user.type != 'Delegate':
-        abort(403)
-    date = datetime.today().strftime("%m/%d/%Y")
 
-    classList = current_user.classList
-    days = ["", "Monday", "Tuesday", "Wednesday",
-            "Thursday", "Friday", "Saturday", "Sunday"]
-    hours = ["09:00", "10:00", "11:00", "12:00", "13:00",
-             "14:00", "15:00", "16:00", "17:00", "18:00"]
-    return render_template('timetabletemp.html', title='Timetable', classList=classList, days=days, hours=hours)
 
 # Displays a list of trainers which can link to the trainers schedule.
 
@@ -261,7 +248,10 @@ def addDelegate():
 
 
 @app.route('/editdel', methods=['GET', 'POST'])
+@login_required
 def editDelegate():
+    if current_user.type != "Delegate":
+        abort(403)
     form = EditDelegate()
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -277,8 +267,11 @@ def editDelegate():
 
 
 @app.route('/edittrain', methods=['GET', 'POST'])
+@login_required
 def editTrainer():
     form = EditTrainer()
+    if current_user.type != "Trainer":
+        abort(403)
     if request.method == 'POST':
         if form.validate_on_submit():
             if form.oldPassword.data == current_user.password:
