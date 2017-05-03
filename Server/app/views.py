@@ -1,5 +1,5 @@
 from flask import render_template, session, redirect, flash, url_for, request, g, abort
-from flask_login import login_user, logout_user, current_user, login_required
+from flask_login import login_user, logout_user, current_user, login_required, AnonymousUserMixin
 from app import app, db, models, login_manager
 from .forms import *
 from queries import *
@@ -14,6 +14,12 @@ import logging
 @login_manager.user_loader
 def load_user(id):
     return models.User.query.get(id)
+
+
+class Anonymous(AnonymousUserMixin):
+
+    def __init__(self):
+        self.type = 'Guest'
 
 
 @app.errorhandler(403)
@@ -31,8 +37,9 @@ def home():
     else:
         return render_template('index.html', title="FDM TEST")
 
-
 # The login page route
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -66,14 +73,21 @@ def admin():
     else:
         return render_template('loggedIn.html', title='Home Page')
 
-##
+
+@app.route('/browse/classes')
+def browseClasses():
+    classList = browseItems()
+    courseList = browseCourses()
+    durations = getDurations()
+    locations = getLocations()
+    return render_template('browseClasses.html', title='Browse Clases', classList=classList, courseList=courseList, durations=durations, locations=locations)
 
 
 @app.route('/myaccount')
 @login_required
 def myAccount():
     if current_user.type == 'Delegate':
-        delClassList = current_user.classList
+        delClassList = getClasses(current_user)
         return render_template('myAccount.html', title='Account Details', delClassList=delClassList)
     elif current_user.type == 'Trainer':
         return render_template('myAccount.html', title='Account Details')
@@ -86,8 +100,9 @@ def myAccount():
 def timetable():
     if current_user.type != 'Delegate':
         abort(403)
-    classList = current_user.classList
+    classList = delTimeTable(current_user)
     return render_template('timetable.html', title='Timetable', classList=classList)
+
 
 @app.route('/timetabletemp')
 @login_required
@@ -97,9 +112,11 @@ def timetabletemp():
     date = datetime.today().strftime("%m/%d/%Y")
 
     classList = current_user.classList
-    days = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"]
-    return render_template('timetabletemp.html', title='Timetable', classList=classList, days = days, hours = hours)
+    days = ["", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday", "Sunday"]
+    hours = ["09:00", "10:00", "11:00", "12:00", "13:00",
+             "14:00", "15:00", "16:00", "17:00", "18:00"]
+    return render_template('timetabletemp.html', title='Timetable', classList=classList, days=days, hours=hours)
 
 # Displays a list of trainers which can link to the trainers schedule.
 
@@ -147,8 +164,8 @@ def adminClassDetails(id):
     classID = id
     if current_user.type != 'Admin':
         abort(403)
-    current_class = classes(classID = classID)
-    return render_template('adminClassDetails.html', title = current_class.title + 'Details', current_class = current_class)
+    current_class = classes(classID=classID)
+    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class)
 
 
 @app.route('/trainers/<id>')
@@ -210,16 +227,11 @@ def addTrainer():
         abort(403)
     form = CreateTrainer()
     if form.validate_on_submit():
-        if form.username.data is not None:
-            username = form.username.data
-        else:
-            username = form.email.data
-        if form.password.data is not None:
-            password = form.password.data
-        else:
-            password = "pass"
-        if checkUserName( form.username.data ):
-            addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
+        username = form.username.data
+        password = form.password.data
+        if checkUserName(username):
+            addNewTrainer(form.name.data, form.address.data,
+                          form.phone.data, form.email.data, username, password)
             flash("CREATED SUCCESSFULY")
         else:
             flash("That username is already taken.")
@@ -230,15 +242,10 @@ def addTrainer():
 def addDelegate():
     form = CreateDelegate()
     if form.validate_on_submit():
-        if form.username.data is not None:
-            username = form.username.data
-        else:
-            username = form.email.data
-        if form.password.data is not None:
-            password = form.password.data
-        else:
-            password = "pass"
-        if checkUserName( form.username.data ):
+        username = form.username.data
+        username = form.email.data
+        password = form.password.data
+        if checkUserName(username):
             addNewDel(form.name.data, username, password, [], form.email.data)
             flash("CREATED SUCCESSFULY")
         else:
@@ -259,7 +266,8 @@ def editDelegate():
         else:
             password = "pass"
         if form.oldPassword.data == current_user.password:
-            edit( current_user, username = username, password=password, email = form.email.data)
+            edit(current_user, username=username,
+                 password=password, email=form.email.data)
             return redirect('/myaccount')
         else:
             flash("Old password was incorrect.")
@@ -281,7 +289,8 @@ def editTrainer():
         else:
             password = "pass"
         if form.oldPassword.data == current_user.password:
-            edit( current_user, username = username, password=password, email = form.email.data, phone = form.phone.data, address = form.address.data)
+            edit(current_user, username=username, password=password,
+                 email=form.email.data, phone=form.phone.data, address=form.address.data)
             return redirect('/myaccount')
         else:
             flash("Old password was incorrect.")
@@ -307,42 +316,46 @@ def addCourse():
 def addClass():
     if current_user.type != 'Admin':
         abort(403)
-    #Create a new form
+    # Create a new form
     form = CreateClass()
-
-    #Get list of courses, classes for using as choices in the drop down boxes.
+    # Get list of courses, classes for using as choices in the drop down boxes.
     courseList = courses()
     classList = classes()
-
-    #Loop through each of these lists adding to the dictionaries for each choice.
+    # Loop through each of these lists adding to the dictionaries for each
+    # choice.
     courseChoices = [(course.courseID, course.title) for course in courseList]
     preReqChoices = [(item.classID, item.title) for item in classList]
+    # This will loop through the list of available trainers and add them to
+    # the choices.
+    trainerChoices = [(item.trainerID, item.name)
+                      for item in checkTrainer(session['classDate'])]
+    # This will loop through the available rooms and add them to the choices.
+    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location)
+                   for item in checkRoom(session['classDate'])]
 
-    #This will loop through the list of available trainers and add them to the choices.
-    trainerChoices = [(item.trainerID, item.name) for item in checkTrainer(session['classDate'])]
-    #This will loop through the available rooms and add them to the choices.
-    roomChoices = [(item.roomID, item.roomCode + " " + item.building + item.location) for item in checkRoom(session['classDate'])]
+    # Allocate each of the choices to the form.
 
-    #Allocate each of the choices to the form.
     form.course.choices = courseChoices
     form.preReqs.choices = preReqChoices
     form.trainer.choices = trainerChoices
     form.room.choices = roomChoices
 
-    #If a post request is made
+    # If a post request is made
     if request.method == 'POST':
-        #Empty waiting list to create a new class with
+        # Empty waiting list to create a new class with
         waitList = []
-        #Join of the characters from the reqFac array and combine them into one string.
+        # Join of the characters from the reqFac array and combine them into
+        # one string.
         reqFacilities = ''.join(form.reqFac.data)
-        #Loop through all of the classID's in the array to get a list of class objects.
+        # Loop through all of the classID's in the array to get a list of class
+        # objects.
         preReqList = []
         for classid in form.preReqs.data:
-            classObj = classes( classID = classid )
+            classObj = classes(classID=classid)
             preReqList.append(classObj)
         if form.validate_on_submit():
             addNewClass(form.course.data, preReqList, form.title.data, form.description.data,
-            form.capacity.data, form.room.data, form.trainer.data, waitList, session['classDate'], form.duration.data, reqFacilities)
+                        form.capacity.data, form.room.data, form.trainer.data, waitList, session['classDate'], form.duration.data, reqFacilities)
             flash("CREATED SUCCESSFULY")
         else:
             flash("Error")
@@ -354,17 +367,18 @@ def addClass():
 def addClassDate():
     if current_user.type != 'Admin':
         abort(403)
-    #Create a new form
+    # Create a new form
     form = CreateClassDate()
-    #If a post request is made
+    # If a post request is made
     if request.method == 'POST':
         if form.validate_on_submit():
-            #Try and create a date object for given form data.
+            # Try and create a date object for given form data.
             try:
-                classDate = datetime(form.dateYear.data, form.dateMonth.data, form.dateDay.data, form.dateHour.data, 00)
+                classDate = datetime(
+                    form.dateYear.data, form.dateMonth.data, form.dateDay.data, form.dateHour.data, 00)
                 session['classDate'] = classDate
                 return redirect('/addclass')
-            #If this fails it will flash the error on screen.
+            # If this fails it will flash the error on screen.
             except:
                 flash("Please enter a valid date")
     return render_template('newClassDate.html', title='Add Class', form=form)
@@ -398,9 +412,11 @@ def signUp(id):
     classID = id
     thisClass = classes(classID=id)
     if current_user.type == 'Delegate':
-        if meetsRequirments(thisClass, current_user):
+        if meetsRequirements(current_user, thisClass):
             addToClass(thisClass, current_user)
             flash("You have been added.")
+        else:
+            flash("You don't meet the requirements")
     else:
         flash("You are not authorised to do this")
     return redirect('/browse/classes/class/' + classID)
@@ -411,8 +427,25 @@ def viewClassDetails(id):
     classID = id
     current_class = classes(classID=classID)
     classSize = classAttendenceLen(current_class)
-    if current_user.type == 'Delegate':
-        userQualify = meetsRequirements(current_user, current_class)
+    if current_user.is_authenticated:
+        if current_user.type == 'Delegate':
+            userQualify = meetsRequirements(current_user, current_class)
+        else:
+            userQualify = False
     else:
-        userQualify = False
+        userQualify = "Sign"
     return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
+
+
+@app.route('/function/cancel/<classID>')
+def cancelClass(classID):
+    current_class = classes(classID=classID)
+    removeFromClass(current_class, current_user)
+    return redirect('/timetable')
+
+
+@app.route('/function/remind/<classID>')
+def remindClass(classID):
+    current_class = classes(classID=classID)
+    reminderEmail(current_class, current_user)
+    return redirect('/timetable')

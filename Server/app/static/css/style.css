@@ -2,6 +2,11 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 
+#timetable {
+    max-height: 580px;
+    overflow-y: scroll;
+}
+
 .Site {
     display: flex;
     min-height: 100vh;

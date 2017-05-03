@@ -35,6 +35,10 @@ roomAccess = ['W', 'A', 'L']
 courseTitle = ['Business', 'Geography', 'Witchcraft', 'Drama', 'Mandarin',
                'Art of Manliness', 'Mathematics', 'Physics', 'Biology',
                'English', 'Computer Science']
+picURLs = ['http://campusdevelopments.leeds.ac.uk/wp-content/uploads/2016/10/lecture_2.jpg',
+            'https://www.meetinleeds.co.uk/wp-content/uploads/2016/07/web-Roger-Stevens-800-x-530-8.jpg',
+            'https://static1.squarespace.com/static/527bab9be4b0040d68c66a17/5280b9bae4b05f093cd00d1b/541ffa15e4b0c158abecc056/1411395390104/DSC00019.JPG?format=1000w',
+            'http://188.65.115.241/~meetinle/wp-content/uploads/2014/02/Yorkshire-Bank-Lecture-Theatre-980x360.jpg']
 
 #Specified to decide how many database entries will be added.
 adminCount = 5
@@ -67,7 +71,8 @@ def createPhoneNum():
 
 #This will create a user name based on the name handed to the function.
 def createUsername(name):
-    name = name + str(random.randint(0,999))
+    name = name.replace(" ", "")
+    name = name.lower() + str(random.randint(0,999))
     return name
 
 #This will create a name and email address to together.
@@ -166,9 +171,10 @@ while x < roomCount:
     location = random.choice(locations)
     building = random.choice(buildings)
     facilities = createRoomFac()
+    picChoice = random.randint(0,len(picURLs)-1)
     roomCode = building[0] + building[len(building) - 8] + str(x)
     accessRating = createRoomAccess()
-    addNewRoom(capacity, roomType, accessRating, roomCode, facilities, building, location)
+    addNewRoom(capacity, roomType, accessRating, roomCode, facilities, building, location, picURLs[picChoice])
     x = x + 1
 print('')
 
