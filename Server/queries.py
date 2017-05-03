@@ -150,7 +150,7 @@ def addNewClass(CourseID, preReqs, Title, Description, Capacity, Location, Train
     db.session.commit()
     return x
 
-
+# Add a new course to the database.
 def addNewCourse(Title, Description):
     ID = genID(courses)
     x = models.Course(courseID=ID, title=Title, description=Description)
@@ -486,7 +486,8 @@ def browseItems():
     return browsableItems
 
 
-#
+# Return a list of information about the available courses, for displaying on the
+# browse courses page.
 def browseCourses():
     # Get All Courses
     courseList = courses()
