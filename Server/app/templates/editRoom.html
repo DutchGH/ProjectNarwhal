@@ -9,29 +9,26 @@
             {% endfor %}
         </div>
     </div>
-    <h2>Edit Account</h2>
+    <h2>Edit Room</h2>
     <form action="" method="post" name="createAccount">
         {{ form.hidden_tag() }}
         <p class="input-field">
-            Username: {{ form.username }}
+            Building: {{ form.building }}
         </p>
         <p>
-            E-mail: {{ form.email }}
+            Room Code: {{ form.roomCode }}
         </p>
         <p>
-            Phone Number: {{ form.phone }}
+            Location: {{ form.location }}
         </p>
         <p>
-            Address: {{ form.address }}
+            Room Type: {{ form.roomType }}
         </p>
         <p>
-            Old Password: {{ form.oldPassword }}
+            Capacity: {{ form.capacity }}
         </p>
         <p>
-            New Password: {{ form.password }}
-        </p>
-        <p>
-            Confirm: {{ form.confirm }}
+            Access Rating: {{ form.accessRating }}
         </p>
         <br>
         <p><input type="submit" value="Change Details"></p>

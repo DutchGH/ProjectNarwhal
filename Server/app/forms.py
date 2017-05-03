@@ -37,21 +37,18 @@ class CreateDelegate(Form):
     name = StringField('name', validators=[InputRequired()])
     email = StringField(
         'email', [validators.DataRequired(), validators.Email()])
-    username = StringField('username', filters=[lambda x: x or None])
+    username = StringField('username', validators = [InputRequired()], filters = [lambda x: x or None])
     password = PasswordField('password', validators=[EqualTo(
         'confirm', message='Passwords must match')], filters=[lambda x: x or None])
     confirm = PasswordField('confirm', filters=[lambda x: x or None])
 
 
 class EditDelegate(Form):
-    email = StringField(
-        'email', [validators.DataRequired(), validators.Email()])
-    username = StringField('username', filters=[lambda x: x or None])
-    oldPassword = PasswordField('oldPassword', validators=[
-                                InputRequired()], filters=[lambda x: x or None])
-    password = PasswordField('password', validators=[EqualTo(
-        'confirm', message='Passwords must match')], filters=[lambda x: x or None])
-    confirm = PasswordField('confirm', filters=[lambda x: x or None])
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    username = StringField('username', validators = [InputRequired()], filters = [lambda x: x or None])
+    oldPassword = PasswordField('oldPassword', validators = [InputRequired()], filters = [lambda x: x or None])
+    password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
 
 class CreateTrainingRoom(Form):
@@ -61,7 +58,6 @@ class CreateTrainingRoom(Form):
     roomType = SelectField('roomType',
                            choices=[('Seminar Room', 'Seminar Room'), ('Lecture Hall', 'Lecture Hall'), ('Conference Suite', 'Conference Suite')], validators=[InputRequired()])
     capacity = IntegerField('capacity', validators=[InputRequired()])
-    # picURL = StringField( 'picURL', validators = [InputRequired()])
     accessRating = SelectMultipleField('accessRating', choices=[(
         'A', 'Assitive Learning System'), ('W', 'Wheelchair Access'), ('L', 'Level Access')])
     facilities = SelectMultipleField('facilities', choices=[('M', 'Microphone'), ('D', 'DVD player'),
