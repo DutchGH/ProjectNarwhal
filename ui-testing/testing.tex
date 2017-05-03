@@ -1,5 +1,13 @@
 \documentclass{article}
 
+\newcommand{\screen}[3]{
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=#1\textwidth]{#2}
+    \caption{#3}
+    \end{figure}
+}
+
 \usepackage{graphicx}
 
 \title{Real-World UI Testing}
@@ -8,5 +16,15 @@
 
 \begin{document}
 \maketitle
+
+\section{Introduction}
+In this document we present a number of real-world tests.
+That is, tests that mimic the behaviour that is performed by a typical user in a browser setting.
+
+\section{Sign-in}
+\screen{0.8}{sign-in-form}{A screenshot of the sign-in form.}
+We expect that on entry of correct login details we are able to successfully login, while incorrect login details results in a message telling us that something is wrong.
+As expected, we receive an error message in the top-right corner when entering incorrect login details:
+\screen{0.8}{sign-in-fail}{Unsuccessful sign-in attempt.}
 
 \end{document}
