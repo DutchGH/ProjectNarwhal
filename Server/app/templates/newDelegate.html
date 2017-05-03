@@ -1,34 +1,45 @@
 {% extends "base.html" %} {% block content %}
-<div class="row">
-    <div class="col s12">
-        {% for message in get_flashed_messages() %}
-        <div class = "toast">
-        {{ message }}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            {% for message in get_flashed_messages() %}
+            <div class="toast">
+                {{ message }}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
-    <h2>Create Trainer Account</h2>
-    <form action="" method="post" name="createAccount">
-        {{ form.hidden_tag() }}
-        <p class="input-field">
-            Name : {{form.name}}
-        </p>
-        <p>
-            E-mail: {{ form.email }}
-        </p>
-        <p>
-            Username: {{ form.username }}
-        </p>
-        <p>
-            Password: {{ form.password }}
-        </p>
-        <p>
-            Confirm: {{ form.confirm }}
-        </p>
-        <br>
-        <p><input type="submit" value="Add User"></p>
-    </form>
-    <br>
+    <div class="row">
+        <div class="col s12 l6">
+            <h2>Create Account</h2>
+            <form action="" method="post" name="createAccount">
+                {{ form.hidden_tag() }}
+                <p class="input-field">
+                    Name : {{form.name}}
+                </p>
+                <p>
+                    E-mail: {{ form.email }}
+                </p>
+                <p>
+                    Username: {{ form.username }}
+                </p>
+                <p>
+                    Password: {{ form.password }}
+                </p>
+                <p>
+                    Confirm: {{ form.confirm }}
+                </p>
+                <br>
+                <div class = "row">
+                <div class = "col s12 l6">
+                    <button class="btn waves-effect waves-light green" input type="submit" value="Add Trainer">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                </form>
+            </div>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
