@@ -79,18 +79,12 @@ def addToList(list, item):
 
 #Checks for unique username. Returns false if the username is taken.
 def checkUserName( name ):
-    dels = delegates()
-    train = trainers()
-    admin = admins()
-    for i in dels:
-        if(i.username == name):
-            return False
-    for i in train:
-        if( i.username == name ):
-            return False
-    for i in admins:
-        if( i.username == name ):
-            return False
+    if delegates( username = name ) != []:
+        return False
+    if trainers( username = name ) != []:
+        return False
+    if admins( username = name ) != []:
+        return False
     return True
 
 # Returns the delegates taking a class
