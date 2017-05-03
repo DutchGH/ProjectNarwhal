@@ -242,7 +242,6 @@ def addDelegate():
     form = CreateDelegate()
     if form.validate_on_submit():
         username = form.username.data
-        username = form.email.data
         password = form.password.data
         if checkUserName(username):
             addNewDel(form.name.data, username, password, [], form.email.data)
