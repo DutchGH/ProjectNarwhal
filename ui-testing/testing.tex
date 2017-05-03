@@ -25,7 +25,8 @@ That is, tests that mimic the behaviour that is performed by a typical user in a
 \screen{0.8}{sign-in-form}{A screenshot of the sign-in form.}
 We expect that on entry of correct login details we are able to successfully login, while incorrect login details results in a message telling us that something is wrong.
 As expected, we receive an error message in the top-right corner when entering incorrect login details:
-\screen{0.8}{sign-in-fail}{Unsuccessful sign-in attempt.}
+\screen{0.8}{sign-in-fail}{Unsuccessful sign-in attempt.}\\
+and the user is logged in successfully if they provide a correct username and password.
 
 \section{View Timetable}
 One of the fundamental features of the website is timetables.
@@ -35,5 +36,13 @@ It is expected that the information presented in this card updates according to 
 \screen{1}{timetable}{List of upcoming classes, and a card showing the room and more information.}\\
 As expected, the timetable lists all upcoming classes for the delegate.
 Upon clicking a class, the card is updated accordingly.
+
+\section{Cancel Module}
+As shown in the figure in the above section, the delegate Ben Reed is signed up for a module titled `Class26'.
+Suppose that he wishes to cancel his attendance for this module.
+To do this, he must click on one instance of a class for this module, go to `Options' on the card, and click the button titled `Cancel Module'.
+We expect that after clicking this button, entries for `Class26' are no longer shown in Ben's timetable as he is no longer a member of that module.
+The website performed as expected:
+\screen{1}{timetable-removed}{Ben Reed's timetable after cancelling the module `Class26'.}
 
 \end{document}
