@@ -257,17 +257,9 @@ def addDelegate():
 def editDelegate():
     form = EditDelegate()
     if form.validate_on_submit():
-        if form.username.data is not None:
-            username = form.username.data
-        else:
-            username = form.email.data
-        if form.password.data is not None:
-            password = form.password.data
-        else:
-            password = "pass"
         if form.oldPassword.data == current_user.password:
-            edit(current_user, username=username,
-                 password=password, email=form.email.data)
+            edit(current_user, username=form.username.data,
+                 password=form.password.data, email=form.email.data)
             return redirect('/myaccount')
         else:
             flash("Old password was incorrect.")
@@ -280,16 +272,8 @@ def editDelegate():
 def editTrainer():
     form = EditTrainer()
     if form.validate_on_submit():
-        if form.username.data is not None:
-            username = form.username.data
-        else:
-            username = form.email.data
-        if form.password.data is not None:
-            password = form.password.data
-        else:
-            password = "pass"
         if form.oldPassword.data == current_user.password:
-            edit(current_user, username=username, password=password,
+            edit(current_user, username=form.username.data, password=form.password.data,
                  email=form.email.data, phone=form.phone.data, address=form.address.data)
             return redirect('/myaccount')
         else:
@@ -449,3 +433,13 @@ def remindClass(classID):
     current_class = classes(classID=classID)
     reminderEmail(current_class, current_user)
     return redirect('/timetable')
+
+
+@app.route('/deleteroom/<id>')
+def deleteRoom(id):
+    room = rooms(roomID=id)
+    if delRoom(room):
+        return redirect('/rooms')
+    else:
+        flash("Classes have been scheduled in this room")
+        return redirect('/rooms/'+id)

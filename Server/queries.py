@@ -16,58 +16,51 @@ def listConvert(x):
         y.append(i)
     return y
 
+
 # Return the list of classes
-
-
 def classes(**kwargs):
     q = models.Class.query.filter_by(**kwargs)
     q = listConvert(q)
     return q
 
+
 # Return the list of courses
-
-
 def courses(**kwargs):
     q = models.Course.query.filter_by(**kwargs)
     q = listConvert(q)
     return q
 
+
 # Return a list of all trainers
-
-
 def trainers(**kwargs):
     q = models.Trainer.query.filter_by(**kwargs)
     q = listConvert(q)
     return q
 
+
 # Return a list of delegates based on a query.
-
-
 def delegates(**kwargs):
     q = models.Delegate.query.filter_by(**kwargs)
     q = listConvert(q)
     return q
 
+
 # Return a list of all admins
-
-
 def admins(**kwargs):
     q = models.Admin.query.filter_by(**kwargs)
     q = listConvert(q)
     return q
 
+
 # Returns a list of all rooms
-
-
 def rooms(**kwargs):
     q = models.Room.query.filter_by(**kwargs)
     q = listConvert(q)
     return q
 
+
 # Adds an item to a list, works to add either classes to a delegates classList or
 # to add delegates to a classes waiting list.
-
-
 def addToList(list, item):
     # If adding to a waiting list
     if(list.__tablename__ == 'Class'):
@@ -88,9 +81,8 @@ def checkUserName(name):
         return False
     return True
 
+
 # Returns the delegates taking a class
-
-
 def classAttendence(thisClass):
     dels = delegates()
     at = []
@@ -100,24 +92,21 @@ def classAttendence(thisClass):
                 at.append(g)
     return at
 
+
 # Returns the number of delegates taking a class
-
-
 def classAttendenceLen(thisClass):
     return len(classAttendence(thisClass))
 
+
 # Checks if a class is at capacity
-
-
 def capacity(thisClass):
     if(thisClass.capacity >= (classAttendenceLen(thisClass))):
         return False
     else:
         return True
 
+
 # This will add a new admin to the Admin database.
-
-
 def addNewAdmin(Name, Username, Password, Email):
     ID = genID(admins)
     x = models.Admin(adminID=ID, name=Name, username=Username,
@@ -126,9 +115,8 @@ def addNewAdmin(Name, Username, Password, Email):
     db.session.commit()
     return x
 
+
 # This will add a new Trainer to the trainer database.
-
-
 def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     ID = genID(trainers)
     x = models.Trainer(trainerID=ID, name=Name, address=Address,
@@ -137,9 +125,8 @@ def addNewTrainer(Name, Address, Phone, Email, Username, Password):
     db.session.commit()
     return x
 
+
 # This will add a new room to the room database.
-
-
 def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Location, pic):
     ID = genID(rooms)
     x = models.Room(roomID=ID, capacity=Capacity, roomType=RoomType,
@@ -149,9 +136,8 @@ def addNewRoom(Capacity, RoomType, AccessRating, RoomCode, Fac, Building, Locati
     db.session.commit()
     return x
 
+
 # This will add a new class to the class database.
-
-
 def addNewClass(CourseID, preReqs, Title, Description, Capacity, Location, Trainer,
                 waitList, StartDate, duration, reqFac=None):
     ID = genID(classes)
@@ -172,9 +158,8 @@ def addNewCourse(Title, Description):
     db.session.commit()
     return x
 
+
 # This will add a new delegate to the delegate database.
-
-
 def addNewDel(Name, Username, Password, Class, Email):
     ID = genID(delegates)
     x = models.Delegate(delID=ID, name=Name, username=Username,
@@ -183,9 +168,8 @@ def addNewDel(Name, Username, Password, Class, Email):
     db.session.commit()
     return x
 
+
 # This will generate a unique ID for a new database entry.
-
-
 def genID(model):
     modelList = model()
     try:
@@ -214,9 +198,8 @@ def genID(model):
                 return ID
         ID += 1
 
+
 # A function that identifies a user as a delegate, a trainer or an adminID
-
-
 def checkUser(user):
     if(type(user) == models.Delegate):
         return "Delegate"
@@ -226,10 +209,9 @@ def checkUser(user):
         return "Trainer"
     return "INVALID"
 
+
 # A function that adds a delegate to a classes attendanceList or
 # waitingList, depending on capacity
-
-
 def addToClass(thisClass, thisDel):
     if(len(thisClass.attendanceList) < thisClass.capacity):
         thisClass.attendanceList.append(thisDel)
@@ -240,10 +222,9 @@ def addToClass(thisClass, thisDel):
         #waitingEmail(thisClass, thisDel)
     db.session.commit()
 
+
 # Will send an email to the user email address confirming their place on
 # the course.
-
-
 def confirmEmail(thisClass, thisDel):
     time = thisClass.startDate
     time = time.strftime("%H:%M, %d/%m/%y")
@@ -253,9 +234,8 @@ def confirmEmail(thisClass, thisDel):
         thisClass.title + " commencing on " + time + "."
     mail.send(message)
 
+
 # Send an email to a user reminding them of an upcoming class.
-
-
 def reminderEmail(thisClass, thisDel):
     time = thisClass.startDate
     time = time.strftime("%H:%M, %d/%m/%y")
@@ -265,10 +245,9 @@ def reminderEmail(thisClass, thisDel):
         thisClass.title + " class starting at " + time + "!"
     mail.send(message)
 
+
 # Will send an email to the user email address notfying them they have
 # been put on a waiting list.
-
-
 def waitingEmail(thisClass, thisDel):
     message = Message("Hi %s" % thisDel.name,
                       sender="luketestacc.gmail.com", recipients=[thisDel.email])
@@ -276,25 +255,22 @@ def waitingEmail(thisClass, thisDel):
         " is currently full you have been placed on a waiting list. You will automatically be moved on to the course if a place becomes available, and will receive an email confirming."
     mail.send(message)
 
+
 # A function for removing entries
-
-
 def removeItem(item):
     db.session.delete(item)
     db.session.commit()
 
+
 # A query for editing entries
-
-
 def edit(item, **kwargs):
     for field, value in kwargs.items():
         setattr(item, str(field), value)
     db.session.commit()
 
+
 # A function which removes a user from a classList and moves someone over
 # from the waitingList
-
-
 def removeFromClass(thisClass, delegate):
     thisClass.attendanceList.remove(delegate)
     if(len(thisClass.waitList) > 0):
@@ -303,9 +279,8 @@ def removeFromClass(thisClass, delegate):
         confirmEmail(thisClass, delegate)
     db.session.commit()
 
+
 # A function that recovers a list of classes yet to be taught.
-
-
 def futureClasses():
     # Get the current time.
     today = datetime.now()
@@ -318,9 +293,8 @@ def futureClasses():
     # Return the result
     return classList
 
+
 # A function that recovers a list of classes already taught.
-
-
 def pastClasses():
     # Get the current time.
     today = datetime.now()
@@ -333,10 +307,9 @@ def pastClasses():
     # Return the result
     return classList
 
+
 # A function that recovers a list of classes already taught, from a delegates
 # classList.
-
-
 def history(delegate):
     # Get the current time.
     today = datetime.now()
@@ -350,9 +323,8 @@ def history(delegate):
     # Return the result
     return results
 
+
 # A function that recovers a list of classes a delegate is yet to take.
-
-
 def schedule(delegate):
     # Get the current time.
     today = datetime.now()
@@ -366,9 +338,8 @@ def schedule(delegate):
     # Return the result
     return results
 
+
 # Function that checks a rooms accessRating, returning an array of properties.
-
-
 def checkAccess(rating):
     accessRating = []
     if 'A' in rating:
@@ -379,9 +350,8 @@ def checkAccess(rating):
         accessRating.append("Wheelchair access.")
     return accessRating
 
+
 # Function that checks a room's facilities, returning an array of properties.
-
-
 def checkFacilities(facilities):
     facList = []
     if 'M' in facilities:
@@ -401,9 +371,8 @@ def checkFacilities(facilities):
 
     return facList
 
+
 # Function that returns a list of available trainers at a given time
-
-
 def checkTrainer(time):
     # Get a list of trainers
     teachers = trainers()
@@ -423,9 +392,8 @@ def checkTrainer(time):
         teachers.remove(j.trainer)
     return teachers
 
+
 # Function that returns a list of available rooms at a given time
-
-
 def checkRoom(time):
     # Get a list of trainers
     classRooms = rooms()
@@ -444,18 +412,16 @@ def checkRoom(time):
         classRooms.remove(j.location)
     return classRooms
 
+
 # Get a list of classes with the same course number
-
-
 def getCourseClasses(thisCourse):
     preReqs = listConvert(models.Class.query.filter_by(course=thisCourse))
     if(type(preReqs) != type([])):
         preReqs = [preReqs]
     return preReqs
 
+
 # Function that checks if a delegate meets the prerequists of a classRooms
-
-
 def checkPrereq(delegate, thisClass):
     # Get the list of required classes for the class
     preReqs = thisClass.preTrain
@@ -470,19 +436,17 @@ def checkPrereq(delegate, thisClass):
             notMet.append(i)
     return(notMet)
 
+
 # Function that gives a simple True/False answer to whether or not a delegate hamish1
 # met the prerequists for a class.
-
-
 def meetsRequirements(delegate, thisClass):
     returnedList = checkPrereq(delegate, thisClass)
     if(len(returnedList) == 0):
         return True
     return False
 
+
 # Function that returns the timetable for a given delegate
-
-
 def delTimeTable(delegate):
     # Get the non finished classes for this delegate.
     classList = schedule(delegate)
@@ -507,9 +471,8 @@ def delTimeTable(delegate):
             newLessons.remove(i)
     return newLessons
 
+
 # Function that returns a list of classes for use in the browse page
-
-
 def browseItems():
     # Get all the classes
     classList = getCurrentClasses()
@@ -523,6 +486,7 @@ def browseItems():
     return browsableItems
 
 
+#
 def browseCourses():
     # Get All Courses
     courseList = courses()
@@ -557,9 +521,8 @@ def roomTimeTable(room):
     itemList = sorted(itemList, key=lambda x: x[4])
     return itemList
 
+
 # A function to get a timetable for a trainer.
-
-
 def trainerTimeTable(trainer):
     # Get a list of classes.
     classList = classes()
@@ -583,9 +546,8 @@ def trainerTimeTable(trainer):
     itemList = sorted(itemList, key=lambda x: x[4])
     return itemList
 
+
 # A function to get the different durations
-
-
 def getDurations():
     classList = classes()
     durationList = []
@@ -595,9 +557,8 @@ def getDurations():
     durationList = sorted(durationList)
     return durationList
 
+
 # A function to get the different locations
-
-
 def getLocations():
     classList = classes()
     locationList = []
@@ -606,9 +567,8 @@ def getLocations():
             locationList.append(i.location.location)
     return locationList
 
+
 # A function that get's a delegates classes without using his classList
-
-
 def getClasses(dele):
     classList = classes()
     results = []
@@ -617,9 +577,8 @@ def getClasses(dele):
             results.append(i)
     return results
 
+
 # Function that gets a list of the classes that have not finished.
-
-
 def getCurrentClasses():
     classList = classes()
     today = datetime.now()
@@ -629,9 +588,8 @@ def getCurrentClasses():
             results.append(i)
     return results
 
+
 # Function that checks if a class will conflict with a delegates classlist.
-
-
 def noTimeTableClash(dele, thisClass):
     classList = dele.classList
     for i in classList:
@@ -648,3 +606,13 @@ def noTimeTableClash(dele, thisClass):
                          timedelta(weeks=j) + timedelta(hours=1)))):
                 return False
     return True
+
+
+#A function to delete a roomd first checking if there are any scheduled classes in it.
+def delRoom(room):
+    schedClass = classes(locationPoint = room.roomID)
+    if schedClass == []:
+        removeItem(room)
+        return True
+    else:
+        return False

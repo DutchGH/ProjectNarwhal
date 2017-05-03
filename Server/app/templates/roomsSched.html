@@ -1,10 +1,16 @@
 {% extends "base.html" %} {% block content %}
-
 <div class="container">
+    {% for message in get_flashed_messages() %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
+
     <h3>{{room.building}} {{room.roomCode}}</h3>
     <div class="row">
         <div class="col l6 m6 s12">
             <h4>Room Information</h4>
+            <p><strong>Location: </strong>{{room.location}}</p>
             <p><strong>Capacity: </strong>{{room.capacity}}</p>
             <p><strong>Room Type: </strong>{{room.roomType}}</p>
             <p><strong>Access Rating: </strong> {% if room.accessRating == "W" %} Wheelchair Accessible {%else%} {{room.accessRating}}
@@ -27,8 +33,7 @@
     <div class="row">
         <div class="col l12">
             <div class="center-align">
-                <a class="waves-effect waves-light btn green">Edit Room</a>
-                <a class="waves-effect waves-light btn red">Delete Room</a>
+                <a class="waves-effect waves-light btn red" href='/deleteroom/{{room.roomID}}'>Delete Room</a>
             </div>
         </div>
     </div>

@@ -28,14 +28,14 @@ class EditTrainer(Form):
 class CreateDelegate(Form):
     name = StringField('name', validators = [InputRequired()])
     email = StringField('email', [validators.DataRequired(), validators.Email()])
-    username = StringField('username', filters = [lambda x: x or None])
+    username = StringField('username', validators = [InputRequired()], filters = [lambda x: x or None])
     password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
     confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
 
 class EditDelegate(Form):
     email = StringField('email', [validators.DataRequired(), validators.Email()])
-    username = StringField('username', filters = [lambda x: x or None])
+    username = StringField('username', validators = [InputRequired()], filters = [lambda x: x or None])
     oldPassword = PasswordField('oldPassword', validators = [InputRequired()], filters = [lambda x: x or None])
     password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
     confirm = PasswordField('confirm', filters = [lambda x: x or None])
