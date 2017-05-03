@@ -199,11 +199,14 @@ def roomSchedule(id):
     if current_user.type != 'Admin':
         abort(403)
     room = rooms(roomID=id)
+    fac = checkFacilities(room.facilities)
+    ac = checkAccess(room.accessRating)
     roomClassList = classes(locationPoint=roomID)
+    tt = roomTimeTable(room)
     if type(roomClassList) != list:
         roomClassList = [roomClassList]
 
-    return render_template('roomsSched.html', title='Room Schedule', room=room, roomClassList=roomClassList)
+    return render_template('roomsSched.html', title='Room Schedule', room=room, roomClassList=roomClassList, fac = fac, ac = ac, tt = tt)
 
 
 @app.route('/addroom', methods=['GET', 'POST'])
