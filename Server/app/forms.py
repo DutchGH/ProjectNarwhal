@@ -16,11 +16,27 @@ class CreateTrainer(Form):
     password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
     confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
+class EditTrainer(Form):
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    username = StringField('username', filters = [lambda x: x or None])
+    address = StringField('address', validators = [InputRequired()])
+    phone = IntegerField('phone', validators = [InputRequired()]);
+    oldPassword = PasswordField('oldPassword', validators = [InputRequired()], filters = [lambda x: x or None])
+    password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
 class CreateDelegate(Form):
     name = StringField('name', validators = [InputRequired()])
     email = StringField('email', [validators.DataRequired(), validators.Email()])
     username = StringField('username', filters = [lambda x: x or None])
+    password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
+    confirm = PasswordField('confirm', filters = [lambda x: x or None])
+
+
+class EditDelegate(Form):
+    email = StringField('email', [validators.DataRequired(), validators.Email()])
+    username = StringField('username', filters = [lambda x: x or None])
+    oldPassword = PasswordField('oldPassword', validators = [InputRequired()], filters = [lambda x: x or None])
     password = PasswordField('password', validators = [EqualTo('confirm', message='Passwords must match')], filters = [lambda x: x or None])
     confirm = PasswordField('confirm', filters = [lambda x: x or None])
 
