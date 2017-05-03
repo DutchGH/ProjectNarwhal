@@ -193,11 +193,7 @@ while x < classCount:
     courseNum = random.randint(0,10)
     capacity = random.randint(0,200)
     duration = random.randint(1,12)
-    y = random.randint(5,10)
-    title = ''
-    while y > 0:
-        title = title + random.choice(string.ascii_lowercase)
-        y = y - 1
+    title = 'Class' + str(x)
     roomNum = random.randint(0,roomCount-1)
     trainerNum = random.randint(0,trainerCount-1)
     waitingList = []
