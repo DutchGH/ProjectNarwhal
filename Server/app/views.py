@@ -218,8 +218,11 @@ def addTrainer():
             password = form.password.data
         else:
             password = "pass"
-        addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
-        flash("CREATED SUCCESSFULY")
+        if checkUserName( form.username.data ):
+            addNewTrainer(form.name.data, form.address.data, form.phone.data, form.email.data, username, password)
+            flash("CREATED SUCCESSFULY")
+        else:
+            flash("That username is already taken.")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
 
 
@@ -235,8 +238,11 @@ def addDelegate():
             password = form.password.data
         else:
             password = "pass"
-        addNewDel(form.name.data, username, password, [], form.email.data)
-        flash("CREATED SUCCESSFULY")
+        if checkUserName( form.username.data ):
+            addNewDel(form.name.data, username, password, [], form.email.data)
+            flash("CREATED SUCCESSFULY")
+        else:
+            flash("That username is already taken.")
     return render_template('newDelegate.html', title='Create Account', form=form)
 
 

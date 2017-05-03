@@ -214,7 +214,7 @@ print('')
 #Queries classes for dependency on delegates.
 classes = classes()
 
-#Finally Delegates.
+#Create the Delegates.
 print("Creating delegates.")
 x = 0
 while x < delCount:
@@ -222,9 +222,25 @@ while x < delCount:
     name, email = createNameandEmail()
     username = createUsername(name)
     password = createPassword()
-    classList = random.sample(classes, 5)
+    classList = random.sample(classes, random.randint(0,5))
     addNewDel(name, username, password, classList, email)
     x = x + 1
 print('')
+
+#Finally create test admins/trainers/dels
+print("Creating test admins.")
+addNewAdmin("Luke Roberts", "Luke", "pass", "LRoberts@email.com")
+addNewAdmin("Jake Horsefield", "Jake", "pass", "JHorsefield@email.com")
+addNewAdmin("Jake Holland", "Jake2", "pass", "JHolland@email.com")
+
+print("Creating test trainers.")
+addNewTrainer("Sam Wilson", "Dec-10", 0, "swilson@leeds.ac.uk", "sam1", "pass")
+addNewTrainer("Eric Atwell", "Dec-10", 0, "eatwell@leeds.ac.uk", "eric1", "pass")
+addNewTrainer("Hamish Carr", "Dec-10", 0, "hcarr@leeds.ac.uk", "hamish1", "pass")
+
+print("Creating test delegates.")
+addNewDel("Ben Reed", "Ben", "pass", random.sample(classes, 3), "BReed@email.com")
+addNewDel("Suhaib Saeed", "Si", "pass", random.sample(classes, 5), "SSaeed@email.com")
+addNewDel("Jon-Fredick Henning", "Jon", "pass", random.sample(classes, 3), "JFHenning@email.com")
 
 print('DONE')
