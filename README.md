@@ -10,4 +10,5 @@
 ## Wiki Contents
 1. [Meetings](https://gitlab.com/comp2931/narwhal/wikis/group-meetings)
 2. [To Do List](https://gitlab.com/comp2931/narwhal/wikis/todo-list)
-
+3. [User Guide](https://gitlab.com/comp2931/narwhal/wikis/functions)
+4. [Real-World Testing](https://gitlab.com/comp2931/narwhal/wikis/real-world-testing)
