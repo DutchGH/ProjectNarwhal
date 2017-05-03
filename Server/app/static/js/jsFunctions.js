@@ -15,14 +15,16 @@ function hideItems(course, pos, checkBox){
     var thisrow = box.rows[i]
     if(thisrow.cells[pos].innerHTML != course){
       if(checkBox.checked){
+        thisrow.cells[5].innerHTML = parseInt(thisrow.cells[5].innerHTML) + 1
         if(thisrow.style.display != "none"){
           thisrow.style.display = "none";
         }
       }
       else{
-          if(thisrow.style.display != "table-row"){
-              thisrow.style.display = "table-row";
-          }
+        thisrow.cells[5].innerHTML = parseInt(thisrow.cells[5].innerHTML) - 1
+        if((thisrow.style.display != "table-row") && ( parseInt(thisrow.cells[5].innerHTML) == 0)){
+            thisrow.style.display = "table-row";
+        }
       }
     }
   }
