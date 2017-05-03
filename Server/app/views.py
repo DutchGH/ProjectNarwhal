@@ -13,11 +13,9 @@ import logging
 def load_user(id):
     return models.User.query.get(id)
 
-
 class Anonymous(AnonymousUserMixin):
     def __init__(self):
         self.type = 'Guest'
-
 
 # If a 403 error code is raised, show the 403 page given by 403.html.
 @app.errorhandler(403)
@@ -50,16 +48,12 @@ def login():
             flash('Invalid Credentials. Please Try Again')
     return render_template('login.html', title='Log In', form=form)
 
-
 # Logout the current user and redirect to the homepage.
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect('/')
-
-# Once user is logged page is displayed <---example--->
-
 
 # When a user tries to access admin options, check their type.
 # If they are eligble (i.e. they are an admin), render the page.
@@ -73,7 +67,9 @@ def admin():
     else:
         return render_template('loggedIn.html', title='Home Page')
 
-
+# The user wishes to browse available classes.
+# Retreive lists of classes, courses, durations and locations.
+# Pass these to the template for rendering.
 @app.route('/browse/classes')
 def browseClasses():
     classList = browseItems()
@@ -82,7 +78,8 @@ def browseClasses():
     locations = getLocations()
     return render_template('browseClasses.html', title='Browse Clases', classList=classList, courseList=courseList, durations=durations, locations=locations)
 
-
+# The user wishes to go to their account page.
+# This page depends on whether the user is a trainer, admin, or delegate.
 @app.route('/myaccount')
 @login_required
 def myAccount():
@@ -97,8 +94,8 @@ def myAccount():
     else:
         abort(403)
 
-
-
+# Render the page that displays a user's timetable.
+# This route is only valid for delegates, therefore abort with 403 for any other user type.
 @app.route('/timetable')
 @login_required
 def timetable():
@@ -106,7 +103,6 @@ def timetable():
         abort(403)
     classList = delTimeTable(current_user)
     return render_template('timetable.html', title='Timetable', classList=classList)
-
 
 @app.route('/timetabletemp')
 @login_required
@@ -122,9 +118,8 @@ def timetabletemp():
              "14:00", "15:00", "16:00", "17:00", "18:00"]
     return render_template('timetabletemp.html', title='Timetable', classList=classList, days=days, hours=hours)
 
-# Displays a list of trainers which can link to the trainers schedule.
-
-
+# Display a list of trainers.
+# Only valid for admins.
 @app.route('/trainers')
 @login_required
 def trainerList():
@@ -133,9 +128,8 @@ def trainerList():
     trainerList = trainers()
     return render_template('trainers.html', title='Trainer List', trainerList=trainerList)
 
-# accessed using <a href='/trainers/{{item.userID}}'></a>
-
-
+# View a list of courses.
+# Only valid for admins.
 @app.route('/courses')
 @login_required
 def courseList():
@@ -144,7 +138,8 @@ def courseList():
     courseList = courses()
     return render_template('courses.html', title='Trainer List', courseList=courseList)
 
-
+# View a list of classes for a given course.
+# Only valid for admins.
 @app.route('/course/<id>')
 @login_required
 def course(id):
@@ -159,7 +154,8 @@ def course(id):
 
     return render_template('courseDetails.html', title='Trainer Schedule', current_course=current_course, courseClassList=courseClassList)
 
-
+# View details about a particular class.
+# Only valid for admins.
 @app.route('/class/<id>')
 @login_required
 def adminClassDetails(id):
@@ -170,7 +166,8 @@ def adminClassDetails(id):
     attSize = len(current_class.attendanceList)
     return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class, attSize = attSize)
 
-
+# View the schedule for a particular trainer.
+# Only valid for admins.
 @app.route('/trainers/<id>')
 @login_required
 def trainerSchedule(id):
@@ -185,7 +182,7 @@ def trainerSchedule(id):
 
     return render_template('trainersSched.html', title='Trainer Schedule', current_trainer=current_trainer, trainerClassList=trainerClassList)
 
-
+# TODO: Change heading on this page?
 @app.route('/rooms')
 @login_required
 def roomList():
