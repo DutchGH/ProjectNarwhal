@@ -518,7 +518,7 @@ def delTimeTable(delegate):
 
 def browseItems():
     # Get all the classes
-    classList = classes()
+    classList = getCurrentClasses()
     # The array to return
     browsableItems = []
     for i in classList:
@@ -607,6 +607,7 @@ def getLocations():
             locationList.append(i.location.location)
     return locationList
 
+# A function that get's a delegates classes without using his classList
 def getClasses(dele):
     classList = classes()
     results = []
@@ -614,3 +615,24 @@ def getClasses(dele):
         if dele in i.attendanceList:
             results.append(i)
     return results
+
+# Function that gets a list of the classes that have not finished.
+def getCurrentClasses():
+    classList = classes()
+    today = datetime.now()
+    results = []
+    for i in classList:
+        if i.endDate > today:
+            results.append(i)
+    return results
+
+# Function that checks if a class will conflict with a delegates classlist.
+def noTimeTableClash(dele,thisClass):
+    classList = dele.classList
+    for i in classList:
+        for j in range(0,i.duration):
+            if((i.startDate + timedelta(weeks=j) <= (thisClass.startDate+timedelta(weeks=j))) and ((i.startDate + timedelta(weeks=j) + timedelta(minutes=60)) >= (thisClass.startDate+timedelta(weeks=j)))):
+                return False
+            if((i.startDate + timedelta(weeks=j) <= (thisClass.startDate+timedelta(weeks=j)+timedelta(hours=1))) and ((i.startDate + timedelta(weeks=j) + timedelta(minutes=60)) >= (thisClass.startDate+timedelta(weeks=j)+timedelta(hours=1)))):
+                return False
+    return True

@@ -22,7 +22,7 @@ def addRoomQuick():
     oldRoomList = rooms()
     if(type(oldRoomList) != list):
         oldRoomList = ['a']
-    newRoom = addNewRoom(99, "test", "test", "test", "test", "test", "test")
+    newRoom = addNewRoom(99, "test", "test", "test", "test", "test", "test","test")
     newRoomList = rooms()
     if(type(newRoomList) != list):
         newRoomList = ['a']
@@ -115,7 +115,7 @@ def addClassQuick():
     a = models.Room(roomID=0)
     b = models.Trainer(trainerID=0)
     c = []
-    newClass = addNewClass(2011,"Web App","Learn to use flask for creating a web server.",90,a.roomID,b.trainerID,c,datetime.utcnow())
+    newClass = addNewClass(2011,[],"Web App","Learn to use flask for creating a web server.",90,a.roomID,b.trainerID,[],datetime.utcnow(),5)
     newClassList = classes()
     if(type(newClassList) != list):
         newClassList = ['a']
