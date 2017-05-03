@@ -214,8 +214,9 @@ def addRoom():
     form = CreateTrainingRoom()
     if form.validate_on_submit():
         ar = ''.join(form.accessRating.data)
+        fac = ''.join(form.facilities.data)
         addNewRoom(form.capacity.data, form.roomType.data, ar,
-                   form.roomCode.data, form.building.data, form.location.data)
+                   form.roomCode.data, fac, form.building.data, form.location.data, "http://www.leeds.ac.uk/mtc/images/rooms/mlt.jpg")
         flash("CREATED SUCCESSFULY")
     return render_template('newRoom.html', title='Add Room', form=form)
 
