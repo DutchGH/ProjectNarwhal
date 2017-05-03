@@ -427,10 +427,10 @@ def viewClassDetails(id):
             userQualify = meetsRequirements(current_user, current_class)
         else:
             userQualify = False
-            clash = True
+            clash = "NA"
     else:
         userQualify = "Sign"
-        clash = True
+        clash = "NA"
     return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify, clash = clash)
 
 

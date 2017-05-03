@@ -56,7 +56,7 @@
     </div>
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{%if userQualify == " Sign "%}/login{%else%}/signup/{{current_class.classID}}{%endif%}"
+            <a href="{%if userQualify == "Sign"%}/login{%else%}/signup/{{current_class.classID}}{%endif%}"
             class="waves-effect waves-light btn green {% if userQualify == False or clash == False%}disabled{% endif %}">
             {% if current_class.capacity == classSize %}Add to Waiting List{%elif userQualify == False %}Requirements Not Met
             {%elif userQualify == "Sign" %}You Must Sign In First!
