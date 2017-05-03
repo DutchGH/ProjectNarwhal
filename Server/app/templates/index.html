@@ -1,11 +1,61 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="s12">
-            <h1> This Project Is Under Construction. </h1>
-            <h3> Please Checkout Back Soon! </h3>
-            <h4> - Team Narwhal </h4>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center blue-text">We Made A Thing.</h1>
+        <div class="row center">
+            <h5 class="header col s12 light">A modern responsive Flask application based on Material Design</h5>
         </div>
+        <div class="row center">
+            <a href="/browse/classes" id="download-button" class="btn-large waves-effect waves-light blue">Browse Classes</a> &nbsp
+            <a href="/login" id="download-button" class="btn-large waves-effect waves-light green">Sign In.</a>
+        </div>
+        <br><br>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="large material-icons">group_work</i></h2>
+                    <h5 class="center">It's kinda good.</h5>
+
+                    <p class="light">Our semi-competent team of 5 managed to band together and make something presentable<br>
+                    We have used Flask for our logic, in conjunction with SQLalchemy for ORM for databases, Jinja2 for templating,
+                Materialize for CSS design and our sanity to write code that (sort of) works.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="large material-icons">group</i></h2>
+                    <h5 class="center">Multiple User Groups</h5>
+
+                    <p class="light">You can sign in as an admin to view entries, a delegate to join classes, and a trainer to view your schedule.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="large material-icons">done</i></h2>
+                    <h5 class="center">I've run out of things to say.</h5>
+
+                    <p class="light">On a normal site, we'd put buzzwords here, such as "synergy", "Disintermediate", and "Bleeding Edge".<br> Feeling business-ey yet? You should.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
     </div>
 </div>
 {% endblock %}

@@ -36,7 +36,7 @@
             <h4>General Information</h4>
             <ul>
                 <li>Course: {{current_class.course.title}}</li>
-                <li>Trainer: <a href="/trainers/{{current_class.trainer.trainerID}}">{{current_class.trainer.name}}</a></li>
+                <li>Trainer:{{current_class.trainer.name}}</li>
                 <li>Start Time: {{current_class.startDate.strftime('%H:%M %d-%b-%Y') }}</li>
                 <li>Location: {{current_class.location.building}} {{current_class.location.roomCode}} ({{current_class.location.location}})
                     <li>

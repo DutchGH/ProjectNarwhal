@@ -263,30 +263,32 @@ def addDelegate():
 @app.route('/editdel', methods=['GET', 'POST'])
 def editDelegate():
     form = EditDelegate()
-    if form.validate_on_submit():
-        if form.oldPassword.data == current_user.password:
-            edit(current_user, username=form.username.data,
-                 password=form.password.data, email=form.email.data)
-            return redirect('/myaccount')
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            if form.oldPassword.data == current_user.password:
+                edit(current_user, username=form.username.data,
+                     password=form.password.data, email=form.email.data)
+                return redirect('/myaccount')
+            else:
+                flash("Old password was incorrect.")
         else:
-            flash("Old password was incorrect.")
-    else:
-        flash("Confirm password did not match.")
+            flash("Confirm password did not match.")
     return render_template('editDel.html', title='Edit Account', form=form)
 
 
 @app.route('/edittrain', methods=['GET', 'POST'])
 def editTrainer():
     form = EditTrainer()
-    if form.validate_on_submit():
-        if form.oldPassword.data == current_user.password:
-            edit(current_user, username=form.username.data, password=form.password.data,
-                 email=form.email.data, phone=form.phone.data, address=form.address.data)
-            return redirect('/myaccount')
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            if form.oldPassword.data == current_user.password:
+                edit(current_user, username=form.username.data, password=form.password.data,
+                     email=form.email.data, phone=form.phone.data, address=form.address.data)
+                return redirect('/myaccount')
+            else:
+                flash("Old password was incorrect.")
         else:
-            flash("Old password was incorrect.")
-    else:
-        flash("Confirm password did not match.")
+            flash("Confirm password did not match.")
     return render_template('editTrain.html', title='Edit Account', form=form)
 
 
