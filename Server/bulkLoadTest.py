@@ -71,7 +71,8 @@ def createPhoneNum():
 
 #This will create a user name based on the name handed to the function.
 def createUsername(name):
-    name = name + str(random.randint(0,999))
+    name = name.replace(" ", "")
+    name = name.lower() + str(random.randint(0,999))
     return name
 
 #This will create a name and email address to together.
