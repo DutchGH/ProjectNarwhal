@@ -171,7 +171,6 @@ def trainerSchedule(id):
 
     return render_template('trainersSched.html', title='Trainer Schedule', current_trainer=current_trainer, trainerClassList=trainerClassList)
 
-# TODO: Change heading on this page?
 @app.route('/rooms')
 @login_required
 def roomList():
@@ -179,7 +178,6 @@ def roomList():
         abort(403)
     roomList = rooms()
     return render_template('rooms.html', title='Room List', roomList=roomList)
-
 
 @app.route('/rooms/<id>')
 @login_required
@@ -197,7 +195,6 @@ def roomSchedule(id):
 
     return render_template('roomsSched.html', title='Room Schedule', room=room, roomClassList=roomClassList, fac = fac, ac = ac, tt = tt)
 
-
 @app.route('/addroom', methods=['GET', 'POST'])
 @login_required
 def addRoom():
@@ -211,7 +208,6 @@ def addRoom():
                    form.roomCode.data, fac, form.building.data, form.location.data, "http://www.leeds.ac.uk/mtc/images/rooms/mlt.jpg")
         flash("CREATED SUCCESSFULY")
     return render_template('newRoom.html', title='Add Room', form=form)
-
 
 @app.route('/addtrainer', methods=['GET', 'POST'])
 @login_required
@@ -230,7 +226,6 @@ def addTrainer():
             flash("That username is already taken.")
     return render_template('newTrainer.html', title='Add Trainer', form=form)
 
-
 @app.route('/createaccount', methods=['GET', 'POST'])
 def addDelegate():
     form = CreateDelegate()
@@ -243,7 +238,6 @@ def addDelegate():
         else:
             flash("That username is already taken.")
     return render_template('newDelegate.html', title='Create Account', form=form)
-
 
 @app.route('/editdel', methods=['GET', 'POST'])
 @login_required
@@ -262,7 +256,6 @@ def editDelegate():
         else:
             flash("Confirm password did not match.")
     return render_template('editDel.html', title='Edit Account', form=form)
-
 
 @app.route('/edittrain', methods=['GET', 'POST'])
 @login_required
@@ -367,7 +360,8 @@ def addClassDate():
                 flash("Please enter a valid date")
     return render_template('newClassDate.html', title='Add Class', form=form)
 
-
+# View a list of delegates.
+# Only valid for admins.
 @app.route('/delegates')
 @login_required
 def delList():
@@ -376,7 +370,8 @@ def delList():
     delList = delegates()
     return render_template('delegates.html', title='Delegate List', delList=delList)
 
-
+# View the schedule of a delegate.
+# Only valid for admins.
 @app.route('/delegates/<id>')
 @login_required
 def delSchedule(id):
@@ -389,7 +384,7 @@ def delSchedule(id):
 
     return render_template('delsSched.html', title='Delegate Schedule', user=user, delClassList=delClassList)
 
-
+# Sign up a delegate for a class, provided they meet requirements.
 @app.route('/signup/<id>')
 @login_required
 def signUp(id):
@@ -408,7 +403,6 @@ def signUp(id):
         flash("You are not authorised to do this")
     return redirect('/browse/classes/class/' + classID)
 
-
 @app.route('/browse/classes/class/<id>')
 def viewClassDetails(id):
     classID = id
@@ -426,7 +420,7 @@ def viewClassDetails(id):
         clash = "NA"
     return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify, clash = clash)
 
-
+# Cancel an upcoming class.
 @app.route('/function/cancel/<classID>')
 def cancelClass(classID):
     current_class = classes(classID=classID)
@@ -434,13 +428,14 @@ def cancelClass(classID):
     return redirect('/timetable')
 
 
+# Send a reminder email about an upcoming class.
 @app.route('/function/remind/<classID>')
 def remindClass(classID):
     current_class = classes(classID=classID)
     reminderEmail(current_class, current_user)
     return redirect('/timetable')
 
-
+# Delete a room with given ID.
 @app.route('/deleteroom/<id>')
 def deleteRoom(id):
     room = rooms(roomID=id)
