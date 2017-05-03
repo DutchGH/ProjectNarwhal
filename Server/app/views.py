@@ -90,9 +90,10 @@ def myAccount():
         delClassList = getClasses(current_user)
         pastClass = history(current_user)
         futureClass = schedule(current_user)
-        return render_template('myAccount.html', title='Account Details', delClassList=delClassList, pastClass=pastClass, futureClass=futureClass)
+        return render_template('myAccount.html', title='Account Details', pastClass=pastClass, futureClass=futureClass)
     elif current_user.type == 'Trainer':
-        return render_template('myAccount.html', title='Account Details')
+        teachingList = classes(trainerPoint = current_user.trainerID)
+        return render_template('myAccount.html', title='Account Details', teachingList = teachingList)
     else:
         abort(403)
 

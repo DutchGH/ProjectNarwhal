@@ -36,9 +36,9 @@
         </div>
         {%else%}
         <div class="col l6 s12">
-            <h4>Currently Enrolled Modules</h4>
+            <h4>Currently Teaching</h4>
             <ul>
-                {% for item in delClassList %}
+                {% for item in teachingList %}
                 <li>{{item.title}}</li>
                 {% endfor %}
             </ul>
