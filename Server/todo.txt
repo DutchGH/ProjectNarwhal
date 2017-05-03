@@ -1,0 +1,3 @@
+TODO
+- Real-world testing (screenshots etc, Wiki).
+- Comments throughout code base.

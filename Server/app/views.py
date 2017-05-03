@@ -9,26 +9,22 @@ import logging
 
 # This callback is used to reload the user object from the user ID stored
 # in the session.
-
-
 @login_manager.user_loader
 def load_user(id):
     return models.User.query.get(id)
 
 
 class Anonymous(AnonymousUserMixin):
-
     def __init__(self):
         self.type = 'Guest'
 
 
+# If a 403 error code is raised, show the 403 page given by 403.html.
 @app.errorhandler(403)
 def page_not_found(e):
     return render_template('403.html'), 403
 
 # The route used to pass a user accID to the view page
-
-
 @app.route('/')
 def home():
     user = current_user
@@ -37,9 +33,9 @@ def home():
     else:
         return render_template('index.html', title="FDM TEST")
 
-# The login page route
-
-
+# When a user attempts to login, check their username and password.
+# If the credentials are valid, login.
+# Otherwise, redirect to the homepage and inform the user that the login failed.
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -55,7 +51,7 @@ def login():
     return render_template('login.html', title='Log In', form=form)
 
 
-# logging the user out
+# Logout the current user and redirect to the homepage.
 @app.route('/logout')
 @login_required
 def logout():
@@ -65,10 +61,14 @@ def logout():
 # Once user is logged page is displayed <---example--->
 
 
+# When a user tries to access admin options, check their type.
+# If they are eligble (i.e. they are an admin), render the page.
+# Otherwise, abort with error code 403.
 @app.route('/adminoptions')
 @login_required
 def admin():
     if current_user.type != 'Admin':
+        # User does not have correct permissions.
         abort(403)
     else:
         return render_template('loggedIn.html', title='Home Page')
