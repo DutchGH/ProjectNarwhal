@@ -88,11 +88,14 @@ def browseClasses():
 def myAccount():
     if current_user.type == 'Delegate':
         delClassList = getClasses(current_user)
-        return render_template('myAccount.html', title='Account Details', delClassList=delClassList)
+        pastClass = history(current_user)
+        futureClass = history(current_user)
+        return render_template('myAccount.html', title='Account Details', delClassList=delClassList, pastClass=pastClass, futureClass=futureClass)
     elif current_user.type == 'Trainer':
         return render_template('myAccount.html', title='Account Details')
     else:
         abort(403)
+
 
 
 @app.route('/timetable')
@@ -417,8 +420,11 @@ def signUp(id):
     thisClass = classes(classID=id)
     if current_user.type == 'Delegate':
         if meetsRequirements(current_user, thisClass):
-            addToClass(thisClass, current_user)
-            flash("You have been added.")
+            if noTimeTableClash(current_user, thisClass):
+                addToClass(thisClass, current_user)
+                flash("You have been added.")
+            else:
+                flash("Cannot sign up. This module clashes with another class.")
         else:
             flash("You don't meet the requirements")
     else:
@@ -433,12 +439,13 @@ def viewClassDetails(id):
     classSize = classAttendenceLen(current_class)
     if current_user.is_authenticated:
         if current_user.type == 'Delegate':
+            clash = noTimeTableClash(current_user, current_class)
             userQualify = meetsRequirements(current_user, current_class)
         else:
             userQualify = False
     else:
         userQualify = "Sign"
-    return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify)
+    return render_template('viewClass.html', title="Course", current_class=current_class, classSize=classSize, userQualify=userQualify, clash = clash)
 
 
 @app.route('/function/cancel/<classID>')

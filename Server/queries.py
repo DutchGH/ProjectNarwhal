@@ -607,8 +607,6 @@ def getLocations():
     return locationList
 
 # A function that get's a delegates classes without using his classList
-
-
 def getClasses(dele):
     classList = classes()
     results = []
@@ -617,9 +615,8 @@ def getClasses(dele):
             results.append(i)
     return results
 
+
 # Function that gets a list of the classes that have not finished.
-
-
 def getCurrentClasses():
     classList = classes()
     today = datetime.now()
@@ -629,9 +626,8 @@ def getCurrentClasses():
             results.append(i)
     return results
 
+
 # Function that checks if a class will conflict with a delegates classlist.
-
-
 def noTimeTableClash(dele, thisClass):
     classList = dele.classList
     for i in classList:
