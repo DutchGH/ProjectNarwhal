@@ -101,10 +101,15 @@ def myAccount():
 @app.route('/timetable')
 @login_required
 def timetable():
-    if current_user.type != 'Delegate':
+    if current_user.type == 'Delegate':
+        classList = delTimeTable(current_user)
+        return render_template('timetable.html', title='Timetable', classList=classList)
+    if current_user.type == 'Trainer':
+        classList = trainerTimeTable(current_user)
+        return render_template('trainerTable.html', title='Timetable', classList=classList)
+    else:
         abort(403)
-    classList = delTimeTable(current_user)
-    return render_template('timetable.html', title='Timetable', classList=classList)
+
 
 
 
