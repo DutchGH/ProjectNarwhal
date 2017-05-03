@@ -23,7 +23,7 @@
         </div>
         </div>
         <div class = "col s12 l4">
-        <h4>Attendance List</h4>
+        <h4>Attendance List {{attSize}}/{{current_class.capacity}}</h4>
         {%- for item in current_class.attendanceList %}
         <p> {{item.name}} </p>
         {%- endfor %}

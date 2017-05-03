@@ -89,7 +89,7 @@ def myAccount():
     if current_user.type == 'Delegate':
         delClassList = getClasses(current_user)
         pastClass = history(current_user)
-        futureClass = history(current_user)
+        futureClass = schedule(current_user)
         return render_template('myAccount.html', title='Account Details', delClassList=delClassList, pastClass=pastClass, futureClass=futureClass)
     elif current_user.type == 'Trainer':
         return render_template('myAccount.html', title='Account Details')
@@ -152,9 +152,7 @@ def course(id):
         abort(403)
 
     current_course = courses(courseID=courseID)
-    #courseClassList = classes(courseID = current_course.courseID)
     courseClassList = classes(course=current_course)
-    #courseClassList = models.Class.query.filter_by(courseID = current_course.courseID)
     if type(courseClassList) != list:
         courseClassList = [courseClassList]
 
@@ -168,7 +166,8 @@ def adminClassDetails(id):
     if current_user.type != 'Admin':
         abort(403)
     current_class = classes(classID=classID)
-    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class)
+    attSize = len(current_class.attendanceList)
+    return render_template('adminClassDetails.html', title=current_class.title + 'Details', current_class=current_class, attSize = attSize)
 
 
 @app.route('/trainers/<id>')
