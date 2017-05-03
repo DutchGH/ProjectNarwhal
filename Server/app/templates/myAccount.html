@@ -12,9 +12,13 @@
             <p><b>Name:</b> {{current_user.name}}</p>
             <p><b>Email: </b> {{current_user.email}}</p>
             {% if current_user.type == 'Delegate' %}
-                <a href='/editdel'><p>Edit details</p></a>
+            <a href="/editdel"> <button class="btn waves-effect waves-light" input type="submit" value="Choose Date">Edit details
+                <i class="material-icons right">mode_edit</i>
+            </button></a>
             {% elif current_user.type == 'Trainer' %}
-                <a href='/edittrain'><p>Edit details</p></a>
+            <a href='/edittrain'> <button  class="btn waves-effect waves-light" input type="submit" value="Choose Date">Edit details
+                <i class="material-icons right">mode_edit</i>
+            </button></a>
             {% endif %}
         </div>
         {% if current_user.type == 'Delegate' %}

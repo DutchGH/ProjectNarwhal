@@ -1,10 +1,14 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
-    {% for message in get_flashed_messages() %}
-    <div>
-        {{ message }}
+    <div class="row">
+        <div class="col s12">
+            {% for message in get_flashed_messages() %}
+            <div class = "toast">
+            {{ message }}
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 
 
     <h2>Add Date for Class</h2>

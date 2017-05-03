@@ -1,11 +1,17 @@
 {% extends "base.html" %} {% block content %}
-<div class="container">
-    {% for message in get_flashed_messages() %}
-    <div>
+<div class = "container">
+<div class="row">
+    <div class="col s12">
+        {% for message in get_flashed_messages() %}
+        <div class = "toast">
         {{ message }}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+</div>
     <h2>Create Trainer Account</h2>
+    <div class = "row">
+    <div class = "col l6 s12">
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
         <p class="input-field">
@@ -29,9 +35,14 @@
         <p>
             Confirm: {{ form.confirm }}
         </p>
-        <br>
-        <p><input type="submit" value="Add Trainer"></p>
+    <div class = "row">
+    </div>
+        <button class="btn waves-effect waves-light green" input type="submit" value="Add Trainer">Submit
+            <i class="material-icons right">send</i>
+        </button>
     </form>
-    <br>
+</div>
+</div>
+</div>
 </div>
 {% endblock %}

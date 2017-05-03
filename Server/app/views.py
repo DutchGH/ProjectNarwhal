@@ -48,7 +48,6 @@ def login():
             username=request.form['username']).first()
         if user is not None and (user.password == request.form['password']):
             login_user(user)
-            flash('Logged in succesfully')
             return redirect('/')
         else:
             flash('Invalid Credentials. Please Try Again')
@@ -102,25 +101,18 @@ def myAccount():
 @app.route('/timetable')
 @login_required
 def timetable():
-    if current_user.type != 'Delegate':
+    if current_user.type == 'Delegate':
+        classList = delTimeTable(current_user)
+        return render_template('timetable.html', title='Timetable', classList=classList)
+    if current_user.type == 'Trainer':
+        classList = trainerTimeTable(current_user)
+        return render_template('trainerTable.html', title='Timetable', classList=classList)
+    else:
         abort(403)
-    classList = delTimeTable(current_user)
-    return render_template('timetable.html', title='Timetable', classList=classList)
 
 
-@app.route('/timetabletemp')
-@login_required
-def timetabletemp():
-    if current_user.type != 'Delegate':
-        abort(403)
-    date = datetime.today().strftime("%m/%d/%Y")
 
-    classList = current_user.classList
-    days = ["", "Monday", "Tuesday", "Wednesday",
-            "Thursday", "Friday", "Saturday", "Sunday"]
-    hours = ["09:00", "10:00", "11:00", "12:00", "13:00",
-             "14:00", "15:00", "16:00", "17:00", "18:00"]
-    return render_template('timetabletemp.html', title='Timetable', classList=classList, days=days, hours=hours)
+
 
 # Displays a list of trainers which can link to the trainers schedule.
 
@@ -261,32 +253,40 @@ def addDelegate():
 
 
 @app.route('/editdel', methods=['GET', 'POST'])
+@login_required
 def editDelegate():
+    if current_user.type != "Delegate":
+        abort(403)
     form = EditDelegate()
-    if form.validate_on_submit():
-        if form.oldPassword.data == current_user.password:
-            edit(current_user, username=form.username.data,
-                 password=form.password.data, email=form.email.data)
-            return redirect('/myaccount')
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            if form.oldPassword.data == current_user.password:
+                edit(current_user, username=form.username.data,
+                     password=form.password.data, email=form.email.data)
+                return redirect('/myaccount')
+            else:
+                flash("Old password was incorrect.")
         else:
-            flash("Old password was incorrect.")
-    else:
-        flash("Confirm password did not match.")
+            flash("Confirm password did not match.")
     return render_template('editDel.html', title='Edit Account', form=form)
 
 
 @app.route('/edittrain', methods=['GET', 'POST'])
+@login_required
 def editTrainer():
     form = EditTrainer()
-    if form.validate_on_submit():
-        if form.oldPassword.data == current_user.password:
-            edit(current_user, username=form.username.data, password=form.password.data,
-                 email=form.email.data, phone=form.phone.data, address=form.address.data)
-            return redirect('/myaccount')
+    if current_user.type != "Trainer":
+        abort(403)
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            if form.oldPassword.data == current_user.password:
+                edit(current_user, username=form.username.data, password=form.password.data,
+                     email=form.email.data, phone=form.phone.data, address=form.address.data)
+                return redirect('/myaccount')
+            else:
+                flash("Old password was incorrect.")
         else:
-            flash("Old password was incorrect.")
-    else:
-        flash("Confirm password did not match.")
+            flash("Confirm password did not match.")
     return render_template('editTrain.html', title='Edit Account', form=form)
 
 
